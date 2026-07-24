@@ -39,6 +39,7 @@ bun run dev
 - [DESIGN.md](docs/DESIGN.md) — Design system tokens
 - [DATA-MODEL.md](docs/DATA-MODEL.md) — Data model
 - [PHASE1.md](docs/PHASE1.md) — Phase 1 data layer & core logic
+- [PHASE2.md](docs/PHASE2.md) — Phase 2 study UI & pages
 - [ADRs](docs/adr/) — Architecture decision records
 
 ## License
