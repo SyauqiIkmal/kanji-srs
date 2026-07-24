@@ -1,13 +1,41 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: var(--font-sans);
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-jp: 'Noto Serif JP', 'Source Han Serif JP', Georgia, serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -16,102 +44,144 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --color-foreground: var(--foreground);
-  --color-background: var(--background);
+
+  --color-grade-again: var(--grade-again);
+  --color-grade-again-foreground: var(--grade-again-foreground);
+  --color-grade-hard: var(--grade-hard);
+  --color-grade-hard-foreground: var(--grade-hard-foreground);
+  --color-grade-good: var(--grade-good);
+  --color-grade-good-foreground: var(--grade-good-foreground);
+  --color-grade-easy: var(--grade-easy);
+  --color-grade-easy-foreground: var(--grade-easy-foreground);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* ─── Light theme ──────────────────────────────────────────────── */
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* Surface & base neutrals (rice paper & sumi ink) */
+  --background: hsl(42, 36%, 95%);
+  --foreground: hsl(24, 10%, 15%);
+
+  /* Cards & containers */
+  --card: hsl(40, 100%, 99%);
+  --card-foreground: hsl(24, 10%, 15%);
+
+  /* Popover — same as card pair (DESIGN.md §3) */
+  --popover: hsl(40, 100%, 99%);
+  --popover-foreground: hsl(24, 10%, 15%);
+
+  /* Primary accent (Japanese vermillion / 朱色) */
+  --primary: hsl(0, 57%, 38%);
+  --primary-foreground: hsl(0, 0%, 100%);
+
+  /* Secondary & muted */
+  --secondary: hsl(38, 41%, 92%);
+  --secondary-foreground: hsl(30, 11%, 20%);
+  --muted: hsl(39, 27%, 86%);
+  --muted-foreground: hsl(30, 9%, 38%);
+  --accent: hsl(0, 27%, 94%);
+  --accent-foreground: hsl(0, 57%, 38%);
+
+  --destructive: hsl(0, 70%, 36%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+
+  /* Structure & focus */
+  --border: hsl(39, 27%, 86%);
+  --input: hsl(39, 27%, 86%);
+  --ring: hsl(0, 57%, 38%);
+
+  --radius: 0.25rem;
+
+  /* Chart — vermillion intensity ramp (DESIGN.md §3: single-hue, not grade colors) */
+  --chart-1: hsl(0, 57%, 38%);
+  --chart-2: hsl(3, 50%, 50%);
+  --chart-3: hsl(7, 60%, 62%);
+  --chart-4: hsl(10, 65%, 74%);
+  --chart-5: hsl(12, 70%, 86%);
+
+  /* Sidebar */
+  --sidebar: hsl(42, 36%, 93%);
+  --sidebar-foreground: hsl(24, 10%, 15%);
+  --sidebar-primary: hsl(0, 57%, 38%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(0, 27%, 94%);
+  --sidebar-accent-foreground: hsl(0, 57%, 38%);
+  --sidebar-border: hsl(39, 27%, 86%);
+  --sidebar-ring: hsl(0, 57%, 38%);
+
+  /* Grade tokens (FSRS recall quality) */
+  --grade-again: hsl(0, 86%, 97%);
+  --grade-again-foreground: hsl(0, 70%, 36%);
+  --grade-hard: hsl(38, 100%, 97%);
+  --grade-hard-foreground: hsl(28, 87%, 37%);
+  --grade-good: hsl(138, 76%, 97%);
+  --grade-good-foreground: hsl(142, 72%, 29%);
+  --grade-easy: hsl(204, 100%, 97%);
+  --grade-easy-foreground: hsl(201, 96%, 32%);
+
+  /* Typography (DESIGN.md §4) */
+  --icon-stroke: 1.5;
+  --kanji-display: clamp(8rem, 20vw, 12rem);
 }
 
+/* ─── Dark theme ───────────────────────────────────────────────── */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: hsl(30, 8%, 9%);
+  --foreground: hsl(36, 33%, 92%);
+
+  --card: hsl(30, 9%, 13%);
+  --card-foreground: hsl(36, 33%, 92%);
+
+  --popover: hsl(30, 9%, 13%);
+  --popover-foreground: hsl(36, 33%, 92%);
+
+  --primary: hsl(7, 72%, 58%);
+  --primary-foreground: hsl(30, 8%, 9%);
+
+  --secondary: hsl(30, 11%, 15%);
+  --secondary-foreground: hsl(38, 30%, 86%);
+  --muted: hsl(30, 10%, 20%);
+  --muted-foreground: hsl(35, 11%, 62%);
+  --accent: hsl(7, 40%, 16%);
+  --accent-foreground: hsl(7, 72%, 58%);
+
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(0, 96%, 82%);
+
+  --border: hsl(30, 10%, 20%);
+  --input: hsl(30, 10%, 20%);
+  --ring: hsl(7, 72%, 58%);
+
+  /* Chart — dark vermillion ramp */
+  --chart-1: hsl(7, 72%, 58%);
+  --chart-2: hsl(5, 60%, 48%);
+  --chart-3: hsl(3, 50%, 38%);
+  --chart-4: hsl(2, 40%, 28%);
+  --chart-5: hsl(0, 30%, 18%);
+
+  /* Sidebar */
+  --sidebar: hsl(30, 9%, 11%);
+  --sidebar-foreground: hsl(36, 33%, 92%);
+  --sidebar-primary: hsl(7, 72%, 58%);
+  --sidebar-primary-foreground: hsl(30, 8%, 9%);
+  --sidebar-accent: hsl(7, 40%, 16%);
+  --sidebar-accent-foreground: hsl(7, 72%, 58%);
+  --sidebar-border: hsl(30, 10%, 20%);
+  --sidebar-ring: hsl(7, 72%, 58%);
+
+  /* Grade tokens (dark) */
+  --grade-again: hsl(0, 42%, 15%);
+  --grade-again-foreground: hsl(0, 96%, 82%);
+  --grade-hard: hsl(27, 52%, 14%);
+  --grade-hard-foreground: hsl(50, 96%, 62%);
+  --grade-good: hsl(146, 45%, 12%);
+  --grade-good-foreground: hsl(138, 76%, 73%);
+  --grade-easy: hsl(203, 52%, 14%);
+  --grade-easy-foreground: hsl(199, 95%, 74%);
 }
 
 @layer base {
@@ -120,5 +190,6 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans);
   }
 }
