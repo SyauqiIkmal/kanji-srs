@@ -30,7 +30,11 @@ export function useKanji() {
   const kanjiList = N5_KANJI_LIST
 
   /** All KanjiEntry objects, ordered by the N5 list. */
-  const allKanji = computed(() => N5_KANJI_LIST.map((char) => dictionary[char]).filter(Boolean))
+  const allKanji = computed<KanjiEntry[]>(() =>
+    N5_KANJI_LIST.map((char) => dictionary[char]).filter((item): item is KanjiEntry =>
+      Boolean(item),
+    ),
+  )
 
   /** Total count of kanji in the deck. */
   const totalCount = N5_KANJI_LIST.length

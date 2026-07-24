@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { TooltipContentEmits, TooltipContentProps } from "reka-ui"
 import type { HTMLAttributes } from "vue"
 import { reactiveOmit } from "@vueuse/core"
 import { TooltipArrow, TooltipContent, TooltipPortal, useForwardPropsEmits } from "reka-ui"
@@ -9,11 +8,20 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const props = withDefaults(defineProps<TooltipContentProps & { class?: HTMLAttributes["class"] }>(), {
-  sideOffset: 4,
-})
+const props = withDefaults(
+  defineProps<{
+    sideOffset?: number
+    class?: HTMLAttributes["class"]
+  }>(),
+  {
+    sideOffset: 4,
+  },
+)
 
-const emits = defineEmits<TooltipContentEmits>()
+const emits = defineEmits<{
+  (e: 'escapeKeyDown', event: KeyboardEvent): void
+  (e: 'pointerDownOutside', event: Event): void
+}>()
 
 const delegatedProps = reactiveOmit(props, "class")
 const forwarded = useForwardPropsEmits(delegatedProps, emits)

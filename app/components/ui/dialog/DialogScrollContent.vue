@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import type { DialogContentEmits, DialogContentProps } from "reka-ui"
 import type { HTMLAttributes } from "vue"
-import { X } from "@lucide/vue"
+import { X } from "lucide-vue-next"
 import { reactiveOmit } from "@vueuse/core"
 import {
   DialogClose,
@@ -16,8 +15,15 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const props = defineProps<DialogContentProps & { class?: HTMLAttributes["class"] }>()
-const emits = defineEmits<DialogContentEmits>()
+const props = defineProps<{
+  class?: HTMLAttributes["class"]
+  forceMount?: boolean
+  trapFocus?: boolean
+}>()
+const emits = defineEmits<{
+  (e: 'escapeKeyDown', event: KeyboardEvent): void
+  (e: 'pointerDownOutside', event: Event): void
+}>()
 
 const delegatedProps = reactiveOmit(props, "class")
 

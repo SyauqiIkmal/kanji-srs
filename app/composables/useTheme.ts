@@ -58,6 +58,7 @@ export function useTheme() {
     theme: computed(() => progress.settings.theme),
     resolvedTheme,
     isDark,
+    applyTheme,
     toggleTheme,
     setTheme,
   }
