@@ -1,0 +1,3394 @@
+{
+  "安": {
+    "char": "安",
+    "codepoint": "05b89",
+    "meanings": [
+      "relax",
+      "cheap",
+      "low",
+      "quiet",
+      "rested",
+      "contented",
+      "peaceful"
+    ],
+    "onyomi": [
+      "アン"
+    ],
+    "kunyomi": [
+      "やす.い",
+      "やす.まる",
+      "やす",
+      "やす.らか"
+    ],
+    "strokeCount": 6,
+    "jlpt": 5,
+    "grade": 3,
+    "frequency": 144,
+    "examples": [
+      {
+        "word": "安い",
+        "reading": "やすい",
+        "meaning": "cheap"
+      },
+      {
+        "word": "安全",
+        "reading": "あんぜん",
+        "meaning": "safe"
+      }
+    ]
+  },
+  "一": {
+    "char": "一",
+    "codepoint": "04e00",
+    "meanings": [
+      "one",
+      "one radical (no.1)"
+    ],
+    "onyomi": [
+      "イチ",
+      "イツ"
+    ],
+    "kunyomi": [
+      "ひと-",
+      "ひと.つ"
+    ],
+    "strokeCount": 1,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 2,
+    "examples": [
+      {
+        "word": "一つ",
+        "reading": "ひとつ",
+        "meaning": "one thing"
+      },
+      {
+        "word": "一日",
+        "reading": "ついたち",
+        "meaning": "first of month"
+      }
+    ]
+  },
+  "飲": {
+    "char": "飲",
+    "codepoint": "098f2",
+    "meanings": [
+      "drink",
+      "smoke",
+      "take"
+    ],
+    "onyomi": [
+      "イン",
+      "オン"
+    ],
+    "kunyomi": [
+      "の.む",
+      "-の.み"
+    ],
+    "strokeCount": 12,
+    "jlpt": 5,
+    "grade": 3,
+    "frequency": 969,
+    "examples": [
+      {
+        "word": "飲む",
+        "reading": "のむ",
+        "meaning": "to drink"
+      },
+      {
+        "word": "飲み物",
+        "reading": "のみもの",
+        "meaning": "beverage"
+      }
+    ]
+  },
+  "右": {
+    "char": "右",
+    "codepoint": "053f3",
+    "meanings": [
+      "right"
+    ],
+    "onyomi": [
+      "ウ",
+      "ユウ"
+    ],
+    "kunyomi": [
+      "みぎ"
+    ],
+    "strokeCount": 5,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 602,
+    "examples": [
+      {
+        "word": "右",
+        "reading": "みぎ",
+        "meaning": "right"
+      },
+      {
+        "word": "右手",
+        "reading": "みぎて",
+        "meaning": "right hand"
+      }
+    ]
+  },
+  "雨": {
+    "char": "雨",
+    "codepoint": "096e8",
+    "meanings": [
+      "rain"
+    ],
+    "onyomi": [
+      "ウ"
+    ],
+    "kunyomi": [
+      "あめ",
+      "あま-",
+      "-さめ"
+    ],
+    "strokeCount": 8,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 950,
+    "examples": [
+      {
+        "word": "雨",
+        "reading": "あめ",
+        "meaning": "rain"
+      },
+      {
+        "word": "大雨",
+        "reading": "おおあめ",
+        "meaning": "heavy rain"
+      }
+    ]
+  },
+  "駅": {
+    "char": "駅",
+    "codepoint": "099c5",
+    "meanings": [
+      "station"
+    ],
+    "onyomi": [
+      "エキ"
+    ],
+    "kunyomi": [],
+    "strokeCount": 14,
+    "jlpt": 5,
+    "grade": 3,
+    "frequency": 724,
+    "examples": [
+      {
+        "word": "駅",
+        "reading": "えき",
+        "meaning": "station"
+      },
+      {
+        "word": "駅前",
+        "reading": "えきまえ",
+        "meaning": "in front of station"
+      }
+    ]
+  },
+  "円": {
+    "char": "円",
+    "codepoint": "05186",
+    "meanings": [
+      "circle",
+      "yen",
+      "round"
+    ],
+    "onyomi": [
+      "エン"
+    ],
+    "kunyomi": [
+      "まる.い",
+      "まる",
+      "まど",
+      "まど.か",
+      "まろ.やか"
+    ],
+    "strokeCount": 4,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 69,
+    "examples": [
+      {
+        "word": "百円",
+        "reading": "ひゃくえん",
+        "meaning": "100 yen"
+      },
+      {
+        "word": "円い",
+        "reading": "まるい",
+        "meaning": "round"
+      }
+    ]
+  },
+  "下": {
+    "char": "下",
+    "codepoint": "04e0b",
+    "meanings": [
+      "below",
+      "down",
+      "descend",
+      "give",
+      "low",
+      "inferior"
+    ],
+    "onyomi": [
+      "カ",
+      "ゲ"
+    ],
+    "kunyomi": [
+      "した",
+      "しも",
+      "もと",
+      "さ.げる",
+      "さ.がる",
+      "くだ.る",
+      "くだ.り",
+      "くだ.す",
+      "-くだ.す",
+      "くだ.さる",
+      "お.ろす",
+      "お.りる"
+    ],
+    "strokeCount": 3,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 97,
+    "examples": [
+      {
+        "word": "下",
+        "reading": "した",
+        "meaning": "down"
+      },
+      {
+        "word": "下がる",
+        "reading": "さがる",
+        "meaning": "to fall"
+      }
+    ]
+  },
+  "何": {
+    "char": "何",
+    "codepoint": "04f55",
+    "meanings": [
+      "what"
+    ],
+    "onyomi": [
+      "カ"
+    ],
+    "kunyomi": [
+      "なに",
+      "なん",
+      "なに-",
+      "なん-"
+    ],
+    "strokeCount": 7,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 340,
+    "examples": [
+      {
+        "word": "何",
+        "reading": "なに",
+        "meaning": "what"
+      },
+      {
+        "word": "何か",
+        "reading": "なにか",
+        "meaning": "something"
+      }
+    ]
+  },
+  "火": {
+    "char": "火",
+    "codepoint": "0706b",
+    "meanings": [
+      "fire"
+    ],
+    "onyomi": [
+      "カ"
+    ],
+    "kunyomi": [
+      "ひ",
+      "-び",
+      "ほ-"
+    ],
+    "strokeCount": 4,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 574,
+    "examples": [
+      {
+        "word": "火曜日",
+        "reading": "かようび",
+        "meaning": "Tuesday"
+      },
+      {
+        "word": "火",
+        "reading": "ひ",
+        "meaning": "fire"
+      }
+    ]
+  },
+  "花": {
+    "char": "花",
+    "codepoint": "082b1",
+    "meanings": [
+      "flower"
+    ],
+    "onyomi": [
+      "カ",
+      "ケ"
+    ],
+    "kunyomi": [
+      "はな"
+    ],
+    "strokeCount": 7,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 578,
+    "examples": [
+      {
+        "word": "花",
+        "reading": "はな",
+        "meaning": "flower"
+      },
+      {
+        "word": "花火",
+        "reading": "はなび",
+        "meaning": "fireworks"
+      }
+    ]
+  },
+  "会": {
+    "char": "会",
+    "codepoint": "04f1a",
+    "meanings": [
+      "meeting",
+      "meet",
+      "party",
+      "association",
+      "interview",
+      "join"
+    ],
+    "onyomi": [
+      "カイ",
+      "エ"
+    ],
+    "kunyomi": [
+      "あ.う",
+      "あ.わせる",
+      "あつ.まる"
+    ],
+    "strokeCount": 6,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 4,
+    "examples": [
+      {
+        "word": "会う",
+        "reading": "あう",
+        "meaning": "to meet"
+      },
+      {
+        "word": "会社",
+        "reading": "かいしゃ",
+        "meaning": "company"
+      }
+    ]
+  },
+  "外": {
+    "char": "外",
+    "codepoint": "05916",
+    "meanings": [
+      "outside"
+    ],
+    "onyomi": [
+      "ガイ",
+      "ゲ"
+    ],
+    "kunyomi": [
+      "そと",
+      "ほか",
+      "はず.す",
+      "はず.れる",
+      "と-"
+    ],
+    "strokeCount": 5,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 81,
+    "examples": [
+      {
+        "word": "外",
+        "reading": "そと",
+        "meaning": "outside"
+      },
+      {
+        "word": "外国",
+        "reading": "がいこく",
+        "meaning": "foreign country"
+      }
+    ]
+  },
+  "学": {
+    "char": "学",
+    "codepoint": "05b66",
+    "meanings": [
+      "study",
+      "learning",
+      "science"
+    ],
+    "onyomi": [
+      "ガク"
+    ],
+    "kunyomi": [
+      "まな.ぶ"
+    ],
+    "strokeCount": 8,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 63,
+    "examples": [
+      {
+        "word": "学生",
+        "reading": "がくせい",
+        "meaning": "student"
+      },
+      {
+        "word": "学校",
+        "reading": "がっこう",
+        "meaning": "school"
+      }
+    ]
+  },
+  "間": {
+    "char": "間",
+    "codepoint": "09593",
+    "meanings": [
+      "interval",
+      "space"
+    ],
+    "onyomi": [
+      "カン",
+      "ケン"
+    ],
+    "kunyomi": [
+      "あいだ",
+      "ま",
+      "あい"
+    ],
+    "strokeCount": 12,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 33,
+    "examples": [
+      {
+        "word": "間",
+        "reading": "あいだ",
+        "meaning": "between"
+      },
+      {
+        "word": "時間",
+        "reading": "じかん",
+        "meaning": "time"
+      }
+    ]
+  },
+  "気": {
+    "char": "気",
+    "codepoint": "06c17",
+    "meanings": [
+      "spirit",
+      "mind",
+      "air",
+      "atmosphere",
+      "mood"
+    ],
+    "onyomi": [
+      "キ",
+      "ケ"
+    ],
+    "kunyomi": [
+      "いき",
+      "き"
+    ],
+    "strokeCount": 6,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 113,
+    "examples": [
+      {
+        "word": "元気",
+        "reading": "げんき",
+        "meaning": "healthy/energetic"
+      },
+      {
+        "word": "天気",
+        "reading": "てんき",
+        "meaning": "weather"
+      }
+    ]
+  },
+  "休": {
+    "char": "休",
+    "codepoint": "04f11",
+    "meanings": [
+      "rest",
+      "day off",
+      "retire",
+      "sleep"
+    ],
+    "onyomi": [
+      "キュウ"
+    ],
+    "kunyomi": [
+      "やす.む",
+      "やす.まる",
+      "やす.める"
+    ],
+    "strokeCount": 6,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 642,
+    "examples": [
+      {
+        "word": "休む",
+        "reading": "やすむ",
+        "meaning": "to rest"
+      },
+      {
+        "word": "休み",
+        "reading": "やすみ",
+        "meaning": "holiday"
+      }
+    ]
+  },
+  "金": {
+    "char": "金",
+    "codepoint": "091d1",
+    "meanings": [
+      "gold"
+    ],
+    "onyomi": [
+      "キン",
+      "コン",
+      "ゴン"
+    ],
+    "kunyomi": [
+      "かね",
+      "かな-",
+      "-がね"
+    ],
+    "strokeCount": 8,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 53,
+    "examples": [
+      {
+        "word": "金曜日",
+        "reading": "きんようび",
+        "meaning": "Friday"
+      },
+      {
+        "word": "お金",
+        "reading": "おかね",
+        "meaning": "money"
+      }
+    ]
+  },
+  "九": {
+    "char": "九",
+    "codepoint": "04e5d",
+    "meanings": [
+      "nine"
+    ],
+    "onyomi": [
+      "キュウ",
+      "ク"
+    ],
+    "kunyomi": [
+      "ここの",
+      "ここの.つ"
+    ],
+    "strokeCount": 2,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 55,
+    "examples": [
+      {
+        "word": "九つ",
+        "reading": "ここのつ",
+        "meaning": "nine things"
+      },
+      {
+        "word": "九日",
+        "reading": "ここのか",
+        "meaning": "ninth day"
+      }
+    ]
+  },
+  "月": {
+    "char": "月",
+    "codepoint": "06708",
+    "meanings": [
+      "month",
+      "moon"
+    ],
+    "onyomi": [
+      "ゲツ",
+      "ガツ"
+    ],
+    "kunyomi": [
+      "つき"
+    ],
+    "strokeCount": 4,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 23,
+    "examples": [
+      {
+        "word": "月曜日",
+        "reading": "げつようび",
+        "meaning": "Monday"
+      },
+      {
+        "word": "一月",
+        "reading": "いちがつ",
+        "meaning": "January"
+      }
+    ]
+  },
+  "見": {
+    "char": "見",
+    "codepoint": "0898b",
+    "meanings": [
+      "see",
+      "hopes",
+      "chances",
+      "idea",
+      "opinion",
+      "look at",
+      "visible"
+    ],
+    "onyomi": [
+      "ケン"
+    ],
+    "kunyomi": [
+      "み.る",
+      "み.える",
+      "み.せる"
+    ],
+    "strokeCount": 7,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 22,
+    "examples": [
+      {
+        "word": "見る",
+        "reading": "みる",
+        "meaning": "to see"
+      },
+      {
+        "word": "見せる",
+        "reading": "みせる",
+        "meaning": "to show"
+      }
+    ]
+  },
+  "古": {
+    "char": "古",
+    "codepoint": "053e4",
+    "meanings": [
+      "old"
+    ],
+    "onyomi": [
+      "コ"
+    ],
+    "kunyomi": [
+      "ふる.い",
+      "ふる-",
+      "-ふる.す"
+    ],
+    "strokeCount": 5,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 509,
+    "examples": [
+      {
+        "word": "古い",
+        "reading": "ふるい",
+        "meaning": "old"
+      },
+      {
+        "word": "中古",
+        "reading": "ちゅうこ",
+        "meaning": "used"
+      }
+    ]
+  },
+  "五": {
+    "char": "五",
+    "codepoint": "04e94",
+    "meanings": [
+      "five"
+    ],
+    "onyomi": [
+      "ゴ"
+    ],
+    "kunyomi": [
+      "いつ",
+      "いつ.つ"
+    ],
+    "strokeCount": 4,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 31,
+    "examples": [
+      {
+        "word": "五つ",
+        "reading": "いつつ",
+        "meaning": "five things"
+      },
+      {
+        "word": "五日",
+        "reading": "いつか",
+        "meaning": "fifth day"
+      }
+    ]
+  },
+  "午": {
+    "char": "午",
+    "codepoint": "05348",
+    "meanings": [
+      "noon",
+      "sign of the horse",
+      "11AM-1PM",
+      "seventh sign of Chinese zodiac"
+    ],
+    "onyomi": [
+      "ゴ"
+    ],
+    "kunyomi": [
+      "うま"
+    ],
+    "strokeCount": 4,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 154,
+    "examples": [
+      {
+        "word": "午前",
+        "reading": "ごぜん",
+        "meaning": "A.M."
+      },
+      {
+        "word": "午後",
+        "reading": "ごご",
+        "meaning": "P.M."
+      }
+    ]
+  },
+  "後": {
+    "char": "後",
+    "codepoint": "05f8c",
+    "meanings": [
+      "behind",
+      "back",
+      "later"
+    ],
+    "onyomi": [
+      "ゴ",
+      "コウ"
+    ],
+    "kunyomi": [
+      "のち",
+      "うし.ろ",
+      "うしろ",
+      "あと",
+      "おく.れる"
+    ],
+    "strokeCount": 9,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 26,
+    "examples": [
+      {
+        "word": "午後",
+        "reading": "ごご",
+        "meaning": "afternoon"
+      },
+      {
+        "word": "後ろ",
+        "reading": "うしろ",
+        "meaning": "behind"
+      }
+    ]
+  },
+  "語": {
+    "char": "語",
+    "codepoint": "08a9e",
+    "meanings": [
+      "word",
+      "speech",
+      "language"
+    ],
+    "onyomi": [
+      "ゴ"
+    ],
+    "kunyomi": [
+      "かた.る",
+      "かた.らう"
+    ],
+    "strokeCount": 14,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 301,
+    "examples": [
+      {
+        "word": "日本語",
+        "reading": "にほんご",
+        "meaning": "Japanese language"
+      },
+      {
+        "word": "英語",
+        "reading": "えいご",
+        "meaning": "English language"
+      }
+    ]
+  },
+  "口": {
+    "char": "口",
+    "codepoint": "053e3",
+    "meanings": [
+      "mouth"
+    ],
+    "onyomi": [
+      "コウ",
+      "ク"
+    ],
+    "kunyomi": [
+      "くち"
+    ],
+    "strokeCount": 3,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 284,
+    "examples": [
+      {
+        "word": "口",
+        "reading": "くち",
+        "meaning": "mouth"
+      },
+      {
+        "word": "入口",
+        "reading": "いりぐち",
+        "meaning": "entrance"
+      }
+    ]
+  },
+  "校": {
+    "char": "校",
+    "codepoint": "06821",
+    "meanings": [
+      "exam",
+      "school",
+      "printing",
+      "proof",
+      "correction"
+    ],
+    "onyomi": [
+      "コウ",
+      "キョウ"
+    ],
+    "kunyomi": [],
+    "strokeCount": 10,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 294,
+    "examples": [
+      {
+        "word": "学校",
+        "reading": "がっこう",
+        "meaning": "school"
+      },
+      {
+        "word": "校長",
+        "reading": "こうちょう",
+        "meaning": "principal"
+      }
+    ]
+  },
+  "行": {
+    "char": "行",
+    "codepoint": "0884c",
+    "meanings": [
+      "going",
+      "journey",
+      "carry out",
+      "conduct",
+      "act",
+      "line",
+      "row",
+      "bank"
+    ],
+    "onyomi": [
+      "コウ",
+      "ギョウ",
+      "アン"
+    ],
+    "kunyomi": [
+      "い.く",
+      "ゆ.く",
+      "-ゆ.き",
+      "-ゆき",
+      "-い.き",
+      "-いき",
+      "おこな.う",
+      "おこ.なう"
+    ],
+    "strokeCount": 6,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 20,
+    "examples": [
+      {
+        "word": "行く",
+        "reading": "いく",
+        "meaning": "to go"
+      },
+      {
+        "word": "旅行",
+        "reading": "りょこう",
+        "meaning": "travel"
+      }
+    ]
+  },
+  "高": {
+    "char": "高",
+    "codepoint": "09ad8",
+    "meanings": [
+      "tall",
+      "high",
+      "expensive"
+    ],
+    "onyomi": [
+      "コウ"
+    ],
+    "kunyomi": [
+      "たか.い",
+      "たか",
+      "-だか",
+      "たか.まる",
+      "たか.める"
+    ],
+    "strokeCount": 10,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 65,
+    "examples": [
+      {
+        "word": "高い",
+        "reading": "たかい",
+        "meaning": "high/expensive"
+      },
+      {
+        "word": "高校",
+        "reading": "こうこう",
+        "meaning": "high school"
+      }
+    ]
+  },
+  "国": {
+    "char": "国",
+    "codepoint": "056fd",
+    "meanings": [
+      "country"
+    ],
+    "onyomi": [
+      "コク"
+    ],
+    "kunyomi": [
+      "くに"
+    ],
+    "strokeCount": 8,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 3,
+    "examples": [
+      {
+        "word": "国",
+        "reading": "くに",
+        "meaning": "country"
+      },
+      {
+        "word": "外国",
+        "reading": "がいこく",
+        "meaning": "foreign country"
+      }
+    ]
+  },
+  "今": {
+    "char": "今",
+    "codepoint": "04eca",
+    "meanings": [
+      "now"
+    ],
+    "onyomi": [
+      "コン",
+      "キン"
+    ],
+    "kunyomi": [
+      "いま"
+    ],
+    "strokeCount": 4,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 49,
+    "examples": [
+      {
+        "word": "今日",
+        "reading": "きょう",
+        "meaning": "today"
+      },
+      {
+        "word": "今月",
+        "reading": "こんげつ",
+        "meaning": "this month"
+      }
+    ]
+  },
+  "左": {
+    "char": "左",
+    "codepoint": "05de6",
+    "meanings": [
+      "left"
+    ],
+    "onyomi": [
+      "サ",
+      "シャ"
+    ],
+    "kunyomi": [
+      "ひだり"
+    ],
+    "strokeCount": 5,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 630,
+    "examples": [
+      {
+        "word": "左",
+        "reading": "ひだり",
+        "meaning": "left"
+      },
+      {
+        "word": "左手",
+        "reading": "ひだりて",
+        "meaning": "left hand"
+      }
+    ]
+  },
+  "三": {
+    "char": "三",
+    "codepoint": "04e09",
+    "meanings": [
+      "three"
+    ],
+    "onyomi": [
+      "サン",
+      "ゾウ"
+    ],
+    "kunyomi": [
+      "み",
+      "み.つ",
+      "みっ.つ"
+    ],
+    "strokeCount": 3,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 14,
+    "examples": [
+      {
+        "word": "三つ",
+        "reading": "みっつ",
+        "meaning": "three things"
+      },
+      {
+        "word": "三日",
+        "reading": "みっか",
+        "meaning": "third day"
+      }
+    ]
+  },
+  "山": {
+    "char": "山",
+    "codepoint": "05c71",
+    "meanings": [
+      "mountain"
+    ],
+    "onyomi": [
+      "サン",
+      "セン"
+    ],
+    "kunyomi": [
+      "やま"
+    ],
+    "strokeCount": 3,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 131,
+    "examples": [
+      {
+        "word": "山",
+        "reading": "やま",
+        "meaning": "mountain"
+      },
+      {
+        "word": "富士山",
+        "reading": "ふじさん",
+        "meaning": "Mt. Fuji"
+      }
+    ]
+  },
+  "四": {
+    "char": "四",
+    "codepoint": "056db",
+    "meanings": [
+      "four"
+    ],
+    "onyomi": [
+      "シ"
+    ],
+    "kunyomi": [
+      "よ",
+      "よ.つ",
+      "よっ.つ",
+      "よん"
+    ],
+    "strokeCount": 5,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 47,
+    "examples": [
+      {
+        "word": "四つ",
+        "reading": "よっつ",
+        "meaning": "four things"
+      },
+      {
+        "word": "四月",
+        "reading": "しがつ",
+        "meaning": "April"
+      }
+    ]
+  },
+  "子": {
+    "char": "子",
+    "codepoint": "05b50",
+    "meanings": [
+      "child",
+      "sign of the rat",
+      "11PM-1AM",
+      "first sign of Chinese zodiac"
+    ],
+    "onyomi": [
+      "シ",
+      "ス",
+      "ツ"
+    ],
+    "kunyomi": [
+      "こ",
+      "-こ",
+      "ね"
+    ],
+    "strokeCount": 3,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 72,
+    "examples": [
+      {
+        "word": "子供",
+        "reading": "こども",
+        "meaning": "child"
+      },
+      {
+        "word": "男の子",
+        "reading": "おとこのこ",
+        "meaning": "boy"
+      }
+    ]
+  },
+  "時": {
+    "char": "時",
+    "codepoint": "06642",
+    "meanings": [
+      "time",
+      "hour"
+    ],
+    "onyomi": [
+      "ジ"
+    ],
+    "kunyomi": [
+      "とき",
+      "-どき"
+    ],
+    "strokeCount": 10,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 16,
+    "examples": [
+      {
+        "word": "時間",
+        "reading": "じかん",
+        "meaning": "time"
+      },
+      {
+        "word": "時計",
+        "reading": "とけい",
+        "meaning": "watch"
+      }
+    ]
+  },
+  "耳": {
+    "char": "耳",
+    "codepoint": "08033",
+    "meanings": [
+      "ear"
+    ],
+    "onyomi": [
+      "ジ"
+    ],
+    "kunyomi": [
+      "みみ"
+    ],
+    "strokeCount": 6,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 1328,
+    "examples": [
+      {
+        "word": "耳",
+        "reading": "みみ",
+        "meaning": "ear"
+      }
+    ]
+  },
+  "七": {
+    "char": "七",
+    "codepoint": "04e03",
+    "meanings": [
+      "seven"
+    ],
+    "onyomi": [
+      "シチ"
+    ],
+    "kunyomi": [
+      "なな",
+      "なな.つ",
+      "なの"
+    ],
+    "strokeCount": 2,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 115,
+    "examples": [
+      {
+        "word": "七つ",
+        "reading": "ななつ",
+        "meaning": "seven things"
+      },
+      {
+        "word": "七日",
+        "reading": "なのか",
+        "meaning": "seventh day"
+      }
+    ]
+  },
+  "社": {
+    "char": "社",
+    "codepoint": "0793e",
+    "meanings": [
+      "company",
+      "firm",
+      "office",
+      "association",
+      "shrine"
+    ],
+    "onyomi": [
+      "シャ"
+    ],
+    "kunyomi": [
+      "やしろ"
+    ],
+    "strokeCount": 7,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 21,
+    "examples": [
+      {
+        "word": "会社",
+        "reading": "かいしゃ",
+        "meaning": "company"
+      },
+      {
+        "word": "社会",
+        "reading": "しゃかい",
+        "meaning": "society"
+      }
+    ]
+  },
+  "車": {
+    "char": "車",
+    "codepoint": "08eca",
+    "meanings": [
+      "car"
+    ],
+    "onyomi": [
+      "シャ"
+    ],
+    "kunyomi": [
+      "くるま"
+    ],
+    "strokeCount": 7,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 333,
+    "examples": [
+      {
+        "word": "車",
+        "reading": "くるま",
+        "meaning": "car"
+      },
+      {
+        "word": "電車",
+        "reading": "でんしゃ",
+        "meaning": "train"
+      }
+    ]
+  },
+  "手": {
+    "char": "手",
+    "codepoint": "0624b",
+    "meanings": [
+      "hand"
+    ],
+    "onyomi": [
+      "シュ",
+      "ズ"
+    ],
+    "kunyomi": [
+      "て",
+      "て-",
+      "-て",
+      "た-"
+    ],
+    "strokeCount": 4,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 60,
+    "examples": [
+      {
+        "word": "手",
+        "reading": "て",
+        "meaning": "hand"
+      },
+      {
+        "word": "手紙",
+        "reading": "てがみ",
+        "meaning": "letter"
+      }
+    ]
+  },
+  "週": {
+    "char": "週",
+    "codepoint": "09031",
+    "meanings": [
+      "week"
+    ],
+    "onyomi": [
+      "シュウ"
+    ],
+    "kunyomi": [],
+    "strokeCount": 11,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 540,
+    "examples": [
+      {
+        "word": "今週",
+        "reading": "こんしゅう",
+        "meaning": "this week"
+      },
+      {
+        "word": "来週",
+        "reading": "らいしゅう",
+        "meaning": "next week"
+      }
+    ]
+  },
+  "十": {
+    "char": "十",
+    "codepoint": "05341",
+    "meanings": [
+      "ten"
+    ],
+    "onyomi": [
+      "ジュウ",
+      "ジッ",
+      "ジュッ"
+    ],
+    "kunyomi": [
+      "とお",
+      "と",
+      "そ"
+    ],
+    "strokeCount": 2,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 8,
+    "examples": [
+      {
+        "word": "十",
+        "reading": "とお",
+        "meaning": "ten things"
+      },
+      {
+        "word": "十日",
+        "reading": "とおか",
+        "meaning": "tenth day"
+      }
+    ]
+  },
+  "出": {
+    "char": "出",
+    "codepoint": "051fa",
+    "meanings": [
+      "exit",
+      "leave",
+      "go out",
+      "come out",
+      "put out",
+      "protrude"
+    ],
+    "onyomi": [
+      "シュツ",
+      "スイ"
+    ],
+    "kunyomi": [
+      "で.る",
+      "-で",
+      "だ.す",
+      "-だ.す",
+      "い.でる",
+      "い.だす"
+    ],
+    "strokeCount": 5,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 13,
+    "examples": [
+      {
+        "word": "出る",
+        "reading": "でる",
+        "meaning": "to exit"
+      },
+      {
+        "word": "出す",
+        "reading": "だす",
+        "meaning": "to put out"
+      }
+    ]
+  },
+  "書": {
+    "char": "書",
+    "codepoint": "066f8",
+    "meanings": [
+      "write"
+    ],
+    "onyomi": [
+      "ショ"
+    ],
+    "kunyomi": [
+      "か.く",
+      "-が.き",
+      "-がき"
+    ],
+    "strokeCount": 10,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 169,
+    "examples": [
+      {
+        "word": "書く",
+        "reading": "かく",
+        "meaning": "to write"
+      },
+      {
+        "word": "辞書",
+        "reading": "じしょ",
+        "meaning": "dictionary"
+      }
+    ]
+  },
+  "女": {
+    "char": "女",
+    "codepoint": "05973",
+    "meanings": [
+      "woman",
+      "female"
+    ],
+    "onyomi": [
+      "ジョ",
+      "ニョ",
+      "ニョウ"
+    ],
+    "kunyomi": [
+      "おんな",
+      "め"
+    ],
+    "strokeCount": 3,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 151,
+    "examples": [
+      {
+        "word": "女",
+        "reading": "おんな",
+        "meaning": "woman"
+      },
+      {
+        "word": "女の子",
+        "reading": "おんなのこ",
+        "meaning": "girl"
+      }
+    ]
+  },
+  "小": {
+    "char": "小",
+    "codepoint": "05c0f",
+    "meanings": [
+      "little",
+      "small"
+    ],
+    "onyomi": [
+      "ショウ"
+    ],
+    "kunyomi": [
+      "ちい.さい",
+      "こ-",
+      "お-",
+      "さ-"
+    ],
+    "strokeCount": 3,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 114,
+    "examples": [
+      {
+        "word": "小さい",
+        "reading": "ちいさい",
+        "meaning": "small"
+      },
+      {
+        "word": "小学校",
+        "reading": "しょうがっこう",
+        "meaning": "elementary school"
+      }
+    ]
+  },
+  "少": {
+    "char": "少",
+    "codepoint": "05c11",
+    "meanings": [
+      "few",
+      "little"
+    ],
+    "onyomi": [
+      "ショウ"
+    ],
+    "kunyomi": [
+      "すく.ない",
+      "すこ.し"
+    ],
+    "strokeCount": 4,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 287,
+    "examples": [
+      {
+        "word": "少ない",
+        "reading": "すくない",
+        "meaning": "few"
+      },
+      {
+        "word": "少し",
+        "reading": "すこし",
+        "meaning": "a little"
+      }
+    ]
+  },
+  "上": {
+    "char": "上",
+    "codepoint": "04e0a",
+    "meanings": [
+      "above",
+      "up"
+    ],
+    "onyomi": [
+      "ジョウ",
+      "ショウ",
+      "シャン"
+    ],
+    "kunyomi": [
+      "うえ",
+      "-うえ",
+      "うわ-",
+      "かみ",
+      "あ.げる",
+      "-あ.げる",
+      "あ.がる",
+      "-あ.がる",
+      "あ.がり",
+      "-あ.がり",
+      "のぼ.る",
+      "のぼ.り",
+      "のぼ.せる",
+      "のぼ.す",
+      "たてまつ.る"
+    ],
+    "strokeCount": 3,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 35,
+    "examples": [
+      {
+        "word": "上",
+        "reading": "うえ",
+        "meaning": "up"
+      },
+      {
+        "word": "上がる",
+        "reading": "あがる",
+        "meaning": "to rise"
+      }
+    ]
+  },
+  "食": {
+    "char": "食",
+    "codepoint": "098df",
+    "meanings": [
+      "eat",
+      "food"
+    ],
+    "onyomi": [
+      "ショク",
+      "ジキ"
+    ],
+    "kunyomi": [
+      "く.う",
+      "く.らう",
+      "た.べる",
+      "は.む"
+    ],
+    "strokeCount": 9,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 328,
+    "examples": [
+      {
+        "word": "食べる",
+        "reading": "たべる",
+        "meaning": "to eat"
+      },
+      {
+        "word": "食事",
+        "reading": "しょくじ",
+        "meaning": "meal"
+      }
+    ]
+  },
+  "新": {
+    "char": "新",
+    "codepoint": "065b0",
+    "meanings": [
+      "new"
+    ],
+    "onyomi": [
+      "シン"
+    ],
+    "kunyomi": [
+      "あたら.しい",
+      "あら.た",
+      "あら-",
+      "にい-"
+    ],
+    "strokeCount": 13,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 51,
+    "examples": [
+      {
+        "word": "新しい",
+        "reading": "あたらしい",
+        "meaning": "new"
+      },
+      {
+        "word": "新聞",
+        "reading": "しんぶん",
+        "meaning": "newspaper"
+      }
+    ]
+  },
+  "人": {
+    "char": "人",
+    "codepoint": "04eba",
+    "meanings": [
+      "person"
+    ],
+    "onyomi": [
+      "ジン",
+      "ニン"
+    ],
+    "kunyomi": [
+      "ひと",
+      "-り",
+      "-と"
+    ],
+    "strokeCount": 2,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 5,
+    "examples": [
+      {
+        "word": "人",
+        "reading": "ひと",
+        "meaning": "person"
+      },
+      {
+        "word": "日本人",
+        "reading": "にほんじん",
+        "meaning": "Japanese person"
+      }
+    ]
+  },
+  "水": {
+    "char": "水",
+    "codepoint": "06c34",
+    "meanings": [
+      "water"
+    ],
+    "onyomi": [
+      "スイ"
+    ],
+    "kunyomi": [
+      "みず",
+      "みず-"
+    ],
+    "strokeCount": 4,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 223,
+    "examples": [
+      {
+        "word": "水曜日",
+        "reading": "すいようび",
+        "meaning": "Wednesday"
+      },
+      {
+        "word": "水",
+        "reading": "みず",
+        "meaning": "water"
+      }
+    ]
+  },
+  "生": {
+    "char": "生",
+    "codepoint": "0751f",
+    "meanings": [
+      "life",
+      "genuine",
+      "birth"
+    ],
+    "onyomi": [
+      "セイ",
+      "ショウ"
+    ],
+    "kunyomi": [
+      "い.きる",
+      "い.かす",
+      "い.ける",
+      "う.まれる",
+      "うま.れる",
+      "う.まれ",
+      "うまれ",
+      "う.む",
+      "お.う",
+      "は.える",
+      "は.やす",
+      "き",
+      "なま",
+      "なま-",
+      "な.る",
+      "な.す",
+      "む.す",
+      "-う"
+    ],
+    "strokeCount": 5,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 29,
+    "examples": [
+      {
+        "word": "先生",
+        "reading": "せんせい",
+        "meaning": "teacher"
+      },
+      {
+        "word": "学生",
+        "reading": "がくせい",
+        "meaning": "student"
+      }
+    ]
+  },
+  "西": {
+    "char": "西",
+    "codepoint": "0897f",
+    "meanings": [
+      "west",
+      "Spain"
+    ],
+    "onyomi": [
+      "セイ",
+      "サイ",
+      "ス"
+    ],
+    "kunyomi": [
+      "にし"
+    ],
+    "strokeCount": 6,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 259,
+    "examples": [
+      {
+        "word": "西",
+        "reading": "にし",
+        "meaning": "west"
+      },
+      {
+        "word": "西口",
+        "reading": "にしぐち",
+        "meaning": "west exit"
+      }
+    ]
+  },
+  "先": {
+    "char": "先",
+    "codepoint": "05148",
+    "meanings": [
+      "before",
+      "ahead",
+      "previous",
+      "future",
+      "precedence"
+    ],
+    "onyomi": [
+      "セン"
+    ],
+    "kunyomi": [
+      "さき",
+      "ま.ず"
+    ],
+    "strokeCount": 6,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 173,
+    "examples": [
+      {
+        "word": "先生",
+        "reading": "せんせい",
+        "meaning": "teacher"
+      },
+      {
+        "word": "先月",
+        "reading": "せんげつ",
+        "meaning": "last month"
+      }
+    ]
+  },
+  "千": {
+    "char": "千",
+    "codepoint": "05343",
+    "meanings": [
+      "thousand"
+    ],
+    "onyomi": [
+      "セン"
+    ],
+    "kunyomi": [
+      "ち"
+    ],
+    "strokeCount": 3,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 195,
+    "examples": [
+      {
+        "word": "千",
+        "reading": "せん",
+        "meaning": "thousand"
+      },
+      {
+        "word": "三千",
+        "reading": "さんぜん",
+        "meaning": "three thousand"
+      }
+    ]
+  },
+  "川": {
+    "char": "川",
+    "codepoint": "05ddd",
+    "meanings": [
+      "stream",
+      "river",
+      "river or three-stroke river radical (no. 47)"
+    ],
+    "onyomi": [
+      "セン"
+    ],
+    "kunyomi": [
+      "かわ"
+    ],
+    "strokeCount": 3,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 181,
+    "examples": [
+      {
+        "word": "川",
+        "reading": "かわ",
+        "meaning": "river"
+      },
+      {
+        "word": "小川",
+        "reading": "おがわ",
+        "meaning": "stream"
+      }
+    ]
+  },
+  "前": {
+    "char": "前",
+    "codepoint": "0524d",
+    "meanings": [
+      "in front",
+      "before"
+    ],
+    "onyomi": [
+      "ゼン"
+    ],
+    "kunyomi": [
+      "まえ",
+      "-まえ"
+    ],
+    "strokeCount": 9,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 27,
+    "examples": [
+      {
+        "word": "名前",
+        "reading": "なまえ",
+        "meaning": "name"
+      },
+      {
+        "word": "午前",
+        "reading": "ごぜん",
+        "meaning": "morning"
+      }
+    ]
+  },
+  "足": {
+    "char": "足",
+    "codepoint": "08db3",
+    "meanings": [
+      "leg",
+      "foot",
+      "be sufficient",
+      "counter for pairs of footwear"
+    ],
+    "onyomi": [
+      "ソク"
+    ],
+    "kunyomi": [
+      "あし",
+      "た.りる",
+      "た.る",
+      "た.す"
+    ],
+    "strokeCount": 7,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 343,
+    "examples": [
+      {
+        "word": "足",
+        "reading": "あし",
+        "meaning": "foot/leg"
+      },
+      {
+        "word": "足りる",
+        "reading": "たりる",
+        "meaning": "to be sufficient"
+      }
+    ]
+  },
+  "多": {
+    "char": "多",
+    "codepoint": "0591a",
+    "meanings": [
+      "many",
+      "frequent",
+      "much"
+    ],
+    "onyomi": [
+      "タ"
+    ],
+    "kunyomi": [
+      "おお.い",
+      "まさ.に",
+      "まさ.る"
+    ],
+    "strokeCount": 6,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 139,
+    "examples": [
+      {
+        "word": "多い",
+        "reading": "おおい",
+        "meaning": "many"
+      },
+      {
+        "word": "多分",
+        "reading": "たぶん",
+        "meaning": "perhaps"
+      }
+    ]
+  },
+  "体": {
+    "char": "体",
+    "codepoint": "04f53",
+    "meanings": [
+      "body",
+      "substance",
+      "object",
+      "reality",
+      "counter for images"
+    ],
+    "onyomi": [
+      "タイ",
+      "テイ"
+    ],
+    "kunyomi": [
+      "からだ",
+      "かたち"
+    ],
+    "strokeCount": 7,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 88,
+    "examples": [
+      {
+        "word": "体",
+        "reading": "からだ",
+        "meaning": "body"
+      },
+      {
+        "word": "体育",
+        "reading": "たいいく",
+        "meaning": "physical education"
+      }
+    ]
+  },
+  "大": {
+    "char": "大",
+    "codepoint": "05927",
+    "meanings": [
+      "large",
+      "big"
+    ],
+    "onyomi": [
+      "ダイ",
+      "タイ"
+    ],
+    "kunyomi": [
+      "おお-",
+      "おお.きい",
+      "-おお.いに"
+    ],
+    "strokeCount": 3,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 7,
+    "examples": [
+      {
+        "word": "大きい",
+        "reading": "おおきい",
+        "meaning": "big"
+      },
+      {
+        "word": "大学",
+        "reading": "だいがく",
+        "meaning": "university"
+      }
+    ]
+  },
+  "男": {
+    "char": "男",
+    "codepoint": "07537",
+    "meanings": [
+      "male"
+    ],
+    "onyomi": [
+      "ダン",
+      "ナン"
+    ],
+    "kunyomi": [
+      "おとこ",
+      "お"
+    ],
+    "strokeCount": 7,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 240,
+    "examples": [
+      {
+        "word": "男",
+        "reading": "おとこ",
+        "meaning": "man"
+      },
+      {
+        "word": "男の子",
+        "reading": "おとこのこ",
+        "meaning": "boy"
+      }
+    ]
+  },
+  "中": {
+    "char": "中",
+    "codepoint": "04e2d",
+    "meanings": [
+      "in",
+      "inside",
+      "middle",
+      "mean",
+      "center"
+    ],
+    "onyomi": [
+      "チュウ"
+    ],
+    "kunyomi": [
+      "なか",
+      "うち",
+      "あた.る"
+    ],
+    "strokeCount": 4,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 11,
+    "examples": [
+      {
+        "word": "中",
+        "reading": "なか",
+        "meaning": "inside"
+      },
+      {
+        "word": "中国",
+        "reading": "ちゅうごく",
+        "meaning": "China"
+      }
+    ]
+  },
+  "長": {
+    "char": "長",
+    "codepoint": "09577",
+    "meanings": [
+      "long",
+      "leader",
+      "superior",
+      "senior"
+    ],
+    "onyomi": [
+      "チョウ"
+    ],
+    "kunyomi": [
+      "なが.い",
+      "おさ"
+    ],
+    "strokeCount": 8,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 12,
+    "examples": [
+      {
+        "word": "長い",
+        "reading": "ながい",
+        "meaning": "long"
+      },
+      {
+        "word": "社長",
+        "reading": "しゃちょう",
+        "meaning": "company president"
+      }
+    ]
+  },
+  "天": {
+    "char": "天",
+    "codepoint": "05929",
+    "meanings": [
+      "heavens",
+      "sky",
+      "imperial"
+    ],
+    "onyomi": [
+      "テン"
+    ],
+    "kunyomi": [
+      "あまつ",
+      "あめ",
+      "あま-"
+    ],
+    "strokeCount": 4,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 512,
+    "examples": [
+      {
+        "word": "天気",
+        "reading": "てんき",
+        "meaning": "weather"
+      },
+      {
+        "word": "天才",
+        "reading": "てんさい",
+        "meaning": "genius"
+      }
+    ]
+  },
+  "店": {
+    "char": "店",
+    "codepoint": "05e97",
+    "meanings": [
+      "store",
+      "shop"
+    ],
+    "onyomi": [
+      "テン"
+    ],
+    "kunyomi": [
+      "みせ",
+      "たな"
+    ],
+    "strokeCount": 8,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 378,
+    "examples": [
+      {
+        "word": "店",
+        "reading": "みせ",
+        "meaning": "shop"
+      },
+      {
+        "word": "喫茶店",
+        "reading": "きっさてん",
+        "meaning": "coffee shop"
+      }
+    ]
+  },
+  "田": {
+    "char": "田",
+    "codepoint": "07530",
+    "meanings": [
+      "rice field",
+      "rice paddy"
+    ],
+    "onyomi": [
+      "デン"
+    ],
+    "kunyomi": [
+      "た"
+    ],
+    "strokeCount": 5,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 90,
+    "examples": [
+      {
+        "word": "田んぼ",
+        "reading": "たんぼ",
+        "meaning": "rice field"
+      },
+      {
+        "word": "水田",
+        "reading": "すいでん",
+        "meaning": "paddy field"
+      }
+    ]
+  },
+  "電": {
+    "char": "電",
+    "codepoint": "096fb",
+    "meanings": [
+      "electricity"
+    ],
+    "onyomi": [
+      "デン"
+    ],
+    "kunyomi": [],
+    "strokeCount": 13,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 268,
+    "examples": [
+      {
+        "word": "電車",
+        "reading": "でんしゃ",
+        "meaning": "train"
+      },
+      {
+        "word": "電話",
+        "reading": "でんわ",
+        "meaning": "telephone"
+      }
+    ]
+  },
+  "土": {
+    "char": "土",
+    "codepoint": "0571f",
+    "meanings": [
+      "soil",
+      "earth",
+      "ground",
+      "Turkey"
+    ],
+    "onyomi": [
+      "ド",
+      "ト"
+    ],
+    "kunyomi": [
+      "つち"
+    ],
+    "strokeCount": 3,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 307,
+    "examples": [
+      {
+        "word": "土曜日",
+        "reading": "どようび",
+        "meaning": "Saturday"
+      },
+      {
+        "word": "土",
+        "reading": "つち",
+        "meaning": "earth"
+      }
+    ]
+  },
+  "東": {
+    "char": "東",
+    "codepoint": "06771",
+    "meanings": [
+      "east"
+    ],
+    "onyomi": [
+      "トウ"
+    ],
+    "kunyomi": [
+      "ひがし"
+    ],
+    "strokeCount": 8,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 37,
+    "examples": [
+      {
+        "word": "東",
+        "reading": "ひがし",
+        "meaning": "east"
+      },
+      {
+        "word": "東口",
+        "reading": "ひがしぐち",
+        "meaning": "east exit"
+      }
+    ]
+  },
+  "道": {
+    "char": "道",
+    "codepoint": "09053",
+    "meanings": [
+      "road-way",
+      "street",
+      "district",
+      "journey",
+      "course",
+      "moral",
+      "teachings"
+    ],
+    "onyomi": [
+      "ドウ",
+      "トウ"
+    ],
+    "kunyomi": [
+      "みち",
+      "いう"
+    ],
+    "strokeCount": 12,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 207,
+    "examples": [
+      {
+        "word": "道",
+        "reading": "みち",
+        "meaning": "road"
+      },
+      {
+        "word": "水道",
+        "reading": "すいどう",
+        "meaning": "water supply"
+      }
+    ]
+  },
+  "読": {
+    "char": "読",
+    "codepoint": "08aad",
+    "meanings": [
+      "read"
+    ],
+    "onyomi": [
+      "ドク",
+      "トク",
+      "トウ"
+    ],
+    "kunyomi": [
+      "よ.む",
+      "-よ.み"
+    ],
+    "strokeCount": 14,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 618,
+    "examples": [
+      {
+        "word": "読む",
+        "reading": "よむ",
+        "meaning": "to read"
+      },
+      {
+        "word": "読書",
+        "reading": "どくしょ",
+        "meaning": "reading"
+      }
+    ]
+  },
+  "南": {
+    "char": "南",
+    "codepoint": "05357",
+    "meanings": [
+      "south"
+    ],
+    "onyomi": [
+      "ナン",
+      "ナ"
+    ],
+    "kunyomi": [
+      "みなみ"
+    ],
+    "strokeCount": 9,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 341,
+    "examples": [
+      {
+        "word": "南",
+        "reading": "みなみ",
+        "meaning": "south"
+      },
+      {
+        "word": "南口",
+        "reading": "みなみぐち",
+        "meaning": "south exit"
+      }
+    ]
+  },
+  "二": {
+    "char": "二",
+    "codepoint": "04e8c",
+    "meanings": [
+      "two",
+      "two radical (no. 7)"
+    ],
+    "onyomi": [
+      "ニ",
+      "ジ"
+    ],
+    "kunyomi": [
+      "ふた",
+      "ふた.つ",
+      "ふたたび"
+    ],
+    "strokeCount": 2,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 9,
+    "examples": [
+      {
+        "word": "二つ",
+        "reading": "ふたつ",
+        "meaning": "two things"
+      },
+      {
+        "word": "二月",
+        "reading": "にがつ",
+        "meaning": "February"
+      }
+    ]
+  },
+  "日": {
+    "char": "日",
+    "codepoint": "065e5",
+    "meanings": [
+      "day",
+      "sun",
+      "Japan",
+      "counter for days"
+    ],
+    "onyomi": [
+      "ニチ",
+      "ジツ"
+    ],
+    "kunyomi": [
+      "ひ",
+      "-び",
+      "-か"
+    ],
+    "strokeCount": 4,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 1,
+    "examples": [
+      {
+        "word": "日本",
+        "reading": "にほん",
+        "meaning": "Japan"
+      },
+      {
+        "word": "日曜日",
+        "reading": "にちようび",
+        "meaning": "Sunday"
+      }
+    ]
+  },
+  "入": {
+    "char": "入",
+    "codepoint": "05165",
+    "meanings": [
+      "enter",
+      "insert"
+    ],
+    "onyomi": [
+      "ニュウ",
+      "ジュ"
+    ],
+    "kunyomi": [
+      "い.る",
+      "-い.る",
+      "-い.り",
+      "い.れる",
+      "-い.れ",
+      "はい.る"
+    ],
+    "strokeCount": 2,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 56,
+    "examples": [
+      {
+        "word": "入る",
+        "reading": "はいる",
+        "meaning": "to enter"
+      },
+      {
+        "word": "入れる",
+        "reading": "いれる",
+        "meaning": "to put in"
+      }
+    ]
+  },
+  "年": {
+    "char": "年",
+    "codepoint": "05e74",
+    "meanings": [
+      "year",
+      "counter for years"
+    ],
+    "onyomi": [
+      "ネン"
+    ],
+    "kunyomi": [
+      "とし"
+    ],
+    "strokeCount": 6,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 6,
+    "examples": [
+      {
+        "word": "今年",
+        "reading": "ことし",
+        "meaning": "this year"
+      },
+      {
+        "word": "去年",
+        "reading": "きょねん",
+        "meaning": "last year"
+      }
+    ]
+  },
+  "買": {
+    "char": "買",
+    "codepoint": "08cb7",
+    "meanings": [
+      "buy"
+    ],
+    "onyomi": [
+      "バイ"
+    ],
+    "kunyomi": [
+      "か.う"
+    ],
+    "strokeCount": 12,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 520,
+    "examples": [
+      {
+        "word": "買う",
+        "reading": "かう",
+        "meaning": "to buy"
+      },
+      {
+        "word": "買い物",
+        "reading": "かいもの",
+        "meaning": "shopping"
+      }
+    ]
+  },
+  "白": {
+    "char": "白",
+    "codepoint": "0767d",
+    "meanings": [
+      "white"
+    ],
+    "onyomi": [
+      "ハク",
+      "ビャク"
+    ],
+    "kunyomi": [
+      "しろ",
+      "しら-",
+      "しろ.い"
+    ],
+    "strokeCount": 5,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 483,
+    "examples": [
+      {
+        "word": "白い",
+        "reading": "しろい",
+        "meaning": "white"
+      },
+      {
+        "word": "面白い",
+        "reading": "おもしろい",
+        "meaning": "interesting"
+      }
+    ]
+  },
+  "八": {
+    "char": "八",
+    "codepoint": "0516b",
+    "meanings": [
+      "eight",
+      "eight radical (no. 12)"
+    ],
+    "onyomi": [
+      "ハチ",
+      "ハツ"
+    ],
+    "kunyomi": [
+      "や",
+      "や.つ",
+      "やっ.つ",
+      "よう"
+    ],
+    "strokeCount": 2,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 92,
+    "examples": [
+      {
+        "word": "八つ",
+        "reading": "やっつ",
+        "meaning": "eight things"
+      },
+      {
+        "word": "八日",
+        "reading": "ようか",
+        "meaning": "eighth day"
+      }
+    ]
+  },
+  "半": {
+    "char": "半",
+    "codepoint": "0534a",
+    "meanings": [
+      "half",
+      "middle",
+      "odd number",
+      "semi-",
+      "part-"
+    ],
+    "onyomi": [
+      "ハン"
+    ],
+    "kunyomi": [
+      "なか.ば"
+    ],
+    "strokeCount": 5,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 224,
+    "examples": [
+      {
+        "word": "半分",
+        "reading": "はんぶん",
+        "meaning": "half"
+      },
+      {
+        "word": "半ば",
+        "reading": "なかば",
+        "meaning": "middle"
+      }
+    ]
+  },
+  "百": {
+    "char": "百",
+    "codepoint": "0767e",
+    "meanings": [
+      "hundred"
+    ],
+    "onyomi": [
+      "ヒャク",
+      "ビャク"
+    ],
+    "kunyomi": [
+      "もも"
+    ],
+    "strokeCount": 6,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 163,
+    "examples": [
+      {
+        "word": "百",
+        "reading": "ひゃく",
+        "meaning": "hundred"
+      },
+      {
+        "word": "三百",
+        "reading": "さんびゃく",
+        "meaning": "three hundred"
+      }
+    ]
+  },
+  "父": {
+    "char": "父",
+    "codepoint": "07236",
+    "meanings": [
+      "father"
+    ],
+    "onyomi": [
+      "フ"
+    ],
+    "kunyomi": [
+      "ちち"
+    ],
+    "strokeCount": 4,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 646,
+    "examples": [
+      {
+        "word": "父",
+        "reading": "ちち",
+        "meaning": "father"
+      },
+      {
+        "word": "お父さん",
+        "reading": "おとうさん",
+        "meaning": "father (polite)"
+      }
+    ]
+  },
+  "分": {
+    "char": "分",
+    "codepoint": "05206",
+    "meanings": [
+      "part",
+      "minute of time",
+      "segment",
+      "share",
+      "degree",
+      "one's lot",
+      "duty",
+      "understand",
+      "know",
+      "rate",
+      "1%",
+      "chances",
+      "shaku/100"
+    ],
+    "onyomi": [
+      "ブン",
+      "フン",
+      "ブ"
+    ],
+    "kunyomi": [
+      "わ.ける",
+      "わ.け",
+      "わ.かれる",
+      "わ.かる",
+      "わ.かつ"
+    ],
+    "strokeCount": 4,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 24,
+    "examples": [
+      {
+        "word": "半分",
+        "reading": "はんぶん",
+        "meaning": "half"
+      },
+      {
+        "word": "分かる",
+        "reading": "わかる",
+        "meaning": "to understand"
+      }
+    ]
+  },
+  "聞": {
+    "char": "聞",
+    "codepoint": "0805e",
+    "meanings": [
+      "hear",
+      "ask",
+      "listen"
+    ],
+    "onyomi": [
+      "ブン",
+      "モン"
+    ],
+    "kunyomi": [
+      "き.く",
+      "き.こえる"
+    ],
+    "strokeCount": 14,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 319,
+    "examples": [
+      {
+        "word": "聞く",
+        "reading": "きく",
+        "meaning": "to hear/listen"
+      },
+      {
+        "word": "新聞",
+        "reading": "しんぶん",
+        "meaning": "newspaper"
+      }
+    ]
+  },
+  "母": {
+    "char": "母",
+    "codepoint": "06bcd",
+    "meanings": [
+      "mother"
+    ],
+    "onyomi": [
+      "ボ"
+    ],
+    "kunyomi": [
+      "はは",
+      "も"
+    ],
+    "strokeCount": 5,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 570,
+    "examples": [
+      {
+        "word": "母",
+        "reading": "はは",
+        "meaning": "mother"
+      },
+      {
+        "word": "お母さん",
+        "reading": "おかあさん",
+        "meaning": "mother (polite)"
+      }
+    ]
+  },
+  "北": {
+    "char": "北",
+    "codepoint": "05317",
+    "meanings": [
+      "north"
+    ],
+    "onyomi": [
+      "ホク"
+    ],
+    "kunyomi": [
+      "きた"
+    ],
+    "strokeCount": 5,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 153,
+    "examples": [
+      {
+        "word": "北",
+        "reading": "きた",
+        "meaning": "north"
+      },
+      {
+        "word": "北口",
+        "reading": "きたぐち",
+        "meaning": "north exit"
+      }
+    ]
+  },
+  "本": {
+    "char": "本",
+    "codepoint": "0672c",
+    "meanings": [
+      "book",
+      "present",
+      "main",
+      "origin",
+      "true",
+      "real",
+      "counter for long cylindrical things"
+    ],
+    "onyomi": [
+      "ホン"
+    ],
+    "kunyomi": [
+      "もと"
+    ],
+    "strokeCount": 5,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 10,
+    "examples": [
+      {
+        "word": "本",
+        "reading": "ほん",
+        "meaning": "book"
+      },
+      {
+        "word": "日本",
+        "reading": "にほん",
+        "meaning": "Japan"
+      }
+    ]
+  },
+  "毎": {
+    "char": "毎",
+    "codepoint": "06bce",
+    "meanings": [
+      "every"
+    ],
+    "onyomi": [
+      "マイ"
+    ],
+    "kunyomi": [
+      "ごと",
+      "-ごと.に"
+    ],
+    "strokeCount": 6,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 436,
+    "examples": [
+      {
+        "word": "毎日",
+        "reading": "まいにち",
+        "meaning": "every day"
+      },
+      {
+        "word": "毎年",
+        "reading": "まいとし",
+        "meaning": "every year"
+      }
+    ]
+  },
+  "万": {
+    "char": "万",
+    "codepoint": "04e07",
+    "meanings": [
+      "ten thousand",
+      "10,000"
+    ],
+    "onyomi": [
+      "マン",
+      "バン"
+    ],
+    "kunyomi": [
+      "よろず"
+    ],
+    "strokeCount": 3,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 375,
+    "examples": [
+      {
+        "word": "一万",
+        "reading": "いちまん",
+        "meaning": "ten thousand"
+      },
+      {
+        "word": "万年筆",
+        "reading": "まんねんひつ",
+        "meaning": "fountain pen"
+      }
+    ]
+  },
+  "名": {
+    "char": "名",
+    "codepoint": "0540d",
+    "meanings": [
+      "name",
+      "noted",
+      "distinguished",
+      "reputation"
+    ],
+    "onyomi": [
+      "メイ",
+      "ミョウ"
+    ],
+    "kunyomi": [
+      "な",
+      "-な"
+    ],
+    "strokeCount": 6,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 177,
+    "examples": [
+      {
+        "word": "名前",
+        "reading": "なまえ",
+        "meaning": "name"
+      },
+      {
+        "word": "有名",
+        "reading": "ゆうめい",
+        "meaning": "famous"
+      }
+    ]
+  },
+  "木": {
+    "char": "木",
+    "codepoint": "06728",
+    "meanings": [
+      "tree",
+      "wood"
+    ],
+    "onyomi": [
+      "ボク",
+      "モク"
+    ],
+    "kunyomi": [
+      "き",
+      "こ-"
+    ],
+    "strokeCount": 4,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 317,
+    "examples": [
+      {
+        "word": "木曜日",
+        "reading": "もくようび",
+        "meaning": "Thursday"
+      },
+      {
+        "word": "木",
+        "reading": "き",
+        "meaning": "tree"
+      }
+    ]
+  },
+  "目": {
+    "char": "目",
+    "codepoint": "076ee",
+    "meanings": [
+      "eye",
+      "class",
+      "look",
+      "insight",
+      "experience",
+      "care",
+      "favor"
+    ],
+    "onyomi": [
+      "モク",
+      "ボク"
+    ],
+    "kunyomi": [
+      "め",
+      "-め",
+      "ま-"
+    ],
+    "strokeCount": 5,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 76,
+    "examples": [
+      {
+        "word": "目",
+        "reading": "め",
+        "meaning": "eye"
+      },
+      {
+        "word": "目次",
+        "reading": "もくじ",
+        "meaning": "table of contents"
+      }
+    ]
+  },
+  "友": {
+    "char": "友",
+    "codepoint": "053cb",
+    "meanings": [
+      "friend"
+    ],
+    "onyomi": [
+      "ユウ"
+    ],
+    "kunyomi": [
+      "とも"
+    ],
+    "strokeCount": 4,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 622,
+    "examples": [
+      {
+        "word": "友達",
+        "reading": "ともだち",
+        "meaning": "friend"
+      },
+      {
+        "word": "友人",
+        "reading": "ゆうじん",
+        "meaning": "friend"
+      }
+    ]
+  },
+  "曜": {
+    "char": "曜",
+    "codepoint": "066dc",
+    "meanings": [
+      "weekday"
+    ],
+    "onyomi": [
+      "ヨウ"
+    ],
+    "kunyomi": [],
+    "strokeCount": 18,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 940,
+    "examples": [
+      {
+        "word": "日曜日",
+        "reading": "にちようび",
+        "meaning": "Sunday"
+      },
+      {
+        "word": "曜日",
+        "reading": "ようび",
+        "meaning": "day of the week"
+      }
+    ]
+  },
+  "来": {
+    "char": "来",
+    "codepoint": "06765",
+    "meanings": [
+      "come",
+      "due",
+      "next",
+      "cause",
+      "become"
+    ],
+    "onyomi": [
+      "ライ",
+      "タイ"
+    ],
+    "kunyomi": [
+      "く.る",
+      "きた.る",
+      "きた.す",
+      "き.たす",
+      "き.たる",
+      "き",
+      "こ"
+    ],
+    "strokeCount": 7,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 102,
+    "examples": [
+      {
+        "word": "来る",
+        "reading": "くる",
+        "meaning": "to come"
+      },
+      {
+        "word": "来年",
+        "reading": "らいねん",
+        "meaning": "next year"
+      }
+    ]
+  },
+  "立": {
+    "char": "立",
+    "codepoint": "07acb",
+    "meanings": [
+      "stand up",
+      "rise",
+      "set up",
+      "erect"
+    ],
+    "onyomi": [
+      "リツ",
+      "リュウ",
+      "リットル"
+    ],
+    "kunyomi": [
+      "た.つ",
+      "-た.つ",
+      "た.ち-",
+      "た.てる",
+      "-た.てる",
+      "た.て-",
+      "たて-",
+      "-た.て",
+      "-だ.て",
+      "-だ.てる"
+    ],
+    "strokeCount": 5,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 58,
+    "examples": [
+      {
+        "word": "立つ",
+        "reading": "たつ",
+        "meaning": "to stand"
+      },
+      {
+        "word": "国立",
+        "reading": "こくりつ",
+        "meaning": "national"
+      }
+    ]
+  },
+  "六": {
+    "char": "六",
+    "codepoint": "0516d",
+    "meanings": [
+      "six"
+    ],
+    "onyomi": [
+      "ロク",
+      "リク"
+    ],
+    "kunyomi": [
+      "む",
+      "む.つ",
+      "むっ.つ",
+      "むい"
+    ],
+    "strokeCount": 4,
+    "jlpt": 5,
+    "grade": 1,
+    "frequency": 93,
+    "examples": [
+      {
+        "word": "六つ",
+        "reading": "むっつ",
+        "meaning": "six things"
+      },
+      {
+        "word": "六日",
+        "reading": "むいか",
+        "meaning": "sixth day"
+      }
+    ]
+  },
+  "話": {
+    "char": "話",
+    "codepoint": "08a71",
+    "meanings": [
+      "tale",
+      "talk"
+    ],
+    "onyomi": [
+      "ワ"
+    ],
+    "kunyomi": [
+      "はな.す",
+      "はなし"
+    ],
+    "strokeCount": 13,
+    "jlpt": 5,
+    "grade": 2,
+    "frequency": 134,
+    "examples": [
+      {
+        "word": "話す",
+        "reading": "はなす",
+        "meaning": "to speak"
+      },
+      {
+        "word": "電話",
+        "reading": "でんわ",
+        "meaning": "telephone"
+      }
+    ]
+  }
+}
