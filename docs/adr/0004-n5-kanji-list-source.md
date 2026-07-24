@@ -14,15 +14,15 @@ the grounds that studying from fixed lists is undesirable. Every list in
 circulation is reverse-engineered from pre-2010 exams. Published counts
 for N5 range from 78 to 134:
 
-| Count | Where it appears |
-|---|---|
-| 78–80 | JLPTsensei, Japanesetest4you, Jisho.org (79) |
-| ~100–103 | Tanos, NIHONGO ICHIBAN, JLPT Samurai |
-| 112 | Hirakan (deliberately padded for coverage) |
-| 134 | Assorted app-specific lists |
+| Count    | Where it appears                             |
+| -------- | -------------------------------------------- |
+| 78–80    | JLPTsensei, Japanesetest4you, Jisho.org (79) |
+| ~100–103 | Tanos, NIHONGO ICHIBAN, JLPT Samurai         |
+| 112      | Hirakan (deliberately padded for coverage)   |
+| 134      | Assorted app-specific lists                  |
 
 **KANJIDIC2's `jlpt` field is not what it looks like.** Per the EDRDG
-documentation it records the *pre-2010* level (values 1–4 only). Old
+documentation it records the _pre-2010_ level (values 1–4 only). Old
 level 4 maps to N5 and old level 3 to N4; old level 2 was split between
 N2 and N3. There is no value `5` in the file. A filter of `jlpt === 5`
 silently returns an empty set.
@@ -33,7 +33,7 @@ Two parts.
 
 **1. The N5 set is an explicit array, not a query.**
 `data/n5-list.ts` exports a hand-committed array of characters. The build
-script (`scripts/build-data.ts`) iterates *that* array and uses KANJIDIC2
+script (`scripts/build-data.ts`) iterates _that_ array and uses KANJIDIC2
 solely to look up fields — readings, meanings, stroke count, grade,
 frequency. KANJIDIC2's `jlpt` field is never used as a selector.
 
@@ -64,7 +64,7 @@ asserts that every character has a corresponding KanjiVG entry.
 
 ## Alternatives considered
 
-- **Filter KANJIDIC2 on `jlpt === 4`.** Rejected as the *source of truth*,
+- **Filter KANJIDIC2 on `jlpt === 4`.** Rejected as the _source of truth_,
   though it is a reasonable cross-check. It yields ~80 characters, hides
   the scope decision inside pipeline code, and encodes a mapping
   (old-4 ⇒ N5) that a future reader has to rediscover.

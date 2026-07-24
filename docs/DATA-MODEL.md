@@ -8,13 +8,13 @@
 
 Two stores, strictly separated:
 
-| | Static content | User state |
-|---|---|---|
-| **Source** | Build-time JSON, committed | Created at runtime |
-| **Location** | `app/data/*.json`, bundled | `localStorage` |
-| **Mutability** | Immutable at runtime | Mutated every review |
-| **Keyed by** | Kanji character (`"日"`) | Same character |
-| **On update** | Ship new JSON, no migration | Never touched by content updates |
+|                | Static content              | User state                       |
+| -------------- | --------------------------- | -------------------------------- |
+| **Source**     | Build-time JSON, committed  | Created at runtime               |
+| **Location**   | `app/data/*.json`, bundled  | `localStorage`                   |
+| **Mutability** | Immutable at runtime        | Mutated every review             |
+| **Keyed by**   | Kanji character (`"日"`)    | Same character                   |
+| **On update**  | Ship new JSON, no migration | Never touched by content updates |
 
 The join key is the kanji character itself — a stable, unique, human-readable
 identifier. No synthetic IDs, no mapping table.
@@ -35,23 +35,23 @@ Committed to the repo. Never parsed at runtime.
 ```ts
 type KanjiEntry = {
   /** The character itself. Primary key. */
-  char: string            // "日"
+  char: string // "日"
   /** Unicode codepoint, lowercase hex — used to look up KanjiVG paths. */
-  codepoint: string       // "065e5"
-  meanings: string[]      // ["day", "sun", "Japan", "counter for days"]
-  onyomi: string[]        // ["ニチ", "ジツ"]
-  kunyomi: string[]       // ["ひ", "-び", "-か"]
-  strokeCount: number     // 4
-  jlpt: 5                 // literal 5 for now; widens to 5|4|3|2|1 later
-  grade: number | null    // Japanese school grade, if assigned
+  codepoint: string // "065e5"
+  meanings: string[] // ["day", "sun", "Japan", "counter for days"]
+  onyomi: string[] // ["ニチ", "ジツ"]
+  kunyomi: string[] // ["ひ", "-び", "-か"]
+  strokeCount: number // 4
+  jlpt: 5 // literal 5 for now; widens to 5|4|3|2|1 later
+  grade: number | null // Japanese school grade, if assigned
   frequency: number | null // newspaper frequency rank, if present
-  examples: Example[]     // 2–3 hand-curated words, N5-appropriate
+  examples: Example[] // 2–3 hand-curated words, N5-appropriate
 }
 
 type Example = {
-  word: string            // "日本"
-  reading: string         // "にほん"
-  meaning: string         // "Japan"
+  word: string // "日本"
+  reading: string // "にほん"
+  meaning: string // "Japan"
 }
 ```
 
@@ -113,10 +113,10 @@ type ReviewEntry = ReviewLog & {
 
 ```ts
 type Settings = {
-  newCardsPerDay: number      // default 5
-  maxReviewsPerDay: number    // default 100, 0 = unlimited
+  newCardsPerDay: number // default 5
+  maxReviewsPerDay: number // default 100, 0 = unlimited
   theme: 'light' | 'dark' | 'system'
-  requestRetention: number    // FSRS target, default 0.9
+  requestRetention: number // FSRS target, default 0.9
 }
 ```
 
@@ -126,25 +126,25 @@ type Settings = {
 
 Everything below is a Pinia getter. Storing any of it invites drift.
 
-| Derived | From |
-|---|---|
-| `dueToday` | `cards` where `due <= endOfToday`, plus new-card intake up to cap |
-| `newCount` / `learningCount` / `reviewCount` | `cards[].state` |
-| `retentionRate` | `log` — ratio of grade > Again among mature reviews |
-| `reviewHeatmap` | `log` grouped by local calendar date |
-| `dueForecast` | `cards[].due` bucketed by day, next 30 days |
-| `isNew(char)` | `!(char in cards)` |
+| Derived                                      | From                                                              |
+| -------------------------------------------- | ----------------------------------------------------------------- |
+| `dueToday`                                   | `cards` where `due <= endOfToday`, plus new-card intake up to cap |
+| `newCount` / `learningCount` / `reviewCount` | `cards[].state`                                                   |
+| `retentionRate`                              | `log` — ratio of grade > Again among mature reviews               |
+| `reviewHeatmap`                              | `log` grouped by local calendar date                              |
+| `dueForecast`                                | `cards[].due` bucketed by day, next 30 days                       |
+| `isNew(char)`                                | `!(char in cards)`                                                |
 
 ---
 
 ## 4. Storage budget
 
-| Item | Est. size |
-|---|---|
-| `kanji.json` (103 entries) | ~45 KB |
-| `strokes.json` (103 entries) | ~180 KB |
-| User cards (103) | ~25 KB |
-| Review log (1 year, ~20/day) | ~1.5 MB |
+| Item                         | Est. size |
+| ---------------------------- | --------- |
+| `kanji.json` (103 entries)   | ~45 KB    |
+| `strokes.json` (103 entries) | ~180 KB   |
+| User cards (103)             | ~25 KB    |
+| Review log (1 year, ~20/day) | ~1.5 MB   |
 
 localStorage caps at ~5 MB per origin. The log is the only thing that
 grows unbounded — at ~200 bytes/entry it takes several years to become a

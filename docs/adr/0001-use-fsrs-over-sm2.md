@@ -4,11 +4,10 @@
 
 ## Context
 
-The scheduling algorithm is the core of any SRS app. SM-2 (SuperMemo,
-1987) is the default choice — it's simple, well-documented, and was
+The scheduling algorithm is the core of any SRS app. SM-2 (SuperMemo, 1987) is the default choice — it's simple, well-documented, and was
 Anki's algorithm for years. FSRS (Free Spaced Repetition Scheduler) is a
-newer, memory-model-based scheduler that estimates each card's *stability*
-and *difficulty* and schedules against a target retention rate. Anki
+newer, memory-model-based scheduler that estimates each card's _stability_
+and _difficulty_ and schedules against a target retention rate. Anki
 adopted it as an option in 2023 and made it the default in 2025.
 
 ## Decision

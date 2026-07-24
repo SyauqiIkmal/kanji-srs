@@ -29,7 +29,7 @@ Persist the Pinia store to localStorage using
   aggregates) is documented in DATA-MODEL.md §4.
 - **Negative:** Writes are synchronous and serialise the whole store. At
   this data size the cost is sub-millisecond and occurs once per grade —
-  not a concern. It *would* be at 10,000+ cards.
+  not a concern. It _would_ be at 10,000+ cards.
 - **Reversible:** The store's public interface doesn't expose the
   persistence layer, so swapping in Dexie later means changing one plugin,
   not the components.

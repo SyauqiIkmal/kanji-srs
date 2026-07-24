@@ -12,9 +12,9 @@ ask "why did they do it that way?"
 
 **Statuses:** Proposed · Accepted · Superseded by ADR-XXXX
 
-| # | Title | Status |
-|---|-------|--------|
-| [0001](0001-use-fsrs-over-sm2.md) | Use FSRS instead of SM-2 for scheduling | Accepted |
-| [0002](0002-localstorage-over-indexeddb.md) | Persist to localStorage, not IndexedDB | Accepted |
-| [0003](0003-build-time-json-over-runtime-parsing.md) | Pre-process dictionary data at build time | Accepted |
-| [0004](0004-n5-kanji-list-source.md) | Define the N5 set as an explicit committed list | Accepted |
+| #                                                    | Title                                           | Status   |
+| ---------------------------------------------------- | ----------------------------------------------- | -------- |
+| [0001](0001-use-fsrs-over-sm2.md)                    | Use FSRS instead of SM-2 for scheduling         | Accepted |
+| [0002](0002-localstorage-over-indexeddb.md)          | Persist to localStorage, not IndexedDB          | Accepted |
+| [0003](0003-build-time-json-over-runtime-parsing.md) | Pre-process dictionary data at build time       | Accepted |
+| [0004](0004-n5-kanji-list-source.md)                 | Define the N5 set as an explicit committed list | Accepted |

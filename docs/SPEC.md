@@ -18,13 +18,13 @@ front-end architecture, algorithm integration, and engineering process.
 
 ## 3. Goals
 
-| # | Goal | Why |
-|---|------|-----|
-| G1 | Schedule reviews with a modern SRS algorithm (FSRS) | Better retention per review than SM-2; the interesting technical core |
-| G2 | Make the kanji itself the visual focus | It's a kanji app — the glyph is the product |
-| G3 | Animated stroke order for every character | Highest-value learning feature, and the demo moment |
-| G4 | Usable offline on a phone | Reviews happen on commutes, not at a desk |
-| G5 | Surface progress honestly (retention, forecast) | Motivation, and it proves the FSRS data is real |
+| #   | Goal                                                | Why                                                                   |
+| --- | --------------------------------------------------- | --------------------------------------------------------------------- |
+| G1  | Schedule reviews with a modern SRS algorithm (FSRS) | Better retention per review than SM-2; the interesting technical core |
+| G2  | Make the kanji itself the visual focus              | It's a kanji app — the glyph is the product                           |
+| G3  | Animated stroke order for every character           | Highest-value learning feature, and the demo moment                   |
+| G4  | Usable offline on a phone                           | Reviews happen on commutes, not at a desk                             |
+| G5  | Surface progress honestly (retention, forecast)     | Motivation, and it proves the FSRS data is real                       |
 
 ## 4. Core features (v1.0)
 
@@ -48,7 +48,7 @@ Changing it requires editing this file first.
 - ❌ Server, database, or cross-device sync
 - ❌ N4 and above (data pipeline supports it; scope does not)
 - ❌ Vocabulary decks (kanji only — no JMdict integration beyond the
-      handful of example words baked into the static data)
+  handful of example words baked into the static data)
 - ❌ Handwriting recognition / drawing input
 - ❌ Anki `.apkg` import or export
 - ❌ Text-to-speech / audio
@@ -71,13 +71,13 @@ Changing it requires editing this file first.
 
 ## 7. Milestones
 
-| Milestone | Contents |
-|-----------|----------|
-| `v0.1` Core loop | Data pipeline, browse, detail, review session, FSRS, persistence |
-| `v0.2` Stroke order | KanjiVG integration, animation component |
-| `v0.3` Stats | Heatmap, retention, forecast |
-| `v0.4` Polish | PWA, a11y pass, Lighthouse, export/import |
-| `v1.0` Ship | README, GIFs, deploy, tag |
+| Milestone           | Contents                                                         |
+| ------------------- | ---------------------------------------------------------------- |
+| `v0.1` Core loop    | Data pipeline, browse, detail, review session, FSRS, persistence |
+| `v0.2` Stroke order | KanjiVG integration, animation component                         |
+| `v0.3` Stats        | Heatmap, retention, forecast                                     |
+| `v0.4` Polish       | PWA, a11y pass, Lighthouse, export/import                        |
+| `v1.0` Ship         | README, GIFs, deploy, tag                                        |
 
 ## 8. Open questions
 
