@@ -41,13 +41,14 @@
     <!-- Kanji Cards Grid -->
     <div
       v-if="filteredKanji.length > 0"
+      data-testid="kanji-grid"
       class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-3"
     >
       <button
         v-for="item in filteredKanji"
         :key="item.char"
         class="group relative flex flex-col items-center justify-center p-3 rounded-lg border border-border bg-card hover:border-primary/50 hover:bg-secondary/40 transition-all text-center"
-        @click="selectedKanji = item"
+        @click="openKanji(item)"
       >
         <!-- Status Indicator Badge -->
         <span
@@ -101,6 +102,9 @@
               {{ selectedKanji.meanings.join(', ') }}
             </span>
           </DialogTitle>
+          <DialogDescription class="sr-only">
+            Kanji detail modal for {{ selectedKanji.char }}
+          </DialogDescription>
         </DialogHeader>
 
         <div class="space-y-4 pt-2">
@@ -221,7 +225,13 @@
 import { Search, SearchX, X } from 'lucide-vue-next'
 import { State } from 'ts-fsrs'
 import type { KanjiEntry } from '~/types'
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '~/components/ui/dialog'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '~/components/ui/dialog'
 
 const progress = useProgressStore()
 const { allKanji } = useKanji()
@@ -231,6 +241,10 @@ type FilterMode = 'all' | 'new' | 'learning' | 'review' | 'due'
 const searchQuery = ref('')
 const activeFilter = ref<FilterMode>('all')
 const selectedKanji = ref<KanjiEntry | null>(null)
+
+function openKanji(item: KanjiEntry) {
+  selectedKanji.value = item
+}
 
 const dueSet = computed(() => new Set(progress.dueToday))
 

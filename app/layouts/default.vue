@@ -60,8 +60,15 @@
             :title="`Current theme: ${theme} (click to toggle)`"
             @click="cycleTheme"
           >
-            <Sun v-if="resolvedTheme === 'light'" class="h-4 w-4 text-amber-600" />
-            <Moon v-else class="h-4 w-4 text-sky-400" />
+            <ClientOnly>
+              <span class="flex items-center justify-center">
+                <Sun v-if="resolvedTheme === 'light'" class="h-4 w-4 text-amber-600" />
+                <Moon v-else class="h-4 w-4 text-sky-400" />
+              </span>
+              <template #fallback>
+                <div class="h-4 w-4" />
+              </template>
+            </ClientOnly>
           </button>
         </div>
       </div>

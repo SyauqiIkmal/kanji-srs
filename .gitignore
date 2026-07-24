@@ -9,6 +9,10 @@ dist
 # Node dependencies
 node_modules
 
+# Test results & reports
+playwright-report
+test-results
+
 # Logs
 logs
 *.log
@@ -18,7 +22,7 @@ logs
 .fleet
 .idea
 
-#data
+# data
 data/raw/
 
 # Local env files

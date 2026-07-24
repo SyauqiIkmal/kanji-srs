@@ -1,15 +1,9 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from "vue"
-import { X } from "lucide-vue-next"
-import { reactiveOmit } from "@vueuse/core"
-import {
-  DialogClose,
-  DialogContent,
-  DialogPortal,
-  useForwardPropsEmits,
-} from "reka-ui"
-import { cn } from "@/lib/utils"
-import DialogOverlay from "./DialogOverlay.vue"
+import type { HTMLAttributes } from 'vue'
+import { X } from 'lucide-vue-next'
+import { DialogClose, DialogContent, DialogPortal } from 'reka-ui'
+import { cn } from '@/lib/utils'
+import DialogOverlay from './DialogOverlay.vue'
 
 defineOptions({
   inheritAttrs: false,
@@ -17,24 +11,13 @@ defineOptions({
 
 const props = withDefaults(
   defineProps<{
-    class?: HTMLAttributes["class"]
+    class?: HTMLAttributes['class']
     showCloseButton?: boolean
-    forceMount?: boolean
-    trapFocus?: boolean
-    disableOutsidePointerEvents?: boolean
   }>(),
   {
     showCloseButton: true,
-  },
+  }
 )
-const emits = defineEmits<{
-  (e: 'escapeKeyDown', event: KeyboardEvent): void
-  (e: 'pointerDownOutside' | 'focusOutside' | 'interactOutside' | 'openAutoFocus' | 'closeAutoFocus', event: Event): void
-}>()
-
-const delegatedProps = reactiveOmit(props, "class")
-
-const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
 
 <template>
@@ -42,11 +25,11 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     <DialogOverlay />
     <DialogContent
       data-slot="dialog-content"
-      v-bind="{ ...$attrs, ...forwarded }"
+      v-bind="$attrs"
       :class="
         cn(
-          'bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border p-6 shadow-lg duration-200 sm:max-w-lg',
-          props.class,
+          'fixed left-1/2 top-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 sm:max-w-lg',
+          props.class
         )
       "
     >
@@ -54,10 +37,9 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 
       <DialogClose
         v-if="showCloseButton"
-        data-slot="dialog-close"
-        class="ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+        class="absolute right-4 top-4 rounded-xs opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
       >
-        <X />
+        <X class="h-4 w-4" />
         <span class="sr-only">Close</span>
       </DialogClose>
     </DialogContent>
