@@ -60,33 +60,44 @@
           v-else-if="phase === 'answer' && currentEntry"
           class="space-y-6 pt-6 border-t border-border text-left"
         >
-          <!-- Meanings -->
-          <div>
-            <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground"
-              >Meaning</span
-            >
-            <p class="text-lg font-semibold text-foreground mt-0.5">
-              {{ currentEntry.meanings.join(', ') }}
-            </p>
-          </div>
+          <!-- Meanings & Animated Stroke Order -->
+          <div class="flex flex-col sm:flex-row items-start justify-between gap-6">
+            <div class="space-y-4 flex-1">
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground"
+                  >Meaning</span
+                >
+                <p class="text-lg font-semibold text-foreground mt-0.5">
+                  {{ currentEntry.meanings.join(', ') }}
+                </p>
+              </div>
 
-          <!-- Readings Grid -->
-          <div class="grid grid-cols-2 gap-4">
-            <div class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground"
-                >On'yomi (音読み)</span
-              >
-              <p class="text-sm font-jp font-medium text-foreground">
-                {{ currentEntry.onyomi.length ? currentEntry.onyomi.join('、') : '-' }}
-              </p>
+              <!-- Readings Grid -->
+              <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <span
+                    class="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground"
+                    >On'yomi (音読み)</span
+                  >
+                  <p class="text-sm font-jp font-medium text-foreground">
+                    {{ currentEntry.onyomi.length ? currentEntry.onyomi.join('、') : '-' }}
+                  </p>
+                </div>
+                <div class="space-y-1">
+                  <span
+                    class="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground"
+                    >Kun'yomi (訓読み)</span
+                  >
+                  <p class="text-sm font-jp font-medium text-foreground">
+                    {{ currentEntry.kunyomi.length ? currentEntry.kunyomi.join('、') : '-' }}
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="space-y-1">
-              <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground"
-                >Kun'yomi (訓読み)</span
-              >
-              <p class="text-sm font-jp font-medium text-foreground">
-                {{ currentEntry.kunyomi.length ? currentEntry.kunyomi.join('、') : '-' }}
-              </p>
+
+            <!-- Stroke Order Animation -->
+            <div v-if="currentChar" class="self-center sm:self-start shrink-0">
+              <KanjiStrokeOrder :char="currentChar" :auto-play="true" />
             </div>
           </div>
 

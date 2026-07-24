@@ -104,25 +104,47 @@
         </DialogHeader>
 
         <div class="space-y-4 pt-2">
-          <!-- Status Badge & Metrics -->
+          <!-- Stroke Order Animation & Status Metrics -->
           <div
-            class="flex items-center justify-between p-3 rounded bg-secondary/50 border border-border text-xs"
+            class="flex flex-col sm:flex-row items-center gap-4 p-3 rounded-lg border border-border bg-secondary/30"
           >
-            <div class="flex items-center gap-2">
-              <span
-                class="h-2.5 w-2.5 rounded-full"
-                :class="getStatusBadgeClass(selectedKanji.char)"
-              />
-              <span class="font-medium text-foreground">{{
-                getStatusLabel(selectedKanji.char)
-              }}</span>
-            </div>
-            <div
-              v-if="getCardState(selectedKanji.char)"
-              class="font-mono text-muted-foreground flex gap-3"
-            >
-              <span>Stab: {{ getCardState(selectedKanji.char)?.stability.toFixed(1) }}d</span>
-              <span>Diff: {{ getCardState(selectedKanji.char)?.difficulty.toFixed(1) }}</span>
+            <KanjiStrokeOrder :char="selectedKanji.char" class="shrink-0" />
+            <div class="space-y-2 flex-1 w-full text-xs">
+              <div
+                class="flex items-center justify-between p-2 rounded bg-card border border-border"
+              >
+                <span class="text-muted-foreground font-medium">SRS Status</span>
+                <span class="font-semibold text-foreground flex items-center gap-1.5">
+                  <span
+                    class="h-2 w-2 rounded-full"
+                    :class="getStatusBadgeClass(selectedKanji.char)"
+                  />
+                  {{ getStatusLabel(selectedKanji.char) }}
+                </span>
+              </div>
+              <div
+                v-if="getCardState(selectedKanji.char)"
+                class="space-y-1.5 p-2 rounded bg-card border border-border font-mono text-[11px]"
+              >
+                <div class="flex justify-between">
+                  <span class="text-muted-foreground">Stability:</span>
+                  <span class="text-foreground font-bold"
+                    >{{ getCardState(selectedKanji.char)?.stability.toFixed(1) }}d</span
+                  >
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-muted-foreground">Difficulty:</span>
+                  <span class="text-foreground font-bold">{{
+                    getCardState(selectedKanji.char)?.difficulty.toFixed(1)
+                  }}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-muted-foreground">Reviews:</span>
+                  <span class="text-foreground font-bold">{{
+                    getCardState(selectedKanji.char)?.reps
+                  }}</span>
+                </div>
+              </div>
             </div>
           </div>
 

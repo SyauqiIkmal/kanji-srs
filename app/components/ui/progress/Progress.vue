@@ -8,7 +8,7 @@ const props = withDefaults(
   defineProps<{
     modelValue?: number | null
     max?: number
-    getValueLabel?: (current: number, max: number) => string
+    getValueLabel?: (value: number | null | undefined, max: number) => string | undefined
     class?: HTMLAttributes["class"]
   }>(),
   {
