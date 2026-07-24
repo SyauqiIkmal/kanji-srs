@@ -1,0 +1,8 @@
+.nuxt
+.output
+dist
+node_modules
+bun.lock
+bun.lockb
+app/components/ui
+data/
