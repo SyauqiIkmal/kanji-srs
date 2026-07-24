@@ -40,6 +40,7 @@ bun run dev
 - [DATA-MODEL.md](docs/DATA-MODEL.md) — Data model
 - [PHASE1.md](docs/PHASE1.md) — Phase 1 data layer & core logic
 - [PHASE2.md](docs/PHASE2.md) — Phase 2 study UI & pages
+- [PHASE3.md](docs/PHASE3.md) — Phase 3 animated stroke order
 - [ADRs](docs/adr/) — Architecture decision records
 
 ## License
