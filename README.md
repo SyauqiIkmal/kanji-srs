@@ -1,75 +1,45 @@
-# Nuxt Minimal Starter
+# Kanji SRS
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A spaced-repetition study app for JLPT N5 kanji, built with Nuxt 4, Tailwind CSS v4, and shadcn-vue.
 
-## Setup
+**Live:** [kanjisrs.netlify.app](https://kanjisrs.netlify.app/)
 
-Make sure to install dependencies:
+## Stack
+
+- **Framework:** Nuxt 4 (Vue 3)
+- **Styling:** Tailwind CSS v4
+- **Components:** shadcn-vue (Reka UI)
+- **SRS algorithm:** FSRS
+- **Package manager:** bun
+
+## Development
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
 bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
 bun run dev
 ```
 
-## Production
+## Scripts
 
-Build the application for production:
+| Command | Description |
+| --- | --- |
+| `bun run dev` | Start dev server |
+| `bun run build` | Production build |
+| `bun run generate` | Static site generation |
+| `bun run lint` | Run ESLint |
+| `bun run format` | Format with Prettier |
+| `bun run format:check` | Check formatting (CI) |
+| `bun run typecheck` | Type-check with Nuxt |
+| `bun run test` | Run Vitest |
+| `bun run test:e2e` | Run Playwright |
 
-```bash
-# npm
-npm run build
+## Docs
 
-# pnpm
-pnpm build
+- [SPEC.md](docs/SPEC.md) — Product specification
+- [DESIGN.md](docs/DESIGN.md) — Design system tokens
+- [DATA-MODEL.md](docs/DATA-MODEL.md) — Data model
+- [ADRs](docs/adr/) — Architecture decision records
 
-# yarn
-yarn build
+## License
 
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+MIT
