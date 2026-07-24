@@ -38,6 +38,7 @@ bun run dev
 - [SPEC.md](docs/SPEC.md) — Product specification
 - [DESIGN.md](docs/DESIGN.md) — Design system tokens
 - [DATA-MODEL.md](docs/DATA-MODEL.md) — Data model
+- [PHASE1.md](docs/PHASE1.md) — Phase 1 data layer & core logic
 - [ADRs](docs/adr/) — Architecture decision records
 
 ## License
