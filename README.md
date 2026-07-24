@@ -68,6 +68,7 @@ bun run test:e2e
 
 ## 📚 Documentation
 
+- [Documentation Index](docs/README.md) — Master technical sitemap & architecture overview
 - [SPEC.md](docs/SPEC.md) — Product specification & goals
 - [DESIGN.md](docs/DESIGN.md) — Design system tokens & typography
 - [DATA-MODEL.md](docs/DATA-MODEL.md) — Static data & user state schema
