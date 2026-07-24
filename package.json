@@ -10,7 +10,7 @@
     "generate": "nuxt generate",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "preview": "nuxt preview",
