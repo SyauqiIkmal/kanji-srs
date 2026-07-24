@@ -21,17 +21,17 @@ bun run dev
 
 ## Scripts
 
-| Command | Description |
-| --- | --- |
-| `bun run dev` | Start dev server |
-| `bun run build` | Production build |
-| `bun run generate` | Static site generation |
-| `bun run lint` | Run ESLint |
-| `bun run format` | Format with Prettier |
-| `bun run format:check` | Check formatting (CI) |
-| `bun run typecheck` | Type-check with Nuxt |
-| `bun run test` | Run Vitest |
-| `bun run test:e2e` | Run Playwright |
+| Command                | Description            |
+| ---------------------- | ---------------------- |
+| `bun run dev`          | Start dev server       |
+| `bun run build`        | Production build       |
+| `bun run generate`     | Static site generation |
+| `bun run lint`         | Run ESLint             |
+| `bun run format`       | Format with Prettier   |
+| `bun run format:check` | Check formatting (CI)  |
+| `bun run typecheck`    | Type-check with Nuxt   |
+| `bun run test`         | Run Vitest             |
+| `bun run test:e2e`     | Run Playwright         |
 
 ## Docs
 
