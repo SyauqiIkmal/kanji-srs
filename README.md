@@ -66,20 +66,6 @@ bun run test:e2e
 
 ---
 
-## 📚 Documentation
-
-- [Documentation Index](docs/README.md) — Master technical sitemap & architecture overview
-- [SPEC.md](docs/SPEC.md) — Product specification & goals
-- [DESIGN.md](docs/DESIGN.md) — Design system tokens & typography
-- [DATA-MODEL.md](docs/DATA-MODEL.md) — Static data & user state schema
-- [PHASE1.md](docs/PHASE1.md) — Phase 1 data layer & core logic
-- [PHASE2.md](docs/PHASE2.md) — Phase 2 study UI & pages
-- [PHASE3.md](docs/PHASE3.md) — Phase 3 animated stroke order
-- [PHASE4.md](docs/PHASE4.md) — Phase 4 PWA, offline & E2E tests
-- [ADRs](docs/adr/) — Architecture decision records
-
----
-
 ## 📄 Data Attribution
 
 - **KANJIDIC2:** Kanji dictionary data is property of the Electronic Dictionary Research and Development Group (EDRDG), used under CC BY-SA 3.0.
