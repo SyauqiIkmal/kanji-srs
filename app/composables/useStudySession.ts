@@ -7,6 +7,7 @@
 
 import { type Grade, Rating } from 'ts-fsrs'
 import { useProgressStore } from '~/stores/progress'
+import type { AnswerFeedback } from '~/types'
 
 export type SessionPhase = 'idle' | 'question' | 'answer' | 'complete'
 
@@ -35,6 +36,12 @@ export function useStudySession() {
     [Rating.Good]: 0,
     [Rating.Easy]: 0,
   })
+
+  /** User typed answer in question phase. */
+  const userAnswer = ref('')
+
+  /** Verification feedback for the submitted answer. */
+  const lastFeedback = ref<AnswerFeedback | null>(null)
 
   // ─── Derived state ────────────────────────────────────
 
@@ -74,12 +81,24 @@ export function useStudySession() {
       [Rating.Good]: 0,
       [Rating.Easy]: 0,
     }
+    userAnswer.value = ''
+    lastFeedback.value = null
     phase.value = 'question'
   }
 
-  /** Reveal the answer for the current card. */
+  /** Submit a typed answer for verification and reveal the card. */
+  function submitAnswer(input: string) {
+    if (phase.value !== 'question' || !currentEntry.value) return
+    userAnswer.value = input
+    lastFeedback.value = checkKanjiReading(input, currentEntry.value)
+    phase.value = 'answer'
+  }
+
+  /** Reveal the answer for the current card without feedback. */
   function revealAnswer() {
     if (phase.value === 'question') {
+      userAnswer.value = ''
+      lastFeedback.value = null
       phase.value = 'answer'
     }
   }
@@ -100,6 +119,10 @@ export function useStudySession() {
       queue.value.push(currentChar.value)
     }
 
+    // Reset card-specific state
+    userAnswer.value = ''
+    lastFeedback.value = null
+
     // Advance to next card
     currentIndex.value++
 
@@ -114,6 +137,8 @@ export function useStudySession() {
   function endSession() {
     queue.value = []
     currentIndex.value = 0
+    userAnswer.value = ''
+    lastFeedback.value = null
     phase.value = 'idle'
   }
 
@@ -124,6 +149,8 @@ export function useStudySession() {
     currentIndex: readonly(currentIndex),
     sessionCount: readonly(sessionCount),
     sessionGrades: readonly(sessionGrades),
+    userAnswer: readonly(userAnswer),
+    lastFeedback: readonly(lastFeedback),
 
     // Derived
     currentChar,
@@ -134,6 +161,7 @@ export function useStudySession() {
 
     // Actions
     startSession,
+    submitAnswer,
     revealAnswer,
     grade,
     endSession,

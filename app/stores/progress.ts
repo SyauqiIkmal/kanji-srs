@@ -20,6 +20,7 @@ const defaultSettings: Settings = {
   maxReviewsPerDay: 100, // 0 = unlimited
   theme: 'system',
   requestRetention: 0.9,
+  answerInputMode: 'romaji',
 }
 
 export const useProgressStore = defineStore('progress', {

@@ -3,21 +3,42 @@
     <!-- Active Session View -->
     <div v-if="phase === 'question' || phase === 'answer'" class="space-y-6">
       <!-- Session Header & Progress -->
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-between gap-4">
         <NuxtLink
           to="/"
-          class="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
+          class="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors shrink-0"
         >
           <ArrowLeft class="h-3.5 w-3.5" />
           <span>Exit Session</span>
         </NuxtLink>
 
-        <!-- Progress Indicator -->
+        <!-- Mode Toggle & Progress Indicator -->
         <div class="flex items-center gap-3">
-          <div class="text-xs font-mono text-muted-foreground">
+          <!-- Input Mode Quick Toggle -->
+          <button
+            type="button"
+            class="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded border border-border bg-secondary/80 hover:bg-muted text-secondary-foreground transition-colors"
+            :title="
+              progressStore.settings.answerInputMode === 'romaji'
+                ? 'Romaji input enabled. Click to switch to Flip mode'
+                : 'Flip card mode enabled. Click to switch to Romaji input'
+            "
+            @click="toggleInputMode"
+          >
+            <Keyboard
+              v-if="progressStore.settings.answerInputMode === 'romaji'"
+              class="h-3.5 w-3.5 text-primary"
+            />
+            <Eye v-else class="h-3.5 w-3.5 text-muted-foreground" />
+            <span>{{
+              progressStore.settings.answerInputMode === 'romaji' ? 'Type Romaji' : 'Flip Mode'
+            }}</span>
+          </button>
+
+          <div class="text-xs font-mono text-muted-foreground hidden sm:block">
             Card <strong class="text-foreground">{{ currentIndex + 1 }}</strong> of {{ totalCards }}
           </div>
-          <div class="h-2 w-24 bg-secondary rounded-full overflow-hidden">
+          <div class="h-2 w-20 sm:w-24 bg-secondary rounded-full overflow-hidden shrink-0">
             <div
               class="h-full bg-primary transition-all duration-300"
               :style="{ width: `${((currentIndex + 1) / totalCards) * 100}%` }"
@@ -40,9 +61,51 @@
           </span>
         </div>
 
-        <!-- Question Mode: Tap / Space to reveal -->
-        <div v-if="phase === 'question'" class="pt-6 border-t border-border/50">
+        <!-- Question Mode: Input Field or Flip Button -->
+        <div v-if="phase === 'question'" class="pt-6 border-t border-border/50 space-y-3">
+          <!-- Romaji Text Input Mode -->
+          <div v-if="progressStore.settings.answerInputMode === 'romaji'" class="space-y-3">
+            <form class="flex items-center gap-2" @submit.prevent="handleAnswerSubmit">
+              <input
+                ref="answerInputRef"
+                v-model="inputAnswer"
+                type="text"
+                placeholder="Type Romaji reading (e.g. yasui)..."
+                class="flex-1 px-4 py-2.5 text-sm rounded-md border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 font-mono"
+                @keydown.esc="onEscKey"
+              />
+              <button
+                type="submit"
+                class="px-5 py-2.5 text-sm font-semibold rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors shrink-0"
+              >
+                Check
+              </button>
+            </form>
+
+            <div class="flex items-center justify-between text-[11px] text-muted-foreground px-1">
+              <span>
+                Press
+                <kbd class="px-1 py-0.5 font-mono bg-muted border border-border rounded text-[10px]"
+                  >Enter</kbd
+                >
+                to check
+              </span>
+              <button
+                type="button"
+                class="hover:text-foreground transition-colors inline-flex items-center gap-1"
+                @click="onSkip"
+              >
+                <span>Skip</span>
+                <kbd class="px-1 py-0.5 font-mono bg-muted border border-border rounded text-[10px]"
+                  >Esc</kbd
+                >
+              </button>
+            </div>
+          </div>
+
+          <!-- Traditional Flip Card Mode -->
           <button
+            v-else
             class="w-full py-3 px-6 rounded-md bg-secondary hover:bg-muted text-secondary-foreground font-medium text-sm transition-colors flex items-center justify-center gap-2 group"
             @click="revealAnswer"
           >
@@ -60,6 +123,50 @@
           v-else-if="phase === 'answer' && currentEntry"
           class="space-y-6 pt-6 border-t border-border text-left"
         >
+          <!-- Answer Feedback Banner (when typed answer submitted) -->
+          <div
+            v-if="lastFeedback"
+            class="p-3.5 rounded-lg border text-sm flex items-start gap-3 transition-all"
+            :class="
+              lastFeedback.isCorrect
+                ? 'border-emerald-500/40 bg-emerald-50/70 text-emerald-950 dark:border-emerald-500/30 dark:bg-emerald-950/40 dark:text-emerald-200'
+                : 'border-rose-500/40 bg-rose-50/70 text-rose-950 dark:border-rose-500/30 dark:bg-rose-950/40 dark:text-rose-200'
+            "
+          >
+            <CheckCircle2
+              v-if="lastFeedback.isCorrect"
+              class="h-5 w-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"
+            />
+            <XCircle v-else class="h-5 w-5 text-rose-600 dark:text-rose-400 shrink-0 mt-0.5" />
+
+            <div class="space-y-0.5 flex-1">
+              <div class="font-semibold text-sm">
+                {{ lastFeedback.isCorrect ? 'Correct!' : 'Incorrect' }}
+              </div>
+              <p class="text-xs opacity-90">
+                <template v-if="lastFeedback.isCorrect">
+                  You typed
+                  <code class="font-mono px-1 py-0.5 bg-black/5 dark:bg-white/10 rounded">{{
+                    lastFeedback.userTyped
+                  }}</code>
+                  — Matches
+                  {{ lastFeedback.matchedType === 'onyomi' ? "On'yomi" : "Kun'yomi" }}:
+                  <span class="font-jp font-semibold">{{ lastFeedback.matchedReading }}</span>
+                </template>
+                <template v-else>
+                  You typed
+                  <code class="font-mono px-1 py-0.5 bg-black/5 dark:bg-white/10 rounded">{{
+                    lastFeedback.userTyped || '(empty)'
+                  }}</code>
+                  — Expected:
+                  <span class="font-jp font-semibold">
+                    {{ [...currentEntry.onyomi, ...currentEntry.kunyomi].join('、') }}
+                  </span>
+                </template>
+              </p>
+            </div>
+          </div>
+
           <!-- Meanings & Animated Stroke Order -->
           <div class="flex flex-col sm:flex-row items-start justify-between gap-6">
             <div class="space-y-4 flex-1">
@@ -146,9 +253,19 @@
       <!-- FSRS Rating Buttons (Answer Phase) -->
       <div v-if="phase === 'answer'" class="grid grid-cols-4 gap-2 sm:gap-3">
         <button
-          class="flex flex-col items-center justify-center p-3 rounded border border-rose-200 bg-rose-50 text-rose-900 dark:border-rose-900/50 dark:bg-rose-950/40 dark:text-rose-200 hover:opacity-95 transition-all shadow-sm group"
+          class="relative flex flex-col items-center justify-center p-3 rounded border border-rose-200 bg-rose-50 text-rose-900 dark:border-rose-900/50 dark:bg-rose-950/40 dark:text-rose-200 hover:opacity-95 transition-all shadow-sm group"
+          :class="{
+            'ring-2 ring-rose-500 shadow-md font-bold scale-[1.02]':
+              lastFeedback && !lastFeedback.isCorrect,
+          }"
           @click="handleGrade(Rating.Again)"
         >
+          <span
+            v-if="lastFeedback && !lastFeedback.isCorrect"
+            class="absolute -top-2 bg-rose-600 text-white text-[9px] px-1.5 py-0.2 rounded font-bold tracking-wide"
+          >
+            Suggested
+          </span>
           <span class="text-sm font-bold">Again</span>
           <span class="text-[10px] opacity-75 font-mono">Repeat</span>
           <kbd
@@ -170,9 +287,19 @@
         </button>
 
         <button
-          class="flex flex-col items-center justify-center p-3 rounded border border-emerald-200 bg-emerald-50 text-emerald-900 dark:border-emerald-900/50 dark:bg-emerald-950/40 dark:text-emerald-200 hover:opacity-95 transition-all shadow-sm group"
+          class="relative flex flex-col items-center justify-center p-3 rounded border border-emerald-200 bg-emerald-50 text-emerald-900 dark:border-emerald-900/50 dark:bg-emerald-950/40 dark:text-emerald-200 hover:opacity-95 transition-all shadow-sm group"
+          :class="{
+            'ring-2 ring-emerald-500 shadow-md font-bold scale-[1.02]':
+              lastFeedback && lastFeedback.isCorrect,
+          }"
           @click="handleGrade(Rating.Good)"
         >
+          <span
+            v-if="lastFeedback && lastFeedback.isCorrect"
+            class="absolute -top-2 bg-emerald-600 text-white text-[9px] px-1.5 py-0.2 rounded font-bold tracking-wide"
+          >
+            Suggested
+          </span>
           <span class="text-sm font-bold">Good</span>
           <span class="text-[10px] opacity-75 font-mono">Recalled</span>
           <kbd
@@ -263,8 +390,11 @@
 </template>
 
 <script setup lang="ts">
-import { ArrowLeft, CheckCircle2 } from 'lucide-vue-next'
+import { ArrowLeft, CheckCircle2, XCircle, Keyboard, Eye } from 'lucide-vue-next'
 import { Rating, type Grade } from 'ts-fsrs'
+import { useProgressStore } from '~/stores/progress'
+
+const progressStore = useProgressStore()
 
 const {
   phase,
@@ -274,13 +404,36 @@ const {
   currentChar,
   currentEntry,
   totalCards,
+  lastFeedback,
   startSession,
+  submitAnswer,
   revealAnswer,
   grade,
 } = useStudySession()
 
+const inputAnswer = ref('')
+const answerInputRef = ref<HTMLInputElement | null>(null)
+
+function focusInput() {
+  nextTick(() => {
+    answerInputRef.value?.focus()
+  })
+}
+
+watch(
+  [phase, currentChar],
+  ([newPhase]) => {
+    if (newPhase === 'question') {
+      inputAnswer.value = ''
+      focusInput()
+    }
+  },
+  { immediate: true },
+)
+
 onMounted(() => {
   startSession()
+  focusInput()
   if (import.meta.client) {
     window.addEventListener('keydown', handleKeydown)
   }
@@ -292,17 +445,45 @@ onUnmounted(() => {
   }
 })
 
+function toggleInputMode() {
+  const currentMode = progressStore.settings.answerInputMode
+  progressStore.updateSettings({
+    answerInputMode: currentMode === 'romaji' ? 'disabled' : 'romaji',
+  })
+  if (progressStore.settings.answerInputMode === 'romaji' && phase.value === 'question') {
+    focusInput()
+  }
+}
+
+function handleAnswerSubmit() {
+  submitAnswer(inputAnswer.value)
+  inputAnswer.value = ''
+}
+
+function onEscKey(e: KeyboardEvent) {
+  e.preventDefault()
+  onSkip()
+}
+
+function onSkip() {
+  inputAnswer.value = ''
+  revealAnswer()
+}
+
 function handleGrade(rating: Rating) {
   if (rating === Rating.Manual) return
   grade(rating as Grade)
 }
 
 function handleKeydown(e: KeyboardEvent) {
+  // Allow normal typing inside input field
   if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
 
-  if (phase.value === 'question' && e.code === 'Space') {
-    e.preventDefault()
-    revealAnswer()
+  if (phase.value === 'question') {
+    if (e.code === 'Space') {
+      e.preventDefault()
+      onSkip()
+    }
   } else if (phase.value === 'answer') {
     if (e.key === '1') {
       e.preventDefault()

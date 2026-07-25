@@ -40,11 +40,21 @@ export type ReviewEntry = ReviewLog & {
   char: string
 }
 
+export type AnswerInputMode = 'romaji' | 'disabled'
+
 export type Settings = {
   newCardsPerDay: number // default 5
   maxReviewsPerDay: number // default 100, 0 = unlimited
   theme: 'light' | 'dark' | 'system'
   requestRetention: number // FSRS target, default 0.9
+  answerInputMode: AnswerInputMode
+}
+
+export type AnswerFeedback = {
+  userTyped: string
+  isCorrect: boolean
+  matchedType?: 'onyomi' | 'kunyomi'
+  matchedReading?: string
 }
 
 export type ProgressState = {
