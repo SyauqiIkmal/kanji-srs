@@ -70,6 +70,17 @@
               </template>
             </ClientOnly>
           </button>
+
+          <!-- GitHub Link Button -->
+          <a
+            href="https://github.com/SyauqiIkmal/kanji-srs"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="View on GitHub"
+            class="flex h-9 w-9 items-center justify-center rounded border border-border bg-card text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Github class="h-4 w-4" />
+          </a>
         </div>
       </div>
     </header>
@@ -106,7 +117,7 @@
 </template>
 
 <script setup lang="ts">
-import { LayoutDashboard, BookOpen, Layers, BarChart3, Sun, Moon } from 'lucide-vue-next'
+import { LayoutDashboard, BookOpen, Layers, BarChart3, Sun, Moon, Github } from 'lucide-vue-next'
 
 const route = useRoute()
 const progress = useProgressStore()
