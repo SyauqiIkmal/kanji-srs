@@ -3,21 +3,26 @@
  *
  * Orchestrates the review flow: builds a queue, tracks position,
  * handles grading, and manages session state.
+ *
+ * Supports both the Kanji deck and the Hiragana deck via the `deckId` parameter.
  */
 
 import { type Grade, Rating } from 'ts-fsrs'
 import { useProgressStore } from '~/stores/progress'
-import type { AnswerFeedback } from '~/types'
+import type { AnswerFeedback, DeckId, DeckEntry } from '~/types'
+import { isHiraganaEntry, isKanjiEntry } from '~/types'
+import { checkKanjiReading, checkHiraganaReading } from '~/utils/romaji'
 
 export type SessionPhase = 'idle' | 'question' | 'answer' | 'complete'
 
-export function useStudySession() {
+export function useStudySession(deckId: DeckId = 'kanji') {
   const progress = useProgressStore()
-  const { kanjiList, lookup } = useKanji()
+  const { kanjiList, lookup: kanjiLookup } = useKanji()
+  const { charList: hiraganaCharList, lookup: hiraganaLookup } = useHiragana()
 
   // ─── Session state ────────────────────────────────────
 
-  /** The queue of kanji characters to study this session. */
+  /** The queue of characters to study this session. */
   const queue = ref<string[]>([])
 
   /** Current position in the queue. */
@@ -45,11 +50,20 @@ export function useStudySession() {
 
   // ─── Derived state ────────────────────────────────────
 
-  /** The current kanji character being studied. */
+  /** The current character being studied. */
   const currentChar = computed(() => queue.value[currentIndex.value] ?? null)
 
-  /** The full kanji entry for the current character. */
-  const currentEntry = computed(() => (currentChar.value ? lookup(currentChar.value) : null))
+  /**
+   * The full entry for the current character (KanjiEntry or HiraganaEntry).
+   * Consumers can use isKanjiEntry / isHiraganaEntry type guards from types/index.ts.
+   */
+  const currentEntry = computed<DeckEntry | null>(() => {
+    if (!currentChar.value) return null
+    if (deckId === 'hiragana') {
+      return hiraganaLookup(currentChar.value) ?? null
+    }
+    return kanjiLookup(currentChar.value) ?? null
+  })
 
   /** Whether there are more cards in the queue. */
   const hasMore = computed(() => currentIndex.value < queue.value.length)
@@ -64,14 +78,14 @@ export function useStudySession() {
 
   /** Start a new study session. Builds the queue from due + new cards. */
   function startSession() {
-    const studyQueue = progress.getStudyQueue([...kanjiList])
+    const allChars = deckId === 'hiragana' ? [...hiraganaCharList] : [...kanjiList]
+    const studyQueue = progress.getStudyQueue(deckId, allChars)
 
     if (studyQueue.length === 0) {
       phase.value = 'complete'
       return
     }
 
-    // Shuffle the queue for variety
     queue.value = shuffleArray(studyQueue)
     currentIndex.value = 0
     sessionCount.value = 0
@@ -90,7 +104,13 @@ export function useStudySession() {
   function submitAnswer(input: string) {
     if (phase.value !== 'question' || !currentEntry.value) return
     userAnswer.value = input
-    lastFeedback.value = checkKanjiReading(input, currentEntry.value)
+
+    if (deckId === 'hiragana' && isHiraganaEntry(currentEntry.value)) {
+      lastFeedback.value = checkHiraganaReading(input, currentEntry.value)
+    } else if (deckId === 'kanji' && isKanjiEntry(currentEntry.value)) {
+      lastFeedback.value = checkKanjiReading(input, currentEntry.value)
+    }
+
     phase.value = 'answer'
   }
 
@@ -107,23 +127,17 @@ export function useStudySession() {
   function grade(rating: Grade) {
     if (phase.value !== 'answer' || !currentChar.value) return
 
-    // Grade the card via the progress store
-    progress.gradeCard(currentChar.value, rating)
+    progress.gradeCard(deckId, currentChar.value, rating)
 
-    // Track session stats
     sessionCount.value++
     sessionGrades.value[rating] = (sessionGrades.value[rating] ?? 0) + 1
 
-    // If graded Again, re-add to the end of the queue for re-review
     if (rating === Rating.Again) {
       queue.value.push(currentChar.value)
     }
 
-    // Reset card-specific state
     userAnswer.value = ''
     lastFeedback.value = null
-
-    // Advance to next card
     currentIndex.value++
 
     if (currentIndex.value >= queue.value.length) {

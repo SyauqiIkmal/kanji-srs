@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
-import { normalizeRomaji, kanaToRomaji, checkKanjiReading } from '../romaji'
-import type { KanjiEntry } from '~/types'
+import { normalizeRomaji, kanaToRomaji, checkKanjiReading, checkHiraganaReading } from '../romaji'
+import type { KanjiEntry, HiraganaEntry } from '~/types'
 
 describe('romaji utility', () => {
   describe('normalizeRomaji', () => {
@@ -125,6 +125,63 @@ describe('romaji utility', () => {
     it('returns isCorrect: false for empty input', () => {
       const res = checkKanjiReading('', sampleKanjiAn)
       expect(res.isCorrect).toBe(false)
+    })
+  })
+
+  describe('checkHiraganaReading', () => {
+    const makeEntry = (char: string, romaji: string, altRomaji?: string[]): HiraganaEntry => ({
+      char,
+      romaji,
+      altRomaji,
+      category: 'gojuon',
+      group: 'a-row',
+      gridCol: 0,
+      gridRow: 0,
+      examples: [],
+      codepoint: '3042',
+    })
+
+    it('accepts the primary romaji', () => {
+      const entry = makeEntry('あ', 'a')
+      const res = checkHiraganaReading('a', entry)
+      expect(res.isCorrect).toBe(true)
+      expect(res.matchedType).toBe('hiragana')
+      expect(res.matchedReading).toBe('a')
+    })
+
+    it('accepts altRomaji variants (Nihon-shiki / Kunrei-shiki)', () => {
+      const shi = makeEntry('し', 'shi', ['si'])
+      expect(checkHiraganaReading('shi', shi).isCorrect).toBe(true)
+      expect(checkHiraganaReading('si', shi).isCorrect).toBe(true)
+
+      const chi = makeEntry('ち', 'chi', ['ti'])
+      expect(checkHiraganaReading('chi', chi).isCorrect).toBe(true)
+      expect(checkHiraganaReading('ti', chi).isCorrect).toBe(true)
+
+      const tsu = makeEntry('つ', 'tsu', ['tu'])
+      expect(checkHiraganaReading('tsu', tsu).isCorrect).toBe(true)
+      expect(checkHiraganaReading('tu', tsu).isCorrect).toBe(true)
+    })
+
+    it('is case-insensitive via normalization', () => {
+      const shi = makeEntry('し', 'shi', ['si'])
+      expect(checkHiraganaReading('SHI', shi).isCorrect).toBe(true)
+    })
+
+    it('accepts yōon contracted sounds', () => {
+      const kya = makeEntry('きゃ', 'kya')
+      expect(checkHiraganaReading('kya', kya).isCorrect).toBe(true)
+      expect(checkHiraganaReading('KYA', kya).isCorrect).toBe(true)
+    })
+
+    it('rejects wrong romaji', () => {
+      const entry = makeEntry('あ', 'a')
+      expect(checkHiraganaReading('ka', entry).isCorrect).toBe(false)
+    })
+
+    it('rejects empty input', () => {
+      const entry = makeEntry('あ', 'a')
+      expect(checkHiraganaReading('', entry).isCorrect).toBe(false)
     })
   })
 })

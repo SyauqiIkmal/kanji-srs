@@ -30,12 +30,18 @@ export function useStrokes() {
     }
 
     try {
-      const data = await import('~/data/strokes.json')
-      cachedStrokes = (data.default || data) as StrokeDictionary
+      const [kanjiData, hiraganaData] = await Promise.all([
+        import('~/data/strokes.json'),
+        import('~/data/hiragana-strokes.json'),
+      ])
+      cachedStrokes = {
+        ...((kanjiData.default || kanjiData) as StrokeDictionary),
+        ...((hiraganaData.default || hiraganaData) as StrokeDictionary),
+      }
       strokeData.value = cachedStrokes
       isLoaded.value = true
     } catch (e) {
-      console.error('Failed to load strokes.json:', e)
+      console.error('Failed to load stroke data:', e)
     }
   }
 

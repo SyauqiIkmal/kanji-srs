@@ -29,3 +29,11 @@ data/raw/
 .env
 .env.*
 !.env.example
+
+# AI Tooling & Metadata
+.claude/
+.codegraph/
+.cursor/
+.gemini/
+.mcp.json
+

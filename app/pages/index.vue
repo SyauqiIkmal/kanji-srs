@@ -1,21 +1,37 @@
 <template>
   <div class="space-y-6">
+    <!-- Deck Switcher -->
+    <div class="flex items-center justify-between flex-wrap gap-3">
+      <DeckSwitcher />
+    </div>
+
     <!-- Hero Banner Card -->
     <div
       class="relative overflow-hidden rounded-lg border border-border bg-card p-6 sm:p-8 shadow-sm"
     >
       <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div class="space-y-2 max-w-xl">
+          <!-- Deck Context Badge -->
           <div
-            class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded text-xs font-mono font-medium border border-primary/20 bg-primary/10 text-primary"
+            class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded text-xs font-mono font-medium border"
+            :class="
+              activeDeck === 'hiragana'
+                ? 'border-violet-400/40 bg-violet-50 text-violet-700 dark:bg-violet-950/40 dark:text-violet-300'
+                : 'border-primary/20 bg-primary/10 text-primary'
+            "
           >
-            <span>JLPT N5 Collection</span>
+            <span>{{
+              activeDeck === 'hiragana' ? 'Hiragana Syllabary' : 'JLPT N5 Collection'
+            }}</span>
             <span>·</span>
-            <span>{{ totalCount }} Kanji Total</span>
+            <span>{{ activeDeck === 'hiragana' ? hiraganaTotal : kanjiTotal }} Total</span>
           </div>
+
           <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
             <span v-if="dueCardsCount > 0">Ready for today's review?</span>
-            <span v-else-if="newCardsAvailableCount > 0">Learn new kanji today!</span>
+            <span v-else-if="newCardsAvailableCount > 0">{{
+              activeDeck === 'hiragana' ? 'Learn new hiragana today!' : 'Learn new kanji today!'
+            }}</span>
             <span v-else>All caught up for today!</span>
           </h1>
           <p class="text-sm text-muted-foreground leading-relaxed">
@@ -27,7 +43,7 @@
             <template v-else-if="newCardsAvailableCount > 0">
               No reviews due! You can introduce up to
               <strong class="text-foreground font-semibold">{{ newCardsAvailableCount }}</strong>
-              new kanji today.
+              new {{ activeDeck === 'hiragana' ? 'hiragana' : 'kanji' }} today.
             </template>
             <template v-else>
               Great job! You've completed all reviews and new card intakes for today.
@@ -55,7 +71,7 @@
             class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded text-sm font-medium border border-border bg-secondary text-secondary-foreground hover:bg-muted transition-colors"
           >
             <Layers class="h-4 w-4" />
-            <span>Browse All</span>
+            <span>{{ activeDeck === 'hiragana' ? 'Syllabary' : 'Browse All' }}</span>
           </NuxtLink>
         </div>
       </div>
@@ -86,7 +102,7 @@
           <span class="text-xs font-medium">Learning</span>
           <BookOpen class="h-4 w-4 text-emerald-500" />
         </div>
-        <div class="text-2xl font-bold font-mono text-foreground">{{ progress.learningCount }}</div>
+        <div class="text-2xl font-bold font-mono text-foreground">{{ learningCount }}</div>
         <p class="text-[11px] text-muted-foreground">In active learning</p>
       </div>
 
@@ -95,65 +111,123 @@
           <span class="text-xs font-medium">Mastered / Review</span>
           <CheckCircle2 class="h-4 w-4 text-indigo-500" />
         </div>
-        <div class="text-2xl font-bold font-mono text-foreground">{{ progress.reviewCount }}</div>
+        <div class="text-2xl font-bold font-mono text-foreground">{{ reviewCount }}</div>
         <p class="text-[11px] text-muted-foreground">Graduated to review</p>
       </div>
     </div>
 
-    <!-- Overall Progress Card -->
-    <div class="rounded-lg border border-border bg-card p-6 space-y-4">
-      <div class="flex items-center justify-between">
-        <div>
-          <h2 class="text-base font-semibold text-foreground">N5 Mastery Progress</h2>
-          <p class="text-xs text-muted-foreground">Total kanji studied at least once</p>
-        </div>
-        <div class="text-right">
-          <span class="text-lg font-bold font-mono text-primary">{{ progress.totalStudied }}</span>
-          <span class="text-sm text-muted-foreground font-mono"> / {{ totalCount }}</span>
-        </div>
-      </div>
-
-      <!-- Progress bar -->
-      <div class="h-3 w-full bg-secondary rounded-full overflow-hidden flex">
-        <div
-          title="Review (Graduated)"
-          class="bg-emerald-500 h-full transition-all duration-500"
-          :style="{ width: `${(progress.reviewCount / totalCount) * 100}%` }"
-        />
-        <div
-          title="Learning"
-          class="bg-amber-500 h-full transition-all duration-500"
-          :style="{ width: `${(progress.learningCount / totalCount) * 100}%` }"
-        />
-        <div
-          title="New"
-          class="bg-muted h-full transition-all duration-500"
-          :style="{ width: `${((totalCount - progress.totalStudied) / totalCount) * 100}%` }"
-        />
-      </div>
-
-      <!-- Legend -->
+    <!-- Deck Progress Cards (side-by-side) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <!-- Kanji N5 Progress -->
       <div
-        class="flex flex-wrap items-center justify-between text-xs text-muted-foreground gap-2 pt-1"
+        class="rounded-lg border bg-card p-5 space-y-3 transition-all"
+        :class="
+          activeDeck === 'kanji' ? 'border-primary/40 ring-1 ring-primary/20' : 'border-border'
+        "
       >
-        <div class="flex items-center gap-4">
-          <span class="flex items-center gap-1.5">
-            <span class="h-2.5 w-2.5 rounded-full bg-emerald-500" />
-            <span>Review ({{ progress.reviewCount }})</span>
-          </span>
-          <span class="flex items-center gap-1.5">
-            <span class="h-2.5 w-2.5 rounded-full bg-amber-500" />
-            <span>Learning ({{ progress.learningCount }})</span>
-          </span>
-          <span class="flex items-center gap-1.5">
-            <span class="h-2.5 w-2.5 rounded-full bg-secondary border border-border" />
-            <span>Unstudied ({{ totalCount - progress.totalStudied }})</span>
-          </span>
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-base">🈁</span>
+              <h2 class="text-sm font-semibold text-foreground">Kanji N5</h2>
+            </div>
+            <p class="text-[11px] text-muted-foreground">Total studied at least once</p>
+          </div>
+          <div class="text-right">
+            <span class="text-lg font-bold font-mono text-primary">{{
+              progress.totalStudiedByDeck('kanji')
+            }}</span>
+            <span class="text-sm text-muted-foreground font-mono"> / {{ kanjiTotal }}</span>
+          </div>
         </div>
 
-        <span class="font-mono text-[11px]">
-          {{ Math.round((progress.totalStudied / totalCount) * 100) }}% Coverage
-        </span>
+        <div class="h-2.5 w-full bg-secondary rounded-full overflow-hidden flex">
+          <div
+            title="Review (Graduated)"
+            class="bg-emerald-500 h-full transition-all duration-500"
+            :style="{
+              width: `${(progress.reviewCountByDeck('kanji') / kanjiTotal) * 100}%`,
+            }"
+          />
+          <div
+            title="Learning"
+            class="bg-amber-500 h-full transition-all duration-500"
+            :style="{
+              width: `${(progress.learningCountByDeck('kanji') / kanjiTotal) * 100}%`,
+            }"
+          />
+        </div>
+
+        <div class="flex flex-wrap items-center text-[10px] text-muted-foreground gap-x-3 gap-y-1">
+          <span class="flex items-center gap-1">
+            <span class="h-2 w-2 rounded-full bg-emerald-500" />
+            <span>Review ({{ progress.reviewCountByDeck('kanji') }})</span>
+          </span>
+          <span class="flex items-center gap-1">
+            <span class="h-2 w-2 rounded-full bg-amber-500" />
+            <span>Learning ({{ progress.learningCountByDeck('kanji') }})</span>
+          </span>
+          <span class="ml-auto font-mono">
+            {{ Math.round((progress.totalStudiedByDeck('kanji') / kanjiTotal) * 100) }}%
+          </span>
+        </div>
+      </div>
+
+      <!-- Hiragana Progress -->
+      <div
+        class="rounded-lg border bg-card p-5 space-y-3 transition-all"
+        :class="
+          activeDeck === 'hiragana'
+            ? 'border-violet-400/40 ring-1 ring-violet-400/20'
+            : 'border-border'
+        "
+      >
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-base">🅰</span>
+              <h2 class="text-sm font-semibold text-foreground">Hiragana</h2>
+            </div>
+            <p class="text-[11px] text-muted-foreground">Total studied at least once</p>
+          </div>
+          <div class="text-right">
+            <span class="text-lg font-bold font-mono text-violet-600 dark:text-violet-400">{{
+              progress.totalStudiedByDeck('hiragana')
+            }}</span>
+            <span class="text-sm text-muted-foreground font-mono"> / {{ hiraganaTotal }}</span>
+          </div>
+        </div>
+
+        <div class="h-2.5 w-full bg-secondary rounded-full overflow-hidden flex">
+          <div
+            title="Review (Graduated)"
+            class="bg-emerald-500 h-full transition-all duration-500"
+            :style="{
+              width: `${(progress.reviewCountByDeck('hiragana') / hiraganaTotal) * 100}%`,
+            }"
+          />
+          <div
+            title="Learning"
+            class="bg-amber-500 h-full transition-all duration-500"
+            :style="{
+              width: `${(progress.learningCountByDeck('hiragana') / hiraganaTotal) * 100}%`,
+            }"
+          />
+        </div>
+
+        <div class="flex flex-wrap items-center text-[10px] text-muted-foreground gap-x-3 gap-y-1">
+          <span class="flex items-center gap-1">
+            <span class="h-2 w-2 rounded-full bg-emerald-500" />
+            <span>Review ({{ progress.reviewCountByDeck('hiragana') }})</span>
+          </span>
+          <span class="flex items-center gap-1">
+            <span class="h-2 w-2 rounded-full bg-amber-500" />
+            <span>Learning ({{ progress.learningCountByDeck('hiragana') }})</span>
+          </span>
+          <span class="ml-auto font-mono">
+            {{ Math.round((progress.totalStudiedByDeck('hiragana') / hiraganaTotal) * 100) }}%
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -163,8 +237,19 @@
 import { Play, Layers, Clock, Sparkles, BookOpen, CheckCircle2 } from 'lucide-vue-next'
 
 const progress = useProgressStore()
-const { kanjiList, totalCount } = useKanji()
+const { kanjiList, totalCount: kanjiTotal } = useKanji()
+const { charList: hiraganaCharList, totalCount: hiraganaTotal } = useHiragana()
 
-const dueCardsCount = computed(() => progress.dueToday.length)
-const newCardsAvailableCount = computed(() => progress.getAvailableNewCards([...kanjiList]).length)
+const activeDeck = computed(() => progress.settings.activeDeck)
+
+// Active deck metrics (reactive to deck switch)
+const dueCardsCount = computed(() => progress.dueTodayByDeck(activeDeck.value).length)
+
+const newCardsAvailableCount = computed(() => {
+  const allChars = activeDeck.value === 'hiragana' ? [...hiraganaCharList] : [...kanjiList]
+  return progress.getAvailableNewCards(activeDeck.value, allChars).length
+})
+
+const learningCount = computed(() => progress.learningCountByDeck(activeDeck.value))
+const reviewCount = computed(() => progress.reviewCountByDeck(activeDeck.value))
 </script>

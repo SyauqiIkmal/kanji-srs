@@ -1,0 +1,2447 @@
+[
+  {
+    "char": "あ",
+    "romaji": "a",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "a-row",
+    "gridRow": 0,
+    "gridCol": 0,
+    "mnemonic": "a for apple",
+    "examples": [
+      {
+        "word": "あさ",
+        "reading": "asa",
+        "meaning": "morning"
+      },
+      {
+        "word": "あめ",
+        "reading": "ame",
+        "meaning": "rain"
+      }
+    ],
+    "codepoint": "3042"
+  },
+  {
+    "char": "い",
+    "romaji": "i",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "a-row",
+    "gridRow": 0,
+    "gridCol": 1,
+    "mnemonic": "i for ink",
+    "examples": [
+      {
+        "word": "いぬ",
+        "reading": "inu",
+        "meaning": "dog"
+      },
+      {
+        "word": "いえ",
+        "reading": "ie",
+        "meaning": "house"
+      }
+    ],
+    "codepoint": "3044"
+  },
+  {
+    "char": "う",
+    "romaji": "u",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "a-row",
+    "gridRow": 0,
+    "gridCol": 2,
+    "mnemonic": "u for up",
+    "examples": [
+      {
+        "word": "うみ",
+        "reading": "umi",
+        "meaning": "sea"
+      },
+      {
+        "word": "うし",
+        "reading": "ushi",
+        "meaning": "cow"
+      }
+    ],
+    "codepoint": "3046"
+  },
+  {
+    "char": "え",
+    "romaji": "e",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "a-row",
+    "gridRow": 0,
+    "gridCol": 3,
+    "mnemonic": "e for elephant",
+    "examples": [
+      {
+        "word": "えき",
+        "reading": "eki",
+        "meaning": "station"
+      },
+      {
+        "word": "えんぴつ",
+        "reading": "enpitsu",
+        "meaning": "pencil"
+      }
+    ],
+    "codepoint": "3048"
+  },
+  {
+    "char": "お",
+    "romaji": "o",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "a-row",
+    "gridRow": 0,
+    "gridCol": 4,
+    "mnemonic": "o for orange",
+    "examples": [
+      {
+        "word": "おとこ",
+        "reading": "otoko",
+        "meaning": "man"
+      },
+      {
+        "word": "おんな",
+        "reading": "onna",
+        "meaning": "woman"
+      }
+    ],
+    "codepoint": "304a"
+  },
+  {
+    "char": "か",
+    "romaji": "ka",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ka-row",
+    "gridRow": 1,
+    "gridCol": 0,
+    "mnemonic": "ka for kite",
+    "examples": [
+      {
+        "word": "かさ",
+        "reading": "kasa",
+        "meaning": "umbrella"
+      },
+      {
+        "word": "かばん",
+        "reading": "kaban",
+        "meaning": "bag"
+      }
+    ],
+    "codepoint": "304b"
+  },
+  {
+    "char": "き",
+    "romaji": "ki",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ka-row",
+    "gridRow": 1,
+    "gridCol": 1,
+    "mnemonic": "ki for key",
+    "examples": [
+      {
+        "word": "き",
+        "reading": "ki",
+        "meaning": "tree"
+      },
+      {
+        "word": "きた",
+        "reading": "kita",
+        "meaning": "north"
+      }
+    ],
+    "codepoint": "304d"
+  },
+  {
+    "char": "く",
+    "romaji": "ku",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ka-row",
+    "gridRow": 1,
+    "gridCol": 2,
+    "mnemonic": "ku for cuckoo",
+    "examples": [
+      {
+        "word": "くるま",
+        "reading": "kuruma",
+        "meaning": "car"
+      },
+      {
+        "word": "くつ",
+        "reading": "kutsu",
+        "meaning": "shoes"
+      }
+    ],
+    "codepoint": "304f"
+  },
+  {
+    "char": "け",
+    "romaji": "ke",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ka-row",
+    "gridRow": 1,
+    "gridCol": 3,
+    "mnemonic": "ke for keg",
+    "examples": [
+      {
+        "word": "けさ",
+        "reading": "kesa",
+        "meaning": "this morning"
+      },
+      {
+        "word": "けっこん",
+        "reading": "kekkon",
+        "meaning": "marriage"
+      }
+    ],
+    "codepoint": "3051"
+  },
+  {
+    "char": "こ",
+    "romaji": "ko",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ka-row",
+    "gridRow": 1,
+    "gridCol": 4,
+    "mnemonic": "ko for coin",
+    "examples": [
+      {
+        "word": "こども",
+        "reading": "kodomo",
+        "meaning": "child"
+      },
+      {
+        "word": "こえ",
+        "reading": "koe",
+        "meaning": "voice"
+      }
+    ],
+    "codepoint": "3053"
+  },
+  {
+    "char": "さ",
+    "romaji": "sa",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "sa-row",
+    "gridRow": 2,
+    "gridCol": 0,
+    "mnemonic": "sa for sun",
+    "examples": [
+      {
+        "word": "さかな",
+        "reading": "sakana",
+        "meaning": "fish"
+      },
+      {
+        "word": "さけ",
+        "reading": "sake",
+        "meaning": "salmon/alcohol"
+      }
+    ],
+    "codepoint": "3055"
+  },
+  {
+    "char": "し",
+    "romaji": "shi",
+    "altRomaji": [
+      "si"
+    ],
+    "category": "gojuon",
+    "group": "sa-row",
+    "gridRow": 2,
+    "gridCol": 1,
+    "mnemonic": "shi for sheep",
+    "examples": [
+      {
+        "word": "しろい",
+        "reading": "shiroi",
+        "meaning": "white"
+      },
+      {
+        "word": "しんぶん",
+        "reading": "shinbun",
+        "meaning": "newspaper"
+      }
+    ],
+    "codepoint": "3057"
+  },
+  {
+    "char": "す",
+    "romaji": "su",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "sa-row",
+    "gridRow": 2,
+    "gridCol": 2,
+    "mnemonic": "su for soup",
+    "examples": [
+      {
+        "word": "すいか",
+        "reading": "suika",
+        "meaning": "watermelon"
+      },
+      {
+        "word": "すし",
+        "reading": "sushi",
+        "meaning": "sushi"
+      }
+    ],
+    "codepoint": "3059"
+  },
+  {
+    "char": "せ",
+    "romaji": "se",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "sa-row",
+    "gridRow": 2,
+    "gridCol": 3,
+    "mnemonic": "se for setting",
+    "examples": [
+      {
+        "word": "せんせい",
+        "reading": "sensei",
+        "meaning": "teacher"
+      },
+      {
+        "word": "せなか",
+        "reading": "senaka",
+        "meaning": "back"
+      }
+    ],
+    "codepoint": "305b"
+  },
+  {
+    "char": "そ",
+    "romaji": "so",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "sa-row",
+    "gridRow": 2,
+    "gridCol": 4,
+    "mnemonic": "so for sewing",
+    "examples": [
+      {
+        "word": "そら",
+        "reading": "sora",
+        "meaning": "sky"
+      },
+      {
+        "word": "そと",
+        "reading": "soto",
+        "meaning": "outside"
+      }
+    ],
+    "codepoint": "305d"
+  },
+  {
+    "char": "た",
+    "romaji": "ta",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ta-row",
+    "gridRow": 3,
+    "gridCol": 0,
+    "mnemonic": "ta for tall",
+    "examples": [
+      {
+        "word": "たまご",
+        "reading": "tamago",
+        "meaning": "egg"
+      },
+      {
+        "word": "たべもの",
+        "reading": "tabemono",
+        "meaning": "food"
+      }
+    ],
+    "codepoint": "305f"
+  },
+  {
+    "char": "ち",
+    "romaji": "chi",
+    "altRomaji": [
+      "ti"
+    ],
+    "category": "gojuon",
+    "group": "ta-row",
+    "gridRow": 3,
+    "gridCol": 1,
+    "mnemonic": "chi for cheese",
+    "examples": [
+      {
+        "word": "ちいさい",
+        "reading": "chiisai",
+        "meaning": "small"
+      },
+      {
+        "word": "ちかてつ",
+        "reading": "chikatetsu",
+        "meaning": "subway"
+      }
+    ],
+    "codepoint": "3061"
+  },
+  {
+    "char": "つ",
+    "romaji": "tsu",
+    "altRomaji": [
+      "tu"
+    ],
+    "category": "gojuon",
+    "group": "ta-row",
+    "gridRow": 3,
+    "gridCol": 2,
+    "mnemonic": "tsu for tsunami",
+    "examples": [
+      {
+        "word": "つくえ",
+        "reading": "tsukue",
+        "meaning": "desk"
+      },
+      {
+        "word": "つめたい",
+        "reading": "tsumetai",
+        "meaning": "cold"
+      }
+    ],
+    "codepoint": "3064"
+  },
+  {
+    "char": "て",
+    "romaji": "te",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ta-row",
+    "gridRow": 3,
+    "gridCol": 3,
+    "mnemonic": "te for ten",
+    "examples": [
+      {
+        "word": "て",
+        "reading": "te",
+        "meaning": "hand"
+      },
+      {
+        "word": "てがみ",
+        "reading": "tegami",
+        "meaning": "letter"
+      }
+    ],
+    "codepoint": "3066"
+  },
+  {
+    "char": "と",
+    "romaji": "to",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ta-row",
+    "gridRow": 3,
+    "gridCol": 4,
+    "mnemonic": "to for toe",
+    "examples": [
+      {
+        "word": "とけい",
+        "reading": "tokei",
+        "meaning": "watch/clock"
+      },
+      {
+        "word": "とり",
+        "reading": "tori",
+        "meaning": "bird"
+      }
+    ],
+    "codepoint": "3068"
+  },
+  {
+    "char": "な",
+    "romaji": "na",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "na-row",
+    "gridRow": 4,
+    "gridCol": 0,
+    "mnemonic": "na for nun",
+    "examples": [
+      {
+        "word": "なまえ",
+        "reading": "namae",
+        "meaning": "name"
+      },
+      {
+        "word": "なつ",
+        "reading": "natsu",
+        "meaning": "summer"
+      }
+    ],
+    "codepoint": "306a"
+  },
+  {
+    "char": "に",
+    "romaji": "ni",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "na-row",
+    "gridRow": 4,
+    "gridCol": 1,
+    "mnemonic": "ni for knee",
+    "examples": [
+      {
+        "word": "にく",
+        "reading": "niku",
+        "meaning": "meat"
+      },
+      {
+        "word": "にし",
+        "reading": "nishi",
+        "meaning": "west"
+      }
+    ],
+    "codepoint": "306b"
+  },
+  {
+    "char": "ぬ",
+    "romaji": "nu",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "na-row",
+    "gridRow": 4,
+    "gridCol": 2,
+    "mnemonic": "nu for noodle",
+    "examples": [
+      {
+        "word": "ぬぐ",
+        "reading": "nugu",
+        "meaning": "to take off clothes"
+      },
+      {
+        "word": "いぬ",
+        "reading": "inu",
+        "meaning": "dog"
+      }
+    ],
+    "codepoint": "306c"
+  },
+  {
+    "char": "ね",
+    "romaji": "ne",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "na-row",
+    "gridRow": 4,
+    "gridCol": 3,
+    "mnemonic": "ne for net",
+    "examples": [
+      {
+        "word": "ねこ",
+        "reading": "neko",
+        "meaning": "cat"
+      },
+      {
+        "word": "ねる",
+        "reading": "neru",
+        "meaning": "to sleep"
+      }
+    ],
+    "codepoint": "306d"
+  },
+  {
+    "char": "の",
+    "romaji": "no",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "na-row",
+    "gridRow": 4,
+    "gridCol": 4,
+    "mnemonic": "no for nose",
+    "examples": [
+      {
+        "word": "のみもの",
+        "reading": "nomimono",
+        "meaning": "drink"
+      },
+      {
+        "word": "のる",
+        "reading": "noru",
+        "meaning": "to ride"
+      }
+    ],
+    "codepoint": "306e"
+  },
+  {
+    "char": "は",
+    "romaji": "ha",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ha-row",
+    "gridRow": 5,
+    "gridCol": 0,
+    "mnemonic": "ha for hat",
+    "examples": [
+      {
+        "word": "はな",
+        "reading": "hana",
+        "meaning": "flower"
+      },
+      {
+        "word": "はる",
+        "reading": "haru",
+        "meaning": "spring"
+      }
+    ],
+    "codepoint": "306f"
+  },
+  {
+    "char": "ひ",
+    "romaji": "hi",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ha-row",
+    "gridRow": 5,
+    "gridCol": 1,
+    "mnemonic": "hi for hill",
+    "examples": [
+      {
+        "word": "ひこうき",
+        "reading": "hikouki",
+        "meaning": "airplane"
+      },
+      {
+        "word": "ひだり",
+        "reading": "hidari",
+        "meaning": "left"
+      }
+    ],
+    "codepoint": "3072"
+  },
+  {
+    "char": "ふ",
+    "romaji": "fu",
+    "altRomaji": [
+      "hu"
+    ],
+    "category": "gojuon",
+    "group": "ha-row",
+    "gridRow": 5,
+    "gridCol": 2,
+    "mnemonic": "fu for Mt. Fuji",
+    "examples": [
+      {
+        "word": "ふゆ",
+        "reading": "fuyu",
+        "meaning": "winter"
+      },
+      {
+        "word": "ふね",
+        "reading": "fune",
+        "meaning": "ship"
+      }
+    ],
+    "codepoint": "3075"
+  },
+  {
+    "char": "へ",
+    "romaji": "he",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ha-row",
+    "gridRow": 5,
+    "gridCol": 3,
+    "mnemonic": "he for head",
+    "examples": [
+      {
+        "word": "へや",
+        "reading": "heya",
+        "meaning": "room"
+      },
+      {
+        "word": "へた",
+        "reading": "heta",
+        "meaning": "unskillful"
+      }
+    ],
+    "codepoint": "3078"
+  },
+  {
+    "char": "ほ",
+    "romaji": "ho",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ha-row",
+    "gridRow": 5,
+    "gridCol": 4,
+    "mnemonic": "ho for home",
+    "examples": [
+      {
+        "word": "ほん",
+        "reading": "hon",
+        "meaning": "book"
+      },
+      {
+        "word": "ほし",
+        "reading": "hoshi",
+        "meaning": "star"
+      }
+    ],
+    "codepoint": "307b"
+  },
+  {
+    "char": "ま",
+    "romaji": "ma",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ma-row",
+    "gridRow": 6,
+    "gridCol": 0,
+    "mnemonic": "ma for mama",
+    "examples": [
+      {
+        "word": "まち",
+        "reading": "machi",
+        "meaning": "town"
+      },
+      {
+        "word": "まど",
+        "reading": "mado",
+        "meaning": "window"
+      }
+    ],
+    "codepoint": "307e"
+  },
+  {
+    "char": "み",
+    "romaji": "mi",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ma-row",
+    "gridRow": 6,
+    "gridCol": 1,
+    "mnemonic": "mi for me",
+    "examples": [
+      {
+        "word": "みず",
+        "reading": "mizu",
+        "meaning": "water"
+      },
+      {
+        "word": "みみ",
+        "reading": "mimi",
+        "meaning": "ear"
+      }
+    ],
+    "codepoint": "307f"
+  },
+  {
+    "char": "む",
+    "romaji": "mu",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ma-row",
+    "gridRow": 6,
+    "gridCol": 2,
+    "mnemonic": "mu for moo",
+    "examples": [
+      {
+        "word": "むいか",
+        "reading": "muika",
+        "meaning": "6th day"
+      },
+      {
+        "word": "むし",
+        "reading": "mushi",
+        "meaning": "insect"
+      }
+    ],
+    "codepoint": "3080"
+  },
+  {
+    "char": "め",
+    "romaji": "me",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ma-row",
+    "gridRow": 6,
+    "gridCol": 3,
+    "mnemonic": "me for eye",
+    "examples": [
+      {
+        "word": "め",
+        "reading": "me",
+        "meaning": "eye"
+      },
+      {
+        "word": "めがね",
+        "reading": "megane",
+        "meaning": "glasses"
+      }
+    ],
+    "codepoint": "3081"
+  },
+  {
+    "char": "も",
+    "romaji": "mo",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ma-row",
+    "gridRow": 6,
+    "gridCol": 4,
+    "mnemonic": "mo for more",
+    "examples": [
+      {
+        "word": "もの",
+        "reading": "mono",
+        "meaning": "thing"
+      },
+      {
+        "word": "もも",
+        "reading": "momo",
+        "meaning": "peach"
+      }
+    ],
+    "codepoint": "3082"
+  },
+  {
+    "char": "や",
+    "romaji": "ya",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ya-row",
+    "gridRow": 7,
+    "gridCol": 0,
+    "mnemonic": "ya for yak",
+    "examples": [
+      {
+        "word": "やま",
+        "reading": "yama",
+        "meaning": "mountain"
+      },
+      {
+        "word": "やさい",
+        "reading": "yasai",
+        "meaning": "vegetable"
+      }
+    ],
+    "codepoint": "3084"
+  },
+  {
+    "char": "ゆ",
+    "romaji": "yu",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ya-row",
+    "gridRow": 7,
+    "gridCol": 2,
+    "mnemonic": "yu for U-turn",
+    "examples": [
+      {
+        "word": "ゆき",
+        "reading": "yuki",
+        "meaning": "snow"
+      },
+      {
+        "word": "ゆうめい",
+        "reading": "yuumei",
+        "meaning": "famous"
+      }
+    ],
+    "codepoint": "3086"
+  },
+  {
+    "char": "よ",
+    "romaji": "yo",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ya-row",
+    "gridRow": 7,
+    "gridCol": 4,
+    "mnemonic": "yo for yo-yo",
+    "examples": [
+      {
+        "word": "よる",
+        "reading": "yoru",
+        "meaning": "night"
+      },
+      {
+        "word": "よむ",
+        "reading": "yomu",
+        "meaning": "to read"
+      }
+    ],
+    "codepoint": "3088"
+  },
+  {
+    "char": "ら",
+    "romaji": "ra",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ra-row",
+    "gridRow": 8,
+    "gridCol": 0,
+    "mnemonic": "ra for rabbit",
+    "examples": [
+      {
+        "word": "らいげつ",
+        "reading": "raigetsu",
+        "meaning": "next month"
+      },
+      {
+        "word": "らいねん",
+        "reading": "rainen",
+        "meaning": "next year"
+      }
+    ],
+    "codepoint": "3089"
+  },
+  {
+    "char": "り",
+    "romaji": "ri",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ra-row",
+    "gridRow": 8,
+    "gridCol": 1,
+    "mnemonic": "ri for ring",
+    "examples": [
+      {
+        "word": "りんご",
+        "reading": "ringo",
+        "meaning": "apple"
+      },
+      {
+        "word": "りょうり",
+        "reading": "ryouri",
+        "meaning": "cooking"
+      }
+    ],
+    "codepoint": "308a"
+  },
+  {
+    "char": "る",
+    "romaji": "ru",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ra-row",
+    "gridRow": 8,
+    "gridCol": 2,
+    "mnemonic": "ru for ruby",
+    "examples": [
+      {
+        "word": "るす",
+        "reading": "rusu",
+        "meaning": "absence"
+      },
+      {
+        "word": "かえる",
+        "reading": "kaeru",
+        "meaning": "to return"
+      }
+    ],
+    "codepoint": "308b"
+  },
+  {
+    "char": "れ",
+    "romaji": "re",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ra-row",
+    "gridRow": 8,
+    "gridCol": 3,
+    "mnemonic": "re for red",
+    "examples": [
+      {
+        "word": "れいぞうこ",
+        "reading": "reizouko",
+        "meaning": "refrigerator"
+      },
+      {
+        "word": "れきし",
+        "reading": "rekishi",
+        "meaning": "history"
+      }
+    ],
+    "codepoint": "308c"
+  },
+  {
+    "char": "ろ",
+    "romaji": "ro",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "ra-row",
+    "gridRow": 8,
+    "gridCol": 4,
+    "mnemonic": "ro for road",
+    "examples": [
+      {
+        "word": "ろく",
+        "reading": "roku",
+        "meaning": "six"
+      },
+      {
+        "word": "ろくおん",
+        "reading": "rokuon",
+        "meaning": "recording"
+      }
+    ],
+    "codepoint": "308d"
+  },
+  {
+    "char": "わ",
+    "romaji": "wa",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "wa-row",
+    "gridRow": 9,
+    "gridCol": 0,
+    "mnemonic": "wa for water",
+    "examples": [
+      {
+        "word": "わたし",
+        "reading": "watashi",
+        "meaning": "I"
+      },
+      {
+        "word": "わるい",
+        "reading": "warui",
+        "meaning": "bad"
+      }
+    ],
+    "codepoint": "308f"
+  },
+  {
+    "char": "を",
+    "romaji": "wo",
+    "altRomaji": [
+      "o"
+    ],
+    "category": "gojuon",
+    "group": "wa-row",
+    "gridRow": 9,
+    "gridCol": 4,
+    "mnemonic": "wo for Olympic",
+    "examples": [
+      {
+        "word": "おんがくをきく",
+        "reading": "ongaku wo kiku",
+        "meaning": "listen to music"
+      },
+      {
+        "word": "ほんをよむ",
+        "reading": "hon wo yomu",
+        "meaning": "read a book"
+      }
+    ],
+    "codepoint": "3092"
+  },
+  {
+    "char": "ん",
+    "romaji": "n",
+    "altRomaji": [],
+    "category": "gojuon",
+    "group": "n",
+    "gridRow": null,
+    "gridCol": null,
+    "mnemonic": "n for end",
+    "examples": [
+      {
+        "word": "ほん",
+        "reading": "hon",
+        "meaning": "book"
+      },
+      {
+        "word": "てんき",
+        "reading": "tenki",
+        "meaning": "weather"
+      }
+    ],
+    "codepoint": "3093"
+  },
+  {
+    "char": "が",
+    "romaji": "ga",
+    "altRomaji": [],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "がっこう",
+        "reading": "gakkou",
+        "meaning": "school"
+      },
+      {
+        "word": "がくせい",
+        "reading": "gakusei",
+        "meaning": "student"
+      }
+    ],
+    "codepoint": "304c"
+  },
+  {
+    "char": "ぎ",
+    "romaji": "gi",
+    "altRomaji": [],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ぎんこう",
+        "reading": "ginkou",
+        "meaning": "bank"
+      },
+      {
+        "word": "みぎ",
+        "reading": "migi",
+        "meaning": "right"
+      }
+    ],
+    "codepoint": "304e"
+  },
+  {
+    "char": "ぐ",
+    "romaji": "gu",
+    "altRomaji": [],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ぐらい",
+        "reading": "gurai",
+        "meaning": "about"
+      },
+      {
+        "word": "だいがく",
+        "reading": "daigaku",
+        "meaning": "university"
+      }
+    ],
+    "codepoint": "3050"
+  },
+  {
+    "char": "げ",
+    "romaji": "ge",
+    "altRomaji": [],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "げんき",
+        "reading": "genki",
+        "meaning": "healthy"
+      },
+      {
+        "word": "げつようび",
+        "reading": "getsuyoubi",
+        "meaning": "Monday"
+      }
+    ],
+    "codepoint": "3052"
+  },
+  {
+    "char": "ご",
+    "romaji": "go",
+    "altRomaji": [],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ごご",
+        "reading": "gogo",
+        "meaning": "afternoon"
+      },
+      {
+        "word": "ごはん",
+        "reading": "gohan",
+        "meaning": "meal"
+      }
+    ],
+    "codepoint": "3054"
+  },
+  {
+    "char": "ざ",
+    "romaji": "za",
+    "altRomaji": [],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ざっし",
+        "reading": "zasshi",
+        "meaning": "magazine"
+      },
+      {
+        "word": "かざん",
+        "reading": "kazan",
+        "meaning": "volcano"
+      }
+    ],
+    "codepoint": "3056"
+  },
+  {
+    "char": "じ",
+    "romaji": "ji",
+    "altRomaji": [
+      "zi",
+      "di"
+    ],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "じかん",
+        "reading": "jikan",
+        "meaning": "time"
+      },
+      {
+        "word": "じしょ",
+        "reading": "jisho",
+        "meaning": "dictionary"
+      }
+    ],
+    "codepoint": "3058"
+  },
+  {
+    "char": "ず",
+    "romaji": "zu",
+    "altRomaji": [],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ずっと",
+        "reading": "zutto",
+        "meaning": "always"
+      },
+      {
+        "word": "みず",
+        "reading": "mizu",
+        "meaning": "water"
+      }
+    ],
+    "codepoint": "305a"
+  },
+  {
+    "char": "ぜ",
+    "romaji": "ze",
+    "altRomaji": [],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ぜんぶ",
+        "reading": "zenbu",
+        "meaning": "all"
+      },
+      {
+        "word": "かぜ",
+        "reading": "kaze",
+        "meaning": "wind"
+      }
+    ],
+    "codepoint": "305c"
+  },
+  {
+    "char": "ぞ",
+    "romaji": "zo",
+    "altRomaji": [],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "かぞく",
+        "reading": "kazoku",
+        "meaning": "family"
+      },
+      {
+        "word": "れいぞうこ",
+        "reading": "reizouko",
+        "meaning": "refrigerator"
+      }
+    ],
+    "codepoint": "305e"
+  },
+  {
+    "char": "だ",
+    "romaji": "da",
+    "altRomaji": [],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "だいがく",
+        "reading": "daigaku",
+        "meaning": "university"
+      },
+      {
+        "word": "だれ",
+        "reading": "dare",
+        "meaning": "who"
+      }
+    ],
+    "codepoint": "3060"
+  },
+  {
+    "char": "ぢ",
+    "romaji": "ji",
+    "altRomaji": [
+      "di",
+      "zi"
+    ],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "はなぢ",
+        "reading": "hanaji",
+        "meaning": "nosebleed"
+      },
+      {
+        "word": "ちぢむ",
+        "reading": "chijimu",
+        "meaning": "to shrink"
+      }
+    ],
+    "codepoint": "3062"
+  },
+  {
+    "char": "づ",
+    "romaji": "zu",
+    "altRomaji": [
+      "du"
+    ],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "つづく",
+        "reading": "tsuzuku",
+        "meaning": "to continue"
+      },
+      {
+        "word": "きづく",
+        "reading": "kizuku",
+        "meaning": "to notice"
+      }
+    ],
+    "codepoint": "3065"
+  },
+  {
+    "char": "で",
+    "romaji": "de",
+    "altRomaji": [],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "でんわ",
+        "reading": "denwa",
+        "meaning": "phone"
+      },
+      {
+        "word": "でんしゃ",
+        "reading": "densha",
+        "meaning": "train"
+      }
+    ],
+    "codepoint": "3067"
+  },
+  {
+    "char": "ど",
+    "romaji": "do",
+    "altRomaji": [],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "どうぶつ",
+        "reading": "doubutsu",
+        "meaning": "animal"
+      },
+      {
+        "word": "ドア",
+        "reading": "doa",
+        "meaning": "door"
+      }
+    ],
+    "codepoint": "3069"
+  },
+  {
+    "char": "ば",
+    "romaji": "ba",
+    "altRomaji": [],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ばんごう",
+        "reading": "bangou",
+        "meaning": "number"
+      },
+      {
+        "word": "かばん",
+        "reading": "kaban",
+        "meaning": "bag"
+      }
+    ],
+    "codepoint": "3070"
+  },
+  {
+    "char": "び",
+    "romaji": "bi",
+    "altRomaji": [],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "びょういん",
+        "reading": "byouin",
+        "meaning": "hospital"
+      },
+      {
+        "word": "えんぴつ",
+        "reading": "enpitsu",
+        "meaning": "pencil"
+      }
+    ],
+    "codepoint": "3073"
+  },
+  {
+    "char": "ぶ",
+    "romaji": "bu",
+    "altRomaji": [],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ぶたにく",
+        "reading": "butaniku",
+        "meaning": "pork"
+      },
+      {
+        "word": "あぶない",
+        "reading": "abunai",
+        "meaning": "dangerous"
+      }
+    ],
+    "codepoint": "3076"
+  },
+  {
+    "char": "べ",
+    "romaji": "be",
+    "altRomaji": [],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "べんきょう",
+        "reading": "benkyou",
+        "meaning": "study"
+      },
+      {
+        "word": "たべる",
+        "reading": "taberu",
+        "meaning": "to eat"
+      }
+    ],
+    "codepoint": "3079"
+  },
+  {
+    "char": "ぼ",
+    "romaji": "bo",
+    "altRomaji": [],
+    "category": "dakuon",
+    "group": "dakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ぼうし",
+        "reading": "boushi",
+        "meaning": "hat"
+      },
+      {
+        "word": "ぼく",
+        "reading": "boku",
+        "meaning": "I (male)"
+      }
+    ],
+    "codepoint": "307c"
+  },
+  {
+    "char": "ぱ",
+    "romaji": "pa",
+    "altRomaji": [],
+    "category": "handakuon",
+    "group": "handakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "パン",
+        "reading": "pan",
+        "meaning": "bread"
+      },
+      {
+        "word": "デパート",
+        "reading": "depaato",
+        "meaning": "department store"
+      }
+    ],
+    "codepoint": "3071"
+  },
+  {
+    "char": "ぴ",
+    "romaji": "pi",
+    "altRomaji": [],
+    "category": "handakuon",
+    "group": "handakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "えんぴつ",
+        "reading": "enpitsu",
+        "meaning": "pencil"
+      },
+      {
+        "word": "コピー",
+        "reading": "kopii",
+        "meaning": "copy"
+      }
+    ],
+    "codepoint": "3074"
+  },
+  {
+    "char": "ぷ",
+    "romaji": "pu",
+    "altRomaji": [],
+    "category": "handakuon",
+    "group": "handakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "スプーン",
+        "reading": "supuun",
+        "meaning": "spoon"
+      },
+      {
+        "word": "きっぷ",
+        "reading": "kippu",
+        "meaning": "ticket"
+      }
+    ],
+    "codepoint": "3077"
+  },
+  {
+    "char": "ぺ",
+    "romaji": "pe",
+    "altRomaji": [],
+    "category": "handakuon",
+    "group": "handakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ペン",
+        "reading": "pen",
+        "meaning": "pen"
+      },
+      {
+        "word": "ページ",
+        "reading": "peeji",
+        "meaning": "page"
+      }
+    ],
+    "codepoint": "307a"
+  },
+  {
+    "char": "ぽ",
+    "romaji": "po",
+    "altRomaji": [],
+    "category": "handakuon",
+    "group": "handakuon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ポケット",
+        "reading": "poketto",
+        "meaning": "pocket"
+      },
+      {
+        "word": "スポーツ",
+        "reading": "supootsu",
+        "meaning": "sports"
+      }
+    ],
+    "codepoint": "307d"
+  },
+  {
+    "char": "きゃ",
+    "romaji": "kya",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "きゃく",
+        "reading": "kyaku",
+        "meaning": "guest"
+      },
+      {
+        "word": "おちゃ",
+        "reading": "ocha",
+        "meaning": "tea"
+      }
+    ],
+    "codepoint": "304d+3083"
+  },
+  {
+    "char": "きゅ",
+    "romaji": "kyu",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "きゅう",
+        "reading": "kyuu",
+        "meaning": "nine"
+      },
+      {
+        "word": "きゅうきゅうしゃ",
+        "reading": "kyuukyuusha",
+        "meaning": "ambulance"
+      }
+    ],
+    "codepoint": "304d+3085"
+  },
+  {
+    "char": "きょ",
+    "romaji": "kyo",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "きょう",
+        "reading": "kyou",
+        "meaning": "today"
+      },
+      {
+        "word": "としょかん",
+        "reading": "toshokan",
+        "meaning": "library"
+      }
+    ],
+    "codepoint": "304d+3087"
+  },
+  {
+    "char": "しゃ",
+    "romaji": "sha",
+    "altRomaji": [
+      "sya"
+    ],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "しゃしん",
+        "reading": "shashin",
+        "meaning": "photo"
+      },
+      {
+        "word": "かいしゃ",
+        "reading": "kaisha",
+        "meaning": "company"
+      }
+    ],
+    "codepoint": "3057+3083"
+  },
+  {
+    "char": "しゅ",
+    "romaji": "shu",
+    "altRomaji": [
+      "syu"
+    ],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "しゅくだい",
+        "reading": "shukudai",
+        "meaning": "homework"
+      },
+      {
+        "word": "しゅみ",
+        "reading": "shumi",
+        "meaning": "hobby"
+      }
+    ],
+    "codepoint": "3057+3085"
+  },
+  {
+    "char": "しょ",
+    "romaji": "sho",
+    "altRomaji": [
+      "syo"
+    ],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "しょくどう",
+        "reading": "shokudou",
+        "meaning": "cafeteria"
+      },
+      {
+        "word": "としょかん",
+        "reading": "toshokan",
+        "meaning": "library"
+      }
+    ],
+    "codepoint": "3057+3087"
+  },
+  {
+    "char": "ちゃ",
+    "romaji": "cha",
+    "altRomaji": [
+      "tya"
+    ],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "おちゃ",
+        "reading": "ocha",
+        "meaning": "tea"
+      },
+      {
+        "word": "ちゃいろ",
+        "reading": "chairo",
+        "meaning": "brown"
+      }
+    ],
+    "codepoint": "3061+3083"
+  },
+  {
+    "char": "ちゅ",
+    "romaji": "chu",
+    "altRomaji": [
+      "tyu"
+    ],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ちゅうごく",
+        "reading": "chuugoku",
+        "meaning": "China"
+      },
+      {
+        "word": "ちゅうしゃじょう",
+        "reading": "chuushajou",
+        "meaning": "parking lot"
+      }
+    ],
+    "codepoint": "3061+3085"
+  },
+  {
+    "char": "ちょ",
+    "romaji": "cho",
+    "altRomaji": [
+      "tyo"
+    ],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ちょっと",
+        "reading": "chotto",
+        "meaning": "a little"
+      },
+      {
+        "word": "ちょきん",
+        "reading": "chokin",
+        "meaning": "savings"
+      }
+    ],
+    "codepoint": "3061+3087"
+  },
+  {
+    "char": "にゃ",
+    "romaji": "nya",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "こんにゃく",
+        "reading": "konnyaku",
+        "meaning": "konjac"
+      },
+      {
+        "word": "にゃん",
+        "reading": "nyan",
+        "meaning": "meow"
+      }
+    ],
+    "codepoint": "306b+3083"
+  },
+  {
+    "char": "にゅ",
+    "romaji": "nyu",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ぎゅうにゅう",
+        "reading": "gyuunyuu",
+        "meaning": "milk"
+      },
+      {
+        "word": "にゅうがく",
+        "reading": "nyuugaku",
+        "meaning": "entry to school"
+      }
+    ],
+    "codepoint": "306b+3085"
+  },
+  {
+    "char": "にょ",
+    "romaji": "nyo",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "にょうぼう",
+        "reading": "nyoubou",
+        "meaning": "wife"
+      },
+      {
+        "word": "にょろにょろ",
+        "reading": "nyoronyoro",
+        "meaning": "slithering"
+      }
+    ],
+    "codepoint": "306b+3087"
+  },
+  {
+    "char": "ひゃ",
+    "romaji": "hya",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ひゃく",
+        "reading": "hyaku",
+        "meaning": "100"
+      },
+      {
+        "word": "さんびゃく",
+        "reading": "sanbyaku",
+        "meaning": "300"
+      }
+    ],
+    "codepoint": "3072+3083"
+  },
+  {
+    "char": "ひゅ",
+    "romaji": "hyu",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ひゅうま",
+        "reading": "hyuuma",
+        "meaning": "Hyuma"
+      },
+      {
+        "word": "ひゅっと",
+        "reading": "hyutto",
+        "meaning": "with a whiz"
+      }
+    ],
+    "codepoint": "3072+3085"
+  },
+  {
+    "char": "ひょ",
+    "romaji": "hyo",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ひょうき",
+        "reading": "hyouki",
+        "meaning": "notation"
+      },
+      {
+        "word": "ひょう",
+        "reading": "hyou",
+        "meaning": "table/chart"
+      }
+    ],
+    "codepoint": "3072+3087"
+  },
+  {
+    "char": "みゃ",
+    "romaji": "mya",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "みゃく",
+        "reading": "myaku",
+        "meaning": "pulse"
+      },
+      {
+        "word": "さんみゃく",
+        "reading": "sanmyaku",
+        "meaning": "mountain range"
+      }
+    ],
+    "codepoint": "307f+3083"
+  },
+  {
+    "char": "みゅ",
+    "romaji": "myu",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "みゅーじしゃん",
+        "reading": "myuujishan",
+        "meaning": "musician"
+      },
+      {
+        "word": "こみゅにけーしょん",
+        "reading": "komyunikeeshon",
+        "meaning": "communication"
+      }
+    ],
+    "codepoint": "307f+3085"
+  },
+  {
+    "char": "みょ",
+    "romaji": "myo",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "みょうじ",
+        "reading": "myouji",
+        "meaning": "surname"
+      },
+      {
+        "word": "みょうごにち",
+        "reading": "myougonichi",
+        "meaning": "day after tomorrow"
+      }
+    ],
+    "codepoint": "307f+3087"
+  },
+  {
+    "char": "りゃ",
+    "romaji": "rya",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "りゃくご",
+        "reading": "ryakugo",
+        "meaning": "abbreviation"
+      },
+      {
+        "word": "りゃくだつ",
+        "reading": "ryakudatsu",
+        "meaning": "plunder"
+      }
+    ],
+    "codepoint": "308a+3083"
+  },
+  {
+    "char": "りゅ",
+    "romaji": "ryu",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "りゅうがくせい",
+        "reading": "ryuugakusei",
+        "meaning": "international student"
+      },
+      {
+        "word": "りゆう",
+        "reading": "riyuu",
+        "meaning": "reason"
+      }
+    ],
+    "codepoint": "308a+3085"
+  },
+  {
+    "char": "りょ",
+    "romaji": "ryo",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "りょこう",
+        "reading": "ryokou",
+        "meaning": "travel"
+      },
+      {
+        "word": "りょうり",
+        "reading": "ryouri",
+        "meaning": "cooking"
+      }
+    ],
+    "codepoint": "308a+3087"
+  },
+  {
+    "char": "ぎゃ",
+    "romaji": "gya",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ぎゃく",
+        "reading": "gyaku",
+        "meaning": "reverse"
+      },
+      {
+        "word": "ぎゃんぶる",
+        "reading": "gyanburu",
+        "meaning": "gamble"
+      }
+    ],
+    "codepoint": "304e+3083"
+  },
+  {
+    "char": "ぎゅ",
+    "romaji": "gyu",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ぎゅうにゅう",
+        "reading": "gyuunyuu",
+        "meaning": "milk"
+      },
+      {
+        "word": "ぎゅうにく",
+        "reading": "gyuuniku",
+        "meaning": "beef"
+      }
+    ],
+    "codepoint": "304e+3085"
+  },
+  {
+    "char": "ぎょ",
+    "romaji": "gyo",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "きんぎょ",
+        "reading": "kingyo",
+        "meaning": "goldfish"
+      },
+      {
+        "word": "にんぎょ",
+        "reading": "ningyo",
+        "meaning": "mermaid"
+      }
+    ],
+    "codepoint": "304e+3087"
+  },
+  {
+    "char": "じゃ",
+    "romaji": "ja",
+    "altRomaji": [
+      "jya",
+      "zya"
+    ],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "じゃあ",
+        "reading": "jaa",
+        "meaning": "well then"
+      },
+      {
+        "word": "じゃがいも",
+        "reading": "jagaimo",
+        "meaning": "potato"
+      }
+    ],
+    "codepoint": "3058+3083"
+  },
+  {
+    "char": "じゅ",
+    "romaji": "ju",
+    "altRomaji": [
+      "jyu",
+      "zyu"
+    ],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "じゅぎょう",
+        "reading": "jugyou",
+        "meaning": "class"
+      },
+      {
+        "word": "じゅう",
+        "reading": "juu",
+        "meaning": "ten"
+      }
+    ],
+    "codepoint": "3058+3085"
+  },
+  {
+    "char": "じょ",
+    "romaji": "jo",
+    "altRomaji": [
+      "jyo",
+      "zyo"
+    ],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "じょせい",
+        "reading": "josei",
+        "meaning": "woman"
+      },
+      {
+        "word": "じょうず",
+        "reading": "jouzu",
+        "meaning": "skillful"
+      }
+    ],
+    "codepoint": "3058+3087"
+  },
+  {
+    "char": "びゃ",
+    "romaji": "bya",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "さんびゃく",
+        "reading": "sanbyaku",
+        "meaning": "300"
+      },
+      {
+        "word": "ろっぴゃく",
+        "reading": "roppyaku",
+        "meaning": "600"
+      }
+    ],
+    "codepoint": "3073+3083"
+  },
+  {
+    "char": "びゅ",
+    "romaji": "byu",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "いんたびゅー",
+        "reading": "intabyuu",
+        "meaning": "interview"
+      },
+      {
+        "word": "びゅーびゅー",
+        "reading": "byuubyuu",
+        "meaning": "howling (wind)"
+      }
+    ],
+    "codepoint": "3073+3085"
+  },
+  {
+    "char": "びょ",
+    "romaji": "byo",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "びょういん",
+        "reading": "byouin",
+        "meaning": "hospital"
+      },
+      {
+        "word": "びょうき",
+        "reading": "byouki",
+        "meaning": "illness"
+      }
+    ],
+    "codepoint": "3073+3087"
+  },
+  {
+    "char": "ぴゃ",
+    "romaji": "pya",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "はっぴゃく",
+        "reading": "happyaku",
+        "meaning": "800"
+      },
+      {
+        "word": "ぴゃく",
+        "reading": "pyaku",
+        "meaning": "(sound)"
+      }
+    ],
+    "codepoint": "3074+3083"
+  },
+  {
+    "char": "ぴゅ",
+    "romaji": "pyu",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "こんぴゅーたー",
+        "reading": "konpyuutaa",
+        "meaning": "computer"
+      },
+      {
+        "word": "ぴゅーぴゅー",
+        "reading": "pyuupyuu",
+        "meaning": "whistling (wind)"
+      }
+    ],
+    "codepoint": "3074+3085"
+  },
+  {
+    "char": "ぴょ",
+    "romaji": "pyo",
+    "altRomaji": [],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "はっぴょう",
+        "reading": "happyou",
+        "meaning": "presentation"
+      },
+      {
+        "word": "ぴょんぴょん",
+        "reading": "pyonpyon",
+        "meaning": "hopping"
+      }
+    ],
+    "codepoint": "3074+3087"
+  },
+  {
+    "char": "ぢゃ",
+    "romaji": "ja",
+    "altRomaji": [
+      "dya"
+    ],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "おちゃわん",
+        "reading": "ochawan",
+        "meaning": "rice bowl (placeholder)"
+      },
+      {
+        "word": "ちゃ",
+        "reading": "cha",
+        "meaning": "tea"
+      }
+    ],
+    "codepoint": "3062+3083"
+  },
+  {
+    "char": "ぢゅ",
+    "romaji": "ju",
+    "altRomaji": [
+      "dyu"
+    ],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ぢゅ",
+        "reading": "ju",
+        "meaning": "placeholder"
+      },
+      {
+        "word": "ぢゅ",
+        "reading": "ju",
+        "meaning": "placeholder"
+      }
+    ],
+    "codepoint": "3062+3085"
+  },
+  {
+    "char": "ぢょ",
+    "romaji": "jo",
+    "altRomaji": [
+      "dyo"
+    ],
+    "category": "yoon",
+    "group": "yoon",
+    "gridRow": null,
+    "gridCol": null,
+    "examples": [
+      {
+        "word": "ぢょ",
+        "reading": "jo",
+        "meaning": "placeholder"
+      },
+      {
+        "word": "ぢょ",
+        "reading": "jo",
+        "meaning": "placeholder"
+      }
+    ],
+    "codepoint": "3062+3087"
+  }
+]

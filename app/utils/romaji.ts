@@ -1,5 +1,5 @@
 import { toRomaji, toKana, toHiragana } from 'wanakana'
-import type { AnswerFeedback, KanjiEntry } from '~/types'
+import type { AnswerFeedback, KanjiEntry, HiraganaEntry } from '~/types'
 
 /**
  * Normalizes Romaji string: lowercases, trims whitespace, and strips okurigana dots ('.') and hyphens ('-').
@@ -19,6 +19,44 @@ export function kanaToRomaji(kana: string): string {
   if (!kana) return ''
   const romaji = toRomaji(kana)
   return normalizeRomaji(romaji)
+}
+
+/**
+ * Checks whether user input matches the romaji of the given Hiragana entry.
+ *
+ * Accepts the primary romaji and any altRomaji variants (Nihon-shiki / Kunrei-shiki),
+ * plus wanakana-based normalization so that e.g. typing "shi" or "si" both match し.
+ */
+export function checkHiraganaReading(input: string, entry: HiraganaEntry): AnswerFeedback {
+  const userTyped = input.trim()
+  const normalizedInput = normalizeRomaji(userTyped)
+
+  if (!normalizedInput) {
+    return { userTyped, isCorrect: false }
+  }
+
+  // Build the canonical romaji for this character via wanakana
+  const canonicalRomaji = kanaToRomaji(entry.char)
+  // Also get the declared primary romaji from the data
+  const primaryRomaji = normalizeRomaji(entry.romaji)
+
+  // All accepted spellings: canonical + primary + altRomaji variants
+  const accepted = new Set<string>([
+    canonicalRomaji,
+    primaryRomaji,
+    ...(entry.altRomaji ?? []).map(normalizeRomaji),
+  ])
+
+  if (accepted.has(normalizedInput)) {
+    return {
+      userTyped,
+      isCorrect: true,
+      matchedType: 'hiragana',
+      matchedReading: entry.romaji,
+    }
+  }
+
+  return { userTyped, isCorrect: false }
 }
 
 /**

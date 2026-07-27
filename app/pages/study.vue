@@ -1,5 +1,10 @@
 <template>
   <div class="max-w-2xl mx-auto space-y-6">
+    <!-- Deck Switcher (only on idle/complete screens) -->
+    <div v-if="phase === 'idle' || phase === 'complete'" class="flex justify-center">
+      <DeckSwitcher />
+    </div>
+
     <!-- Active Session View -->
     <div v-if="phase === 'question' || phase === 'answer'" class="space-y-6">
       <!-- Session Header & Progress -->
@@ -12,8 +17,20 @@
           <span>Exit Session</span>
         </NuxtLink>
 
-        <!-- Mode Toggle & Progress Indicator -->
+        <!-- Deck Badge + Mode Toggle + Progress Indicator -->
         <div class="flex items-center gap-3">
+          <!-- Active Deck Badge -->
+          <span
+            class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium border"
+            :class="
+              activeDeck === 'hiragana'
+                ? 'border-violet-400/40 bg-violet-50 text-violet-700 dark:bg-violet-950/40 dark:text-violet-300'
+                : 'border-primary/20 bg-primary/10 text-primary'
+            "
+          >
+            <span>{{ activeDeck === 'hiragana' ? '🅰 Hiragana' : '🈁 Kanji N5' }}</span>
+          </span>
+
           <!-- Input Mode Quick Toggle -->
           <button
             type="button"
@@ -52,7 +69,7 @@
         class="relative overflow-hidden rounded-lg border border-border bg-card p-8 sm:p-12 text-center transition-all duration-200"
         :class="{ 'ring-1 ring-primary/30': phase === 'question' }"
       >
-        <!-- Hero Kanji Display -->
+        <!-- Hero Character Display -->
         <div class="py-4 flex justify-center items-center">
           <span
             class="font-jp text-[clamp(6rem,18vw,10rem)] leading-none text-foreground select-none"
@@ -70,7 +87,11 @@
                 ref="answerInputRef"
                 v-model="inputAnswer"
                 type="text"
-                placeholder="Type Romaji reading (e.g. yasui)..."
+                :placeholder="
+                  activeDeck === 'hiragana'
+                    ? 'Type romaji (e.g. ka, shi, kya)...'
+                    : 'Type Romaji reading (e.g. yasui)...'
+                "
                 class="flex-1 px-4 py-2.5 text-sm rounded-md border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 font-mono"
                 @keydown.esc="onEscKey"
               />
@@ -118,12 +139,12 @@
           </button>
         </div>
 
-        <!-- Answer Mode: Revealed Kanji Details -->
+        <!-- Answer Mode: Revealed Card Details -->
         <div
           v-else-if="phase === 'answer' && currentEntry"
           class="space-y-6 pt-6 border-t border-border text-left"
         >
-          <!-- Answer Feedback Banner (when typed answer submitted) -->
+          <!-- Answer Feedback Banner -->
           <div
             v-if="lastFeedback"
             class="p-3.5 rounded-lg border text-sm flex items-start gap-3 transition-all"
@@ -150,8 +171,14 @@
                     lastFeedback.userTyped
                   }}</code>
                   — Matches
-                  {{ lastFeedback.matchedType === 'onyomi' ? "On'yomi" : "Kun'yomi" }}:
-                  <span class="font-jp font-semibold">{{ lastFeedback.matchedReading }}</span>
+                  <template v-if="lastFeedback.matchedType === 'hiragana'">
+                    romaji
+                    <span class="font-mono font-semibold">{{ lastFeedback.matchedReading }}</span>
+                  </template>
+                  <template v-else>
+                    {{ lastFeedback.matchedType === 'onyomi' ? "On'yomi" : "Kun'yomi" }}:
+                    <span class="font-jp font-semibold">{{ lastFeedback.matchedReading }}</span>
+                  </template>
                 </template>
                 <template v-else>
                   You typed
@@ -160,79 +187,73 @@
                   }}</code>
                   — Expected:
                   <span class="font-jp font-semibold">
-                    {{ [...currentEntry.onyomi, ...currentEntry.kunyomi].join('、') }}
+                    {{ expectedAnswer }}
                   </span>
                 </template>
               </p>
             </div>
           </div>
 
-          <!-- Meanings & Animated Stroke Order -->
-          <div class="flex flex-col sm:flex-row items-start justify-between gap-6">
-            <div class="space-y-4 flex-1">
-              <div>
-                <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground"
-                  >Meaning</span
+          <!-- Hiragana Answer Details -->
+          <template v-if="activeDeck === 'hiragana' && currentHiraganaEntry">
+            <div class="flex flex-col sm:flex-row items-start justify-between gap-6">
+              <div class="space-y-4 flex-1">
+                <!-- Romaji -->
+                <div>
+                  <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground"
+                    >Romaji</span
+                  >
+                  <p class="text-2xl font-mono font-semibold text-primary mt-0.5">
+                    {{ currentHiraganaEntry.romaji }}
+                    <span
+                      v-if="currentHiraganaEntry.altRomaji?.length"
+                      class="text-sm font-normal text-muted-foreground ml-2"
+                    >
+                      (also: {{ currentHiraganaEntry.altRomaji.join(', ') }})
+                    </span>
+                  </p>
+                </div>
+
+                <!-- Category -->
+                <div>
+                  <span
+                    class="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground"
+                    >Type</span
+                  >
+                  <p class="text-sm font-medium text-foreground mt-0.5 capitalize">
+                    {{ currentHiraganaEntry.category }}
+                  </p>
+                </div>
+
+                <!-- Mnemonic -->
+                <div
+                  v-if="currentHiraganaEntry.mnemonic"
+                  class="p-2.5 rounded-md bg-amber-50/70 dark:bg-amber-950/30 border border-amber-200/50 dark:border-amber-800/30"
                 >
-                <p class="text-lg font-semibold text-foreground mt-0.5">
-                  {{ currentEntry.meanings.join(', ') }}
-                </p>
-              </div>
-
-              <!-- Readings Grid -->
-              <div class="grid grid-cols-2 gap-4">
-                <div class="space-y-1">
                   <span
-                    class="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground"
-                    >On'yomi (音読み)</span
+                    class="text-[11px] font-semibold uppercase text-amber-700 dark:text-amber-400"
+                    >💡 Mnemonic</span
                   >
-                  <p class="text-sm font-jp font-medium text-foreground">
-                    {{ currentEntry.onyomi.length ? currentEntry.onyomi.join('、') : '-' }}
-                  </p>
-                </div>
-                <div class="space-y-1">
-                  <span
-                    class="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground"
-                    >Kun'yomi (訓読み)</span
-                  >
-                  <p class="text-sm font-jp font-medium text-foreground">
-                    {{ currentEntry.kunyomi.length ? currentEntry.kunyomi.join('、') : '-' }}
+                  <p class="text-sm italic text-amber-900 dark:text-amber-200 mt-0.5">
+                    {{ currentHiraganaEntry.mnemonic }}
                   </p>
                 </div>
               </div>
+
+              <!-- Stroke Order -->
+              <div v-if="currentChar" class="self-center sm:self-start shrink-0">
+                <KanjiStrokeOrder :char="currentChar" :auto-play="true" />
+              </div>
             </div>
 
-            <!-- Stroke Order Animation -->
-            <div v-if="currentChar" class="self-center sm:self-start shrink-0">
-              <KanjiStrokeOrder :char="currentChar" :auto-play="true" />
-            </div>
-          </div>
-
-          <!-- Metadata & Examples -->
-          <div class="space-y-3 pt-2">
-            <div class="flex items-center gap-4 text-xs text-muted-foreground">
-              <span
-                >Strokes:
-                <strong class="text-foreground font-mono">{{
-                  currentEntry.strokeCount
-                }}</strong></span
-              >
-              <span
-                >Grade:
-                <strong class="text-foreground font-mono">{{
-                  currentEntry.grade ?? '-'
-                }}</strong></span
-              >
-            </div>
-
-            <!-- Example Words -->
-            <div v-if="currentEntry.examples.length" class="space-y-2">
+            <!-- Examples -->
+            <div v-if="currentHiraganaEntry.examples.length" class="space-y-2">
               <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground"
                 >Examples</span
               >
               <div class="grid gap-2 sm:grid-cols-2">
                 <div
-                  v-for="(ex, i) in currentEntry.examples"
+                  v-for="(ex, i) in currentHiraganaEntry.examples"
                   :key="i"
                   class="p-2.5 rounded border border-border bg-secondary/50 flex flex-col"
                 >
@@ -246,7 +267,92 @@
                 </div>
               </div>
             </div>
-          </div>
+          </template>
+
+          <!-- Kanji Answer Details -->
+          <template v-else-if="activeDeck === 'kanji' && currentKanjiEntry">
+            <div class="flex flex-col sm:flex-row items-start justify-between gap-6">
+              <div class="space-y-4 flex-1">
+                <div>
+                  <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground"
+                    >Meaning</span
+                  >
+                  <p class="text-lg font-semibold text-foreground mt-0.5">
+                    {{ currentKanjiEntry.meanings.join(', ') }}
+                  </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="space-y-1">
+                    <span
+                      class="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground"
+                      >On'yomi (音読み)</span
+                    >
+                    <p class="text-sm font-jp font-medium text-foreground">
+                      {{
+                        currentKanjiEntry.onyomi.length ? currentKanjiEntry.onyomi.join('、') : '-'
+                      }}
+                    </p>
+                  </div>
+                  <div class="space-y-1">
+                    <span
+                      class="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground"
+                      >Kun'yomi (訓読み)</span
+                    >
+                    <p class="text-sm font-jp font-medium text-foreground">
+                      {{
+                        currentKanjiEntry.kunyomi.length
+                          ? currentKanjiEntry.kunyomi.join('、')
+                          : '-'
+                      }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div v-if="currentChar" class="self-center sm:self-start shrink-0">
+                <KanjiStrokeOrder :char="currentChar" :auto-play="true" />
+              </div>
+            </div>
+
+            <div class="space-y-3 pt-2">
+              <div class="flex items-center gap-4 text-xs text-muted-foreground">
+                <span
+                  >Strokes:
+                  <strong class="text-foreground font-mono">{{
+                    currentKanjiEntry.strokeCount
+                  }}</strong></span
+                >
+                <span
+                  >Grade:
+                  <strong class="text-foreground font-mono">{{
+                    currentKanjiEntry.grade ?? '-'
+                  }}</strong></span
+                >
+              </div>
+
+              <div v-if="currentKanjiEntry.examples.length" class="space-y-2">
+                <span class="text-xs font-semibold uppercase tracking-wider text-muted-foreground"
+                  >Examples</span
+                >
+                <div class="grid gap-2 sm:grid-cols-2">
+                  <div
+                    v-for="(ex, i) in currentKanjiEntry.examples"
+                    :key="i"
+                    class="p-2.5 rounded border border-border bg-secondary/50 flex flex-col"
+                  >
+                    <div class="flex items-baseline justify-between gap-2">
+                      <span class="font-jp text-base font-semibold text-foreground">{{
+                        ex.word
+                      }}</span>
+                      <span class="font-jp text-xs text-muted-foreground">{{ ex.reading }}</span>
+                    </div>
+                    <span class="text-xs text-muted-foreground mt-1">{{ ex.meaning }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
         </div>
       </div>
 
@@ -341,7 +447,7 @@
         </p>
       </div>
 
-      <!-- Grade Breakdown Summary -->
+      <!-- Grade Breakdown -->
       <div
         class="grid grid-cols-4 gap-2 max-w-sm mx-auto p-4 rounded-lg bg-secondary/50 border border-border"
       >
@@ -393,23 +499,60 @@
 import { ArrowLeft, CheckCircle2, XCircle, Keyboard, Eye } from 'lucide-vue-next'
 import { Rating, type Grade } from 'ts-fsrs'
 import { useProgressStore } from '~/stores/progress'
+import { isHiraganaEntry, isKanjiEntry } from '~/types'
 
 const progressStore = useProgressStore()
+const activeDeck = computed(() => progressStore.settings.activeDeck)
 
-const {
-  phase,
-  currentIndex,
-  sessionCount,
-  sessionGrades,
-  currentChar,
-  currentEntry,
-  totalCards,
-  lastFeedback,
-  startSession,
-  submitAnswer,
-  revealAnswer,
-  grade,
-} = useStudySession()
+// Create both sessions upfront — composables can't be called inside computed()
+const kanjiSession = useStudySession('kanji')
+const hiraganaSession = useStudySession('hiragana')
+
+// Dynamically pick the active session
+const activeSession = computed(() =>
+  activeDeck.value === 'hiragana' ? hiraganaSession : kanjiSession,
+)
+
+// Proxy the session API through computed refs so the template stays clean
+const phase = computed(() => activeSession.value.phase.value)
+const currentIndex = computed(() => activeSession.value.currentIndex.value)
+const sessionCount = computed(() => activeSession.value.sessionCount.value)
+const sessionGrades = computed(() => activeSession.value.sessionGrades.value)
+const currentChar = computed(() => activeSession.value.currentChar.value)
+const currentEntry = computed(() => activeSession.value.currentEntry.value)
+const totalCards = computed(() => activeSession.value.totalCards.value)
+const lastFeedback = computed(() => activeSession.value.lastFeedback.value)
+
+function startSession() {
+  activeSession.value.startSession()
+}
+function submitAnswer(input: string) {
+  activeSession.value.submitAnswer(input)
+}
+function revealAnswer() {
+  activeSession.value.revealAnswer()
+}
+function grade(rating: Grade) {
+  activeSession.value.grade(rating)
+}
+
+// Typed convenience accessors for the template
+const currentKanjiEntry = computed(() =>
+  currentEntry.value && isKanjiEntry(currentEntry.value) ? currentEntry.value : null,
+)
+const currentHiraganaEntry = computed(() =>
+  currentEntry.value && isHiraganaEntry(currentEntry.value) ? currentEntry.value : null,
+)
+
+/** Expected answer text for the "Incorrect" feedback banner. */
+const expectedAnswer = computed(() => {
+  if (!currentEntry.value) return ''
+  if (isHiraganaEntry(currentEntry.value)) {
+    const alts = currentEntry.value.altRomaji?.join(' / ') ?? ''
+    return alts ? `${currentEntry.value.romaji} (or ${alts})` : currentEntry.value.romaji
+  }
+  return [...currentEntry.value.onyomi, ...currentEntry.value.kunyomi].join('、')
+})
 
 const inputAnswer = ref('')
 const answerInputRef = ref<HTMLInputElement | null>(null)
@@ -430,6 +573,11 @@ watch(
   },
   { immediate: true },
 )
+
+// Restart session when deck changes
+watch(activeDeck, () => {
+  startSession()
+})
 
 onMounted(() => {
   startSession()
@@ -476,7 +624,6 @@ function handleGrade(rating: Rating) {
 }
 
 function handleKeydown(e: KeyboardEvent) {
-  // Allow normal typing inside input field
   if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
 
   if (phase.value === 'question') {

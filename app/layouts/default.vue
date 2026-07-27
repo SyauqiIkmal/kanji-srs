@@ -122,13 +122,20 @@ import { LayoutDashboard, BookOpen, Layers, BarChart3, Sun, Moon, Github } from 
 const route = useRoute()
 const progress = useProgressStore()
 const { kanjiList } = useKanji()
+const { charList: hiraganaList } = useHiragana()
 const { theme, resolvedTheme, setTheme } = useTheme()
 
-const dueCount = computed(() => progress.getStudyQueue([...kanjiList]).length)
+const studyQueueCount = computed(
+  () =>
+    progress.getStudyQueue(
+      progress.settings.activeDeck,
+      progress.settings.activeDeck === 'hiragana' ? [...hiraganaList] : [...kanjiList],
+    ).length,
+)
 
 const navItems = computed(() => [
   { label: 'Dashboard', path: '/', icon: LayoutDashboard },
-  { label: 'Study', path: '/study', icon: BookOpen, badge: dueCount.value },
+  { label: 'Study', path: '/study', icon: BookOpen, badge: studyQueueCount.value },
   { label: 'Browse', path: '/browse', icon: Layers },
   { label: 'Stats', path: '/stats', icon: BarChart3 },
 ])

@@ -50,4 +50,33 @@ describe('useStudySession', () => {
     expect(session.phase.value).toBe('answer')
     expect(session.lastFeedback.value).toBeNull()
   })
+
+  describe('hiragana deck session', () => {
+    it('supports hiragana deck study session and romaji validation', () => {
+      const session = useStudySession('hiragana')
+      session.startSession()
+
+      expect(session.phase.value).toBe('question')
+      expect(session.totalCards.value).toBeGreaterThan(0)
+      expect(session.currentEntry.value).toHaveProperty('romaji')
+
+      const entry = session.currentEntry.value
+      if (entry && 'romaji' in entry) {
+        // Submit correct primary romaji
+        session.submitAnswer(entry.romaji)
+        expect(session.phase.value).toBe('answer')
+        expect(session.lastFeedback.value?.isCorrect).toBe(true)
+        expect(session.lastFeedback.value?.matchedType).toBe('hiragana')
+      }
+    })
+
+    it('rejects incorrect romaji for hiragana entry', () => {
+      const session = useStudySession('hiragana')
+      session.startSession()
+
+      session.submitAnswer('invalid_romaji_xyz')
+      expect(session.phase.value).toBe('answer')
+      expect(session.lastFeedback.value?.isCorrect).toBe(false)
+    })
+  })
 })

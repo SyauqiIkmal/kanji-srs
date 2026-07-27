@@ -6,6 +6,14 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  app: {
+    head: {
+      link: [
+        { rel: 'manifest', href: '/manifest.webmanifest' },
+        { rel: 'apple-touch-icon', href: '/pwa-192x192.png' },
+      ],
+    },
+  },
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: [

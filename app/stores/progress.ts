@@ -1,8 +1,11 @@
 /**
- * Progress store — the user's SRS state.
+ * Progress store — the user's SRS state across all decks.
  *
  * Persisted to localStorage via pinia-plugin-persistedstate.
  * Uses ts-fsrs for scheduling; stores its Card type verbatim.
+ *
+ * Card keys are namespaced as "deckId:char" (e.g. "kanji:日", "hiragana:あ").
+ * Schema version 2 introduces this namespacing; v1 keys are migrated on load.
  *
  * @see docs/DATA-MODEL.md
  * @see docs/adr/0001-use-fsrs-over-sm2.md
@@ -11,9 +14,9 @@
 
 import { defineStore } from 'pinia'
 import { fsrs, createEmptyCard, Rating, State, type Card, type Grade } from 'ts-fsrs'
-import type { ReviewEntry, Settings } from '~/types'
+import type { DeckId, ReviewEntry, Settings } from '~/types'
 
-const CURRENT_VERSION = 1
+const CURRENT_VERSION = 2
 
 const defaultSettings: Settings = {
   newCardsPerDay: 5,
@@ -21,16 +24,26 @@ const defaultSettings: Settings = {
   theme: 'system',
   requestRetention: 0.9,
   answerInputMode: 'romaji',
+  activeDeck: 'kanji',
+}
+
+/** Returns the namespaced storage key for a card. */
+export function getCardKey(deckId: DeckId, char: string): string {
+  return `${deckId}:${char}`
 }
 
 export const useProgressStore = defineStore('progress', {
   state: () => ({
-    /** char → FSRS Card. Absent key = never studied ("new"). */
+    /**
+     * "deckId:char" → FSRS Card.
+     * Absent key = never studied ("new").
+     * Example keys: "kanji:日", "hiragana:あ"
+     */
     cards: {} as Record<string, Card>,
     /** Append-only review log. Source of truth for stats. */
     log: [] as ReviewEntry[],
     settings: { ...defaultSettings },
-    /** Schema version for future migrations. */
+    /** Schema version for migrations. */
     version: CURRENT_VERSION,
   }),
 
@@ -44,51 +57,67 @@ export const useProgressStore = defineStore('progress', {
         request_retention: state.settings.requestRetention,
       }),
 
-    /** Check if a character has never been studied. */
+    // ─── Per-deck getters ──────────────────────────────────────────
+
+    /** Check if a character in a specific deck has never been studied. */
     isNew:
       (state) =>
-      (char: string): boolean =>
-        !(char in state.cards),
+      (deckId: DeckId, char: string): boolean =>
+        !(getCardKey(deckId, char) in state.cards),
 
-    /** Cards where state is New (not yet in the cards map counts too). */
-    newCount(state): number {
-      return Object.values(state.cards).filter((c) => c.state === State.New).length
-    },
-
-    /** Cards in Learning or Relearning state. */
-    learningCount(state): number {
-      return Object.values(state.cards).filter(
-        (c) => c.state === State.Learning || c.state === State.Relearning,
-      ).length
-    },
-
-    /** Cards in Review state (graduated). */
-    reviewCount(state): number {
-      return Object.values(state.cards).filter((c) => c.state === State.Review).length
-    },
-
-    /**
-     * Cards due today: reviews whose due date ≤ end of today,
-     * plus new-card intake up to the daily cap.
-     */
-    dueToday(state): string[] {
+    /** Cards due today for a specific deck. Returns raw char strings (no prefix). */
+    dueTodayByDeck: (state) => (deckId: DeckId) => {
       const now = new Date()
       const endOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999)
-
+      const prefix = `${deckId}:`
       const due: string[] = []
 
-      for (const [char, card] of Object.entries(state.cards)) {
-        const dueDate = new Date(card.due)
-        if (dueDate <= endOfToday) {
-          due.push(char)
+      for (const [key, card] of Object.entries(state.cards)) {
+        if (key.startsWith(prefix)) {
+          const dueDate = new Date(card.due)
+          if (dueDate <= endOfToday) {
+            due.push(key.slice(prefix.length))
+          }
         }
       }
-
       return due
     },
 
+    /** How many cards are in New state in a specific deck. */
+    newCountByDeck: (state) => (deckId: DeckId) => {
+      const prefix = `${deckId}:`
+      return Object.entries(state.cards).filter(
+        ([k, c]) => k.startsWith(prefix) && c.state === State.New,
+      ).length
+    },
+
+    /** Cards in Learning or Relearning state for a specific deck. */
+    learningCountByDeck: (state) => (deckId: DeckId) => {
+      const prefix = `${deckId}:`
+      return Object.entries(state.cards).filter(
+        ([k, c]) =>
+          k.startsWith(prefix) && (c.state === State.Learning || c.state === State.Relearning),
+      ).length
+    },
+
+    /** Cards in Review state (graduated) for a specific deck. */
+    reviewCountByDeck: (state) => (deckId: DeckId) => {
+      const prefix = `${deckId}:`
+      return Object.entries(state.cards).filter(
+        ([k, c]) => k.startsWith(prefix) && c.state === State.Review,
+      ).length
+    },
+
+    /** Total characters studied at least once in a specific deck. */
+    totalStudiedByDeck: (state) => (deckId: DeckId) => {
+      const prefix = `${deckId}:`
+      return Object.keys(state.cards).filter((k) => k.startsWith(prefix)).length
+    },
+
+    // ─── Cross-deck aggregate getters (for stats page / heatmap) ──
+
     /**
-     * How many new cards were introduced today.
+     * How many new cards were introduced today across all decks.
      * Counts log entries where state was New and the review date is today.
      */
     newCardsIntroducedToday(state): number {
@@ -106,8 +135,23 @@ export const useProgressStore = defineStore('progress', {
     },
 
     /**
-     * Number of reviews completed today (all grades).
+     * How many new cards were introduced today in a specific deck.
      */
+    newCardsIntroducedTodayByDeck: (state) => (deckId: DeckId) => {
+      const today = new Date()
+      const startOfToday = new Date(
+        today.getFullYear(),
+        today.getMonth(),
+        today.getDate(),
+      ).getTime()
+
+      return state.log.filter((entry) => {
+        const reviewTime = new Date(entry.review).getTime()
+        return entry.deckId === deckId && entry.state === State.New && reviewTime >= startOfToday
+      }).length
+    },
+
+    /** Number of reviews completed today (all decks). */
     reviewsDoneToday(state): number {
       const today = new Date()
       const startOfToday = new Date(
@@ -124,12 +168,11 @@ export const useProgressStore = defineStore('progress', {
 
     /**
      * Current streak: consecutive days with at least one review,
-     * counting backwards from today.
+     * counting backwards from today (across all decks).
      */
     streak(state): number {
       if (state.log.length === 0) return 0
 
-      // Group reviews by local date string
       const reviewDates = new Set(
         state.log.map((entry) => {
           const d = new Date(entry.review)
@@ -140,16 +183,13 @@ export const useProgressStore = defineStore('progress', {
       let count = 0
       const d = new Date()
 
-      // Check today first
       const todayKey = `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`
       if (!reviewDates.has(todayKey)) {
-        // If no review today, check if yesterday had one (streak is still alive)
         d.setDate(d.getDate() - 1)
         const yesterdayKey = `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`
         if (!reviewDates.has(yesterdayKey)) return 0
       }
 
-      // Count consecutive days backwards
       while (true) {
         const key = `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`
         if (reviewDates.has(key)) {
@@ -175,14 +215,13 @@ export const useProgressStore = defineStore('progress', {
     },
 
     /**
-     * Reviews grouped by local calendar date for heatmap display.
+     * Reviews grouped by local calendar date for heatmap display (all decks).
      */
     reviewHeatmap(state): Record<string, number> {
       const heatmap: Record<string, number> = {}
 
       for (const entry of state.log) {
         const d = new Date(entry.review)
-        // ISO date string YYYY-MM-DD
         const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
         heatmap[key] = (heatmap[key] || 0) + 1
       }
@@ -191,7 +230,7 @@ export const useProgressStore = defineStore('progress', {
     },
 
     /**
-     * Due forecast: count of cards due on each of the next 30 days.
+     * Due forecast: count of cards due on each of the next 30 days (all decks).
      */
     dueForecast(state): { date: string; count: number }[] {
       const forecast: Record<string, number> = {}
@@ -214,57 +253,110 @@ export const useProgressStore = defineStore('progress', {
       return Object.entries(forecast).map(([date, count]) => ({ date, count }))
     },
 
-    /** Total number of kanji the user has studied at least once. */
+    /** Total number of characters studied at least once (all decks). */
     totalStudied(state): number {
       return Object.keys(state.cards).length
+    },
+
+    // ─── Legacy aliases (kanji-only; kept for backward compat) ────
+
+    /** @deprecated Use dueTodayByDeck('kanji') instead. */
+    dueToday(state): string[] {
+      const now = new Date()
+      const endOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999)
+      const prefix = 'kanji:'
+      const due: string[] = []
+
+      for (const [key, card] of Object.entries(state.cards)) {
+        if (key.startsWith(prefix)) {
+          if (new Date(card.due) <= endOfToday) {
+            due.push(key.slice(prefix.length))
+          }
+        }
+      }
+      // Also handle un-migrated legacy keys (no prefix)
+      for (const [key, card] of Object.entries(state.cards)) {
+        if (!key.includes(':')) {
+          if (new Date(card.due) <= endOfToday) {
+            due.push(key)
+          }
+        }
+      }
+      return due
+    },
+
+    /** @deprecated Use newCountByDeck('kanji') instead. */
+    newCount(state): number {
+      return Object.entries(state.cards).filter(
+        ([k, c]) => (k.startsWith('kanji:') || !k.includes(':')) && c.state === State.New,
+      ).length
+    },
+
+    /** @deprecated Use learningCountByDeck('kanji') instead. */
+    learningCount(state): number {
+      return Object.entries(state.cards).filter(
+        ([k, c]) =>
+          (k.startsWith('kanji:') || !k.includes(':')) &&
+          (c.state === State.Learning || c.state === State.Relearning),
+      ).length
+    },
+
+    /** @deprecated Use reviewCountByDeck('kanji') instead. */
+    reviewCount(state): number {
+      return Object.entries(state.cards).filter(
+        ([k, c]) => (k.startsWith('kanji:') || !k.includes(':')) && c.state === State.Review,
+      ).length
     },
   },
 
   actions: {
     /**
-     * Grade a kanji card. Creates the card if it's new.
+     * Grade a card for a specific deck. Creates the card if it's new.
      *
-     * @param char - The kanji character
-     * @param grade - FSRS grade (Again=1, Hard=2, Good=3, Easy=4)
+     * @param deckId - The deck this card belongs to
+     * @param char   - The character (without prefix)
+     * @param grade  - FSRS grade (Again=1, Hard=2, Good=3, Easy=4)
      */
-    gradeCard(char: string, grade: Grade) {
+    gradeCard(deckId: DeckId, char: string, grade: Grade) {
+      const key = getCardKey(deckId, char)
       const now = new Date()
-      const currentCard = char in this.cards ? this.cards[char]! : createEmptyCard(now)
+      const currentCard = key in this.cards ? this.cards[key]! : createEmptyCard(now)
 
       const result = this.scheduler.next(currentCard, now, grade)
 
-      // Store updated card state
-      this.cards[char] = result.card
-
-      // Append to review log
+      this.cards[key] = result.card
       this.log.push({
         ...result.log,
         char,
+        deckId,
       })
     },
 
     /**
-     * Get the available new cards that can be introduced today,
-     * respecting the daily cap.
+     * Get the available new cards that can be introduced today for a deck,
+     * respecting the per-deck daily cap.
      *
-     * @param allKanji - All kanji characters in the deck
+     * @param deckId   - The target deck
+     * @param allChars - All characters in that deck
      */
-    getAvailableNewCards(allKanji: string[]): string[] {
-      const remaining = this.settings.newCardsPerDay - this.newCardsIntroducedToday
+    getAvailableNewCards(deckId: DeckId, allChars: string[]): string[] {
+      const remaining = this.settings.newCardsPerDay - this.newCardsIntroducedTodayByDeck(deckId)
       if (remaining <= 0) return []
 
-      const newCards = allKanji.filter((char) => !(char in this.cards))
+      const prefix = `${deckId}:`
+      const newCards = allChars.filter((char) => !(prefix + char in this.cards))
       return newCards.slice(0, remaining)
     },
 
     /**
-     * Build today's study queue: due reviews + new card intake.
+     * Build today's study queue for a deck: due reviews + new card intake.
      *
-     * @param allKanji - All kanji characters in the deck
+     * @param deckId   - The target deck
+     * @param allChars - All characters in that deck
      */
-    getStudyQueue(allKanji: string[]): string[] {
-      const queue: string[] = [...this.dueToday]
-      const newCards = this.getAvailableNewCards(allKanji)
+    getStudyQueue(deckId: DeckId, allChars: string[]): string[] {
+      const queue: string[] = [...this.dueTodayByDeck(deckId)]
+      const newCards = this.getAvailableNewCards(deckId, allChars)
       queue.push(...newCards)
       return queue
     },
@@ -272,6 +364,31 @@ export const useProgressStore = defineStore('progress', {
     /** Update user settings. */
     updateSettings(patch: Partial<Settings>) {
       this.settings = { ...this.settings, ...patch }
+    },
+
+    /**
+     * Migrate schema from v1 (bare char keys) to v2 (deckId:char keys).
+     * Also backfills deckId on log entries.
+     * Called automatically by the store plugin after rehydration.
+     */
+    migrateSchema() {
+      if (this.version < 2) {
+        // Migrate card keys
+        const migratedCards: Record<string, Card> = {}
+        for (const [key, card] of Object.entries(this.cards)) {
+          const newKey = key.includes(':') ? key : `kanji:${key}`
+          migratedCards[newKey] = card
+        }
+        this.cards = migratedCards
+
+        // Backfill deckId on log entries (cast to any for migration)
+        this.log = this.log.map((entry) => ({
+          ...entry,
+          deckId: (entry as { deckId?: string }).deckId ?? 'kanji',
+        })) as ReviewEntry[]
+
+        this.version = 2
+      }
     },
 
     /** Export progress as a JSON string. */
@@ -294,6 +411,8 @@ export const useProgressStore = defineStore('progress', {
           this.settings = { ...defaultSettings, ...data.settings }
         }
         this.version = data.version
+        // Run migration in case imported data is v1
+        this.migrateSchema()
       }
     },
 
@@ -307,5 +426,9 @@ export const useProgressStore = defineStore('progress', {
   persist: {
     key: 'kanji-srs-progress',
     pick: ['cards', 'log', 'settings', 'version'],
+    afterHydrate: (ctx) => {
+      // Auto-run migration after localStorage is loaded
+      ctx.store.migrateSchema()
+    },
   },
 })
